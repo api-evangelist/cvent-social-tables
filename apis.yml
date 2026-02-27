@@ -1,0 +1,50 @@
+name: Cvent Social Tables
+description: Social Tables by Cvent provides event diagramming and seating software that helps event planners design floor plans, manage attendees, and collaborate on events. The platform offers tools for creating interactive seating charts, floor plan management, and guest list coordination.
+image: https://www.cvent.com/sites/default/files/image/2021-09/social-tables-logo.png
+url: https://www.socialtables.com
+created: 2025-03-14 00:00:00+00:00
+modified: 2025-03-14 00:00:00+00:00
+tags:
+- events
+- seating
+- floor plans
+- event management
+- hospitality
+- venue management
+apis:
+- name: Social Tables Events API
+  description: API for managing events, floor plans, diagrams, and seating arrangements in Social Tables
+  baseURL: https://api.socialtables.com
+  humanURL: https://www.socialtables.com
+  properties:
+  - type: Documentation
+    url: https://developer.socialtables.com/docs
+  - type: OpenAPI
+    url: https://api.socialtables.com/openapi.json
+  - type: Authentication
+    url: https://developer.socialtables.com/docs/authentication
+  tags:
+  - events
+  - floor plans
+  - seating charts
+  - venues
+common:
+- type: Portal
+  url: https://developer.socialtables.com
+- type: Sign Up
+  url: https://www.socialtables.com/free-trial
+- type: Login
+  url: https://app.socialtables.com/login
+- type: Terms of Service
+  url: https://www.cvent.com/en/terms-of-service
+- type: Privacy Policy
+  url: https://www.cvent.com/en/privacy-policy
+- type: Support
+  url: https://support.socialtables.com
+- type: Status
+  url: https://status.socialtables.com
+- type: Blog
+  url: https://www.socialtables.com/blog
+maintainers:
+- FN: APIs.json Maintainer
+  email: info@apisjson.org
