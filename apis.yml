@@ -1,20 +1,16 @@
 name: Cvent Social Tables
-description: Social Tables by Cvent provides event diagramming and seating 
-  software that helps event planners design floor plans, manage attendees, and 
-  collaborate on events. The platform offers tools for creating interactive 
-  seating charts, floor plan management, and guest list coordination.
-image: 
-  https://www.cvent.com/sites/default/files/image/2021-09/social-tables-logo.png
+description: Social Tables by Cvent provides event diagramming and seating software that helps event planners design floor plans, manage attendees, and collaborate on events. The platform offers tools for creating interactive seating charts, floor plan management, and guest list coordination.
+image: https://www.cvent.com/sites/default/files/image/2021-09/social-tables-logo.png
 url: https://www.socialtables.com
 created: '2025-03-14'
 modified: '2026-03-16'
 tags:
-  - events
-  - seating
-  - floor plans
-  - event management
-  - hospitality
-  - venue management
+  - Event Management
+  - Events
+  - Floor Plans
+  - Hospitality
+  - Seating
+  - Venue Management
 apis:
   - name: Social Tables Events API
     description: >-
@@ -30,10 +26,10 @@ apis:
       - type: Authentication
         url: https://developer.socialtables.com/docs/authentication
     tags:
-      - events
-      - floor plans
-      - seating charts
-      - venues
+      - Events
+      - Floor Plans
+      - Seating Charts
+      - Venues
 common:
   - type: Portal
     url: https://developer.socialtables.com
