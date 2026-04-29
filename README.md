@@ -1,48 +1,59 @@
 # Cvent Social Tables (cvent-social-tables)
-Social Tables by Cvent provides event diagramming and seating software that helps event planners design floor plans, manage attendees, and collaborate on events. The platform offers tools for creating interactive seating charts, floor plan management, and guest list coordination.
 
-**URL:** [Visit APIs.json URL](https://www.socialtables.com)
+Social Tables, a Cvent product, is event diagramming, room-design, and seating software for hospitality venues, hotels, and meeting planners. Planners design 2D / 3D floor plans, manage seating arrangements, build attendee guest lists, and collaborate with venues. Social Tables has been integrated into Cvent's Hospitality Cloud and Diagramming product line; new programmatic integration is generally delivered through the unified Cvent Platform REST API.
 
-## Tags:
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/cvent-social-tables/refs/heads/main/apis.yml)
 
- - events, seating, floor plans, event management, hospitality, venue management
+## Scope
+
+- **Type:** Index
+- **Position:** Consuming
+- **Access:** 3rd-Party
+- **x-type:** company
+
+## Tags
+
+- 3D Design, Catering, Diagramming, Event Design, Event Management, Events, Floor Plans, Hospitality, Hotel, Meetings, Seating, Seating Charts, Venues
 
 ## Timestamps
 
-- **Created:** 2025-03-14 00:00:00+00:00 
-- **Modified:** 2025-03-14 00:00:00+00:00 
+- **Created:** 2025-03-14
+- **Modified:** 2026-04-28
 
 ## APIs
 
-### Social Tables Events API
-API for managing events, floor plans, diagrams, and seating arrangements in Social Tables
+### Social Tables Events API (Legacy)
 
-**Human URL:** [https://www.socialtables.com](https://www.socialtables.com)
+The legacy Social Tables Events API provided REST access to events, venues, floor plans, diagrams, and seating arrangements. With Social Tables now part of Cvent's Hospitality Cloud, programmatic access has largely consolidated into the Cvent Platform REST API.
 
+- **Human URL:** https://developer.socialtables.com
+- **Base URL:** `https://api.socialtables.com`
 
-#### Tags:
+## Capabilities
 
- - events, floor plans, seating charts, venues
+- 2D / 3D floor plan and room layout design
+- Seating chart and guest list management
+- Venue and meeting space cataloging
+- Catering and AV layout planning
+- Collaboration between planners and hospitality venues
 
-#### Properties
+## Use Cases
 
-- [Documentation](https://developer.socialtables.com/docs)
-- [OpenAPI](https://api.socialtables.com/openapi.json)
-- [Authentication](https://developer.socialtables.com/docs/authentication)
+- Hotel sales teams pre-designing event spaces for RFP responses
+- Wedding and corporate planners visualizing seating
+- Catering and AV vendors syncing equipment placement to plans
+- Venue marketing showcasing room capacity and configurations
 
-## Common Properties
+## Common Resources
 
-- [Portal](https://developer.socialtables.com)
-- [Sign Up](https://www.socialtables.com/free-trial)
-- [Login](https://app.socialtables.com/login)
-- [Terms of Service](https://www.cvent.com/en/terms-of-service)
-- [Privacy Policy](https://www.cvent.com/en/privacy-policy)
-- [Support](https://support.socialtables.com)
-- [Status](https://status.socialtables.com)
-- [Blog](https://www.socialtables.com/blog)
+- [Social Tables Website](https://www.socialtables.com)
+- [Cvent Diagramming](https://www.cvent.com/en/diagramming-event-design)
+- [Cvent Developer Portal](https://developers.cvent.com/)
+- [Status](https://status.cvent.com/)
+- [Support](https://support.cvent.com/)
 
 ## Maintainers
 
-**FN:** APIs.json Maintainer
+**FN:** Kin Lane
 
-**Email:** info@apisjson.org
+**Email:** kin@apievangelist.com
