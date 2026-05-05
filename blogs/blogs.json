@@ -1,0 +1,13 @@
+{
+  "repo": "cvent-social-tables",
+  "feeds": [
+    {
+      "source": "https://www.socialtables.com/blog",
+      "feed_url": "https://www.socialtables.com/feed/",
+      "saved": 10,
+      "title": "Social Tables"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:26:45Z"
+}
