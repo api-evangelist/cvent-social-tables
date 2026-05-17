@@ -1,6 +1,6 @@
 aid: cvent-social-tables
 name: Cvent Social Tables
-x-type: company
+kind: company
 description: >-
   Social Tables, a Cvent product, is event diagramming, room-design, and
   seating software for hospitality venues, hotels, and meeting planners.
@@ -74,7 +74,7 @@ common:
     url: https://app.socialtables.com/login
   - type: Support
     url: https://support.cvent.com/
-  - type: Status
+  - type: StatusPage
     url: https://status.cvent.com/
   - type: TermsOfService
     url: https://www.cvent.com/en/terms-of-service
