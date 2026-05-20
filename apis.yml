@@ -62,6 +62,8 @@ apis:
       - type: ParentPlatform
         url: https://developers.cvent.com/
 common:
+  - type: GitHubOrganization
+    url: https://github.com/socialtables
   - type: Website
     url: https://www.socialtables.com
   - type: ProductPage
