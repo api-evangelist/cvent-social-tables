@@ -1,0 +1,2047 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get information about the current OAuth bearer token as-supplied in headers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/oauth/token"
+          },
+          "docs": "Get information about the current OAuth bearer token as-supplied in headers"
+        },
+        {
+          "info": {
+            "name": "Request an OAuth bearer token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/oauth/token",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": ""
+              },
+              {
+                "name": "Accept",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Request an OAuth bearer token"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Diagram Favorites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get multiple favorites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/favorites",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get multiple favorites"
+        },
+        {
+          "info": {
+            "name": "inserts a favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/favorites/"
+          },
+          "docs": "inserts a favorite"
+        },
+        {
+          "info": {
+            "name": "updates a favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/favorites/"
+          },
+          "docs": "updates a favorite"
+        },
+        {
+          "info": {
+            "name": "get a favorite by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/favorites/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a favorite by ID"
+        },
+        {
+          "info": {
+            "name": "deletes a favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/favorites/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "deletes a favorite"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Diagram Layouts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get multiple layouts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/layouts",
+            "params": [
+              {
+                "name": "bookable_room",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "space_template",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get multiple layouts"
+        },
+        {
+          "info": {
+            "name": "inserts a layout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/layouts/"
+          },
+          "docs": "inserts a layout"
+        },
+        {
+          "info": {
+            "name": "get a layout by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/layouts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a layout by ID"
+        },
+        {
+          "info": {
+            "name": "updates a layout",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/layouts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "updates a layout"
+        },
+        {
+          "info": {
+            "name": "deletes a layout",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/layouts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "deletes a layout"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Diagram Template Presets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get multiple template presets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/template-presets",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "setup",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query",
+                "description": "filters by property id, excludes presets associated with a property if 'null'"
+              },
+              {
+                "name": "catalogItemId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get multiple template presets"
+        },
+        {
+          "info": {
+            "name": "inserts a template preset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/template-presets",
+            "params": [
+              {
+                "name": "event_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "inserts a template preset"
+        },
+        {
+          "info": {
+            "name": "get a template preset by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/template-presets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a template preset by id"
+        },
+        {
+          "info": {
+            "name": "updates a template preset",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/template-presets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "event_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "updates a template preset"
+        },
+        {
+          "info": {
+            "name": "deletes a template preset",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/template-presets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "event_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "deletes a template preset"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Diagrams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get multiple diagrams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/diagrams",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "event",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "space",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "guestlist",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "legacy_event",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_diagram_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_event_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get multiple diagrams"
+        },
+        {
+          "info": {
+            "name": "get a diagram by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/diagrams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get a diagram by ID"
+        },
+        {
+          "info": {
+            "name": "deletes a diagram",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/diagrams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "deletes a diagram"
+        },
+        {
+          "info": {
+            "name": "automatically seat array of guest objects at available chairs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/diagrams/:id/auto-seat",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of diagram to seat guests in"
+              }
+            ]
+          },
+          "docs": "automatically seat array of guest objects at available chairs"
+        },
+        {
+          "info": {
+            "name": "get chair and floor element information for seated guests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/diagrams/:id/guests",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get chair and floor element information for seated guests"
+        },
+        {
+          "info": {
+            "name": "Detaches a diagram's guestlist and unseats all guests",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/diagrams/:id/guests",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of diagram"
+              }
+            ]
+          },
+          "docs": "Detaches a diagram's guestlist and unseats all guests"
+        },
+        {
+          "info": {
+            "name": "seat guests at specified floor elements in a diagram",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/diagrams/:id/seat",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of diagram to seat guests in"
+              }
+            ]
+          },
+          "docs": "seat guests at specified floor elements in a diagram"
+        },
+        {
+          "info": {
+            "name": "Get a diagram by its guestlist ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/diagrams/guestlist/:guestlistId",
+            "params": [
+              {
+                "name": "guestlistId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a diagram by its guestlist ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all events an authenticated user has access to within their team.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/events",
+            "params": [
+              {
+                "name": "event_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of event IDs."
+              },
+              {
+                "name": "v2_event_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of v2 event IDs."
+              },
+              {
+                "name": "attachSpacesAndBookableRooms",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include spaces and bookable rooms in the event response."
+              },
+              {
+                "name": "permissionLevel",
+                "value": "",
+                "type": "query",
+                "description": "Permission level to include in the event response. 0 = default = add mobile permissions; 1 = skip mobile permissions;"
+              }
+            ]
+          },
+          "docs": "Retrieve all events an authenticated user has access to within their team."
+        },
+        {
+          "info": {
+            "name": "Creates an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/events"
+          },
+          "docs": "Creates an event"
+        },
+        {
+          "info": {
+            "name": "Returns information about an event by its unique ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/events/:event",
+            "params": [
+              {
+                "name": "event",
+                "value": "",
+                "type": "path",
+                "description": "The string or int unique identifier of the event."
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include deleted events in the response."
+              }
+            ]
+          },
+          "docs": "Returns information about an event by its unique ID."
+        },
+        {
+          "info": {
+            "name": "Update an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/events/:event",
+            "params": [
+              {
+                "name": "event",
+                "value": "",
+                "type": "path",
+                "description": "ID or UID of the event to update"
+              }
+            ]
+          },
+          "docs": "Update an event"
+        },
+        {
+          "info": {
+            "name": "Delete an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/events/:event",
+            "params": [
+              {
+                "name": "event",
+                "value": "",
+                "type": "path",
+                "description": "ID or UID of the event to delete"
+              }
+            ]
+          },
+          "docs": "Delete an event"
+        },
+        {
+          "info": {
+            "name": "Retrieve a list of events that the user (specified via the token) has access to, with offset-based pagination",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/events/page",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of events to retrieve"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The starting point for pagination"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by name of the event"
+              },
+              {
+                "name": "owner_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the owner ID of the event"
+              },
+              {
+                "name": "collaborator_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by collaborator who can access the event"
+              },
+              {
+                "name": "industry_type",
+                "value": "",
+                "type": "query",
+                "description": "Filter by industry type of the event"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "Filter by start date (epoch time) of the event"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "Filter by end date (epoch time) of the event"
+              },
+              {
+                "name": "last_activity",
+                "value": "",
+                "type": "query",
+                "description": "Filter by last activity date of the event"
+              },
+              {
+                "name": "event_type",
+                "value": "",
+                "type": "query",
+                "description": "Filter by event type of the event"
+              },
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by team ID of the user"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by space IDs of the diagrams in the event"
+              },
+              {
+                "name": "sort_col",
+                "value": "",
+                "type": "query",
+                "description": "The field to sort by (e.g., name, start_date, end_date, etc.)"
+              },
+              {
+                "name": "sort_dir",
+                "value": "",
+                "type": "query",
+                "description": "The sort direction to use (ASC or DESC)"
+              },
+              {
+                "name": "date_filter",
+                "value": "",
+                "type": "query",
+                "description": "Convenience filter to get events that are upcoming, past, or all"
+              },
+              {
+                "name": "space_template_ids",
+                "value": "",
+                "type": "query",
+                "description": "Space template IDs to filter by"
+              },
+              {
+                "name": "bookable_room_ids",
+                "value": "",
+                "type": "query",
+                "description": "Bookable room IDs to filter by"
+              },
+              {
+                "name": "event_platform",
+                "value": "",
+                "type": "query",
+                "description": "Filter by event platform type. Valid values: 'prismm' (events with prismm_occasion_id), 'ced' (events without prismm_occasion_id, default), or 'all' (no filtering)"
+              },
+              {
+                "name": "event_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of event UIDs to filter by"
+              },
+              {
+                "name": "v2_event_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of v2 (legacy) event IDs to filter by"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of events that the user (specified via the token) has access to, with offset-based pagination"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Guest Checkin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all checked in guests for a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/checkin",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get all checked in guests for a guestlist"
+        },
+        {
+          "info": {
+            "name": "Updates multiple guests to a single checkin status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/checkin",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates multiple guests to a single checkin status"
+        },
+        {
+          "info": {
+            "name": "Updates multiple guests to multiple checkin statuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/update-checkin-status",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates multiple guests to multiple checkin statuses"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Guest Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a group"
+        },
+        {
+          "info": {
+            "name": "Retrieve a GROUP",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a GROUP"
+        },
+        {
+          "info": {
+            "name": "Delete a GROUP",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a GROUP"
+        },
+        {
+          "info": {
+            "name": "Bulk add/remove guests to/from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/guests/_bulk",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Bulk add/remove guests to/from group"
+        },
+        {
+          "info": {
+            "name": "Bulk adds guests from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/guests/_bulk/create",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Bulk adds guests from group"
+        },
+        {
+          "info": {
+            "name": "Bulk deletes guests from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/guests/_bulk/delete",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Bulk deletes guests from group"
+        },
+        {
+          "info": {
+            "name": "Clear Group Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/name",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Clear Group Name"
+        },
+        {
+          "info": {
+            "name": "Set group name",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/name/:name",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Set group name"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Guest Lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all guestlists by session or event id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists",
+            "params": [
+              {
+                "name": "event_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all guestlists by session or event id"
+        },
+        {
+          "info": {
+            "name": "Create a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists"
+          },
+          "docs": "Create a guestlist"
+        },
+        {
+          "info": {
+            "name": "Retrieve all guestlists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all guestlists"
+        },
+        {
+          "info": {
+            "name": "Update a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path",
+                "description": "guestlist ID"
+              }
+            ]
+          },
+          "docs": "Update a guestlist"
+        },
+        {
+          "info": {
+            "name": "Update a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path",
+                "description": "guestlist ID"
+              }
+            ]
+          },
+          "docs": "Update a guestlist"
+        },
+        {
+          "info": {
+            "name": "Delete a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a guestlist"
+        },
+        {
+          "info": {
+            "name": "Clone a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/_clone",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Clone a guestlist"
+        },
+        {
+          "info": {
+            "name": "Get a guestlist column mapping",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/column_mapping",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a guestlist column mapping"
+        },
+        {
+          "info": {
+            "name": "Delete a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/cvent/seating",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a guestlist"
+        },
+        {
+          "info": {
+            "name": "Restore a deleted guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/restore",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Restore a deleted guestlist"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Guest Meals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "assign/delete multiple guests to a tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/meals",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "assign/delete multiple guests to a tag"
+        },
+        {
+          "info": {
+            "name": "create a meal on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/meals",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "create a meal on a guestlist"
+        },
+        {
+          "info": {
+            "name": "edit a meal on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/meals/:meal_title",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "meal_title",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "edit a meal on a guestlist"
+        },
+        {
+          "info": {
+            "name": "delete a meal on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/meals/:meal_title",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "meal_title",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "delete a meal on a guestlist"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Guest Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "assign/delete multiple guests to a tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/tags",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "assign/delete multiple guests to a tag"
+        },
+        {
+          "info": {
+            "name": "get the tags status on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get the tags status on a guestlist"
+        },
+        {
+          "info": {
+            "name": "create a tag on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "create a tag on a guestlist"
+        },
+        {
+          "info": {
+            "name": "get a tag on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags/:tag_title_or_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tag_title_or_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a tag on a guestlist"
+        },
+        {
+          "info": {
+            "name": "edit a tag on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags/:tag_title_or_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tag_title_or_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "edit a tag on a guestlist"
+        },
+        {
+          "info": {
+            "name": "delete a tag on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags/:tag_title_or_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tag_title_or_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "delete a tag on a guestlist"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Guests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all guests for a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all guests for a guestlist"
+        },
+        {
+          "info": {
+            "name": "Add a guest to a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add a guest to a guestlist"
+        },
+        {
+          "info": {
+            "name": "add multiple guests to a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/_bulk",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "add multiple guests to a guestlist"
+        },
+        {
+          "info": {
+            "name": "dedupe new guests against existing guests in a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/_dedupe",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "dedupe new guests against existing guests in a guestlist"
+        },
+        {
+          "info": {
+            "name": "deletes existing guests that match new duplicate guests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/_replace",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "deletes existing guests that match new duplicate guests"
+        },
+        {
+          "info": {
+            "name": "Retrieve a guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a guest"
+        },
+        {
+          "info": {
+            "name": "update a guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path",
+                "description": "guest ID"
+              }
+            ]
+          },
+          "docs": "update a guest"
+        },
+        {
+          "info": {
+            "name": "update a guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path",
+                "description": "guest ID"
+              }
+            ]
+          },
+          "docs": "update a guest"
+        },
+        {
+          "info": {
+            "name": "Delete a guest & remove from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a guest & remove from group"
+        },
+        {
+          "info": {
+            "name": "Updates the checkin status of an individual guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/checkin",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates the checkin status of an individual guest"
+        },
+        {
+          "info": {
+            "name": "Restore a deleted guest and their group if applicable",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/restore",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Restore a deleted guest and their group if applicable"
+        },
+        {
+          "info": {
+            "name": "Retrieve a guest with seating information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/seating",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a guest with seating information"
+        },
+        {
+          "info": {
+            "name": "Seats a guest and any grouped guests with them",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/seating",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Seats a guest and any grouped guests with them"
+        },
+        {
+          "info": {
+            "name": "Retrieve all guests and their seatings for a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/seating",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all guests and their seatings for a guestlist"
+        },
+        {
+          "info": {
+            "name": "Retrieve all guests matching specified filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/team/:team_id/guests/_filter",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filter_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter_value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "event_ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all guests matching specified filter"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Layout Automation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /4.0/layout-automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/layout-automation"
+          },
+          "docs": "actively calculates layout and creates an event/space/diagram"
+        },
+        {
+          "info": {
+            "name": "DELETE /4.0/layout-automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/layout-automation",
+            "params": [
+              {
+                "name": "spaces",
+                "value": "",
+                "type": "query",
+                "description": "a comma-separated list of space IDs to clear"
+              },
+              {
+                "name": "event",
+                "value": "",
+                "type": "query",
+                "description": "the ID of the event to clear"
+              },
+              {
+                "name": "hardDelete",
+                "value": "",
+                "type": "query",
+                "description": "flag to hard delete diagram/space"
+              }
+            ]
+          },
+          "docs": "removes floor elements from previous automated and manual layouts"
+        },
+        {
+          "info": {
+            "name": "POST /4.0/layout-automation/custom-setup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/layout-automation/custom-setup"
+          },
+          "docs": "actively calculates layout and creates an event/space/diagram using custom_setup defined from Home Team Setup Presets https://home-2018.socialtables.com/settings/team-setup-presets"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Properties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get active properties owned by the caller team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/properties"
+          },
+          "docs": "get active properties owned by the caller team"
+        },
+        {
+          "info": {
+            "name": "get a property from a property ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/properties/:property_id",
+            "params": [
+              {
+                "name": "property_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a property from a property ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Rooms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns all rooms for a given property ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/properties/:property_id/rooms",
+            "params": [
+              {
+                "name": "property_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns all rooms for a given property ID"
+        },
+        {
+          "info": {
+            "name": "get a room by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/rooms/:room_id",
+            "params": [
+              {
+                "name": "room_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "archived",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get a room by ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SNC Event Integration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Accepts data about external events and persists them",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/v1/integrations/:sncType",
+            "params": [
+              {
+                "name": "sncType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This api creates a diagram in a specified room.\nUnlike most of our other apis, this uses externally provided property and room ids instead of our ids, and requires coordination with our professional services team to map the rooms.\nbooking_id must be unique for each event and function_id must be unique for each diagram.\nIf you are interested in using this api, please contact your account manager or Cvent sales.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get users for a given team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/teams/:team_id/users",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "path",
+                "description": "team ID"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "page size"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "cursor for paging"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "before cursor for backpaging"
+              }
+            ]
+          },
+          "docs": "get users for a given team"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
