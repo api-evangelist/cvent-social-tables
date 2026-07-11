@@ -62,6 +62,10 @@ apis:
       - type: ParentPlatform
         url: https://developers.cvent.com/
 common:
+  - type: DomainSecurity
+    url: security/cvent-social-tables-domain-security.yml
+  - type: Authentication
+    url: authentication/cvent-social-tables-authentication.yml
   - type: OAuthScopes
     url: scopes/cvent-social-tables-scopes.yml
   - type: GitHubOrganization
