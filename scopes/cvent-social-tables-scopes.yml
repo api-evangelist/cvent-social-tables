@@ -1,0 +1,30 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cvent-social-tables-openapi.json
+schemes:
+- name: oauth2
+  source: openapi/cvent-social-tables-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+scopes:
+- scope: authenticated
+  description: any authentication whatsoever
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/cvent-social-tables-openapi.json
+- scope: create:oauth_client
+  description: oauth client create
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/cvent-social-tables-openapi.json
+- scope: userdata
+  description: All of the things.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/cvent-social-tables-openapi.json

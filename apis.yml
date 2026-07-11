@@ -62,6 +62,8 @@ apis:
       - type: ParentPlatform
         url: https://developers.cvent.com/
 common:
+  - type: OAuthScopes
+    url: scopes/cvent-social-tables-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/socialtables
   - type: Website
