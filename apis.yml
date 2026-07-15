@@ -62,6 +62,8 @@ apis:
       - type: ParentPlatform
         url: https://developers.cvent.com/
 common:
+  - type: AgenticAccess
+    url: agentic-access/cvent-social-tables-agentic-access.yml
   - type: DomainSecurity
     url: security/cvent-social-tables-domain-security.yml
   - type: Authentication
