@@ -1,0 +1,100 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Authentication
+paths:
+  /4.0/oauth/token:
+    post:
+      summary: Request an OAuth bearer token
+      tags:
+      - Authentication
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        description: content type
+        in: header
+        type: string
+      - name: Accept
+        description: content type
+        in: header
+        type: string
+      - name: client_id
+        description: OAuth client ID
+        in: formData
+        type: string
+        required: true
+      - name: client_secret
+        description: OAuth client secret - required for password and client_credentials flows
+        in: formData
+        type: string
+        required: true
+      - name: grant_type
+        description: OAuth grant type
+        in: formData
+        type: string
+        enum:
+        - authorization_code
+        - password
+        - client_credentials
+        - refresh_token
+        required: true
+      - name: code
+        description: Authorization code for authorization_code grants
+        in: formData
+        type: string
+      - name: refresh_token
+        description: Refresh token for refresh_token grants
+        in: formData
+        type: string
+      - name: username
+        description: Username (email) for password grants
+        in: formData
+        type: string
+      - name: password
+        description: Password for password grants
+        in: formData
+        type: string
+      responses:
+        '200':
+          description: success
+    get:
+      summary: Get information about the current OAuth bearer token as-supplied in headers
+      tags:
+      - Authentication
+      produces:
+      - application/json
+      security:
+      - oauth2:
+        - authenticated
+      responses:
+        '200':
+          description: success
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

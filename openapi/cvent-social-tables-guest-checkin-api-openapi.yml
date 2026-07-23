@@ -1,0 +1,200 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Guest Checkin API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Guest Checkin
+paths:
+  /4.0/guestlists/{guestlist_id}/checkin:
+    get:
+      tags:
+      - Guest Checkin
+      summary: Get all checked in guests for a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: returns checked in guests
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/guests-guest-list-service'
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/checkin:
+    post:
+      tags:
+      - Guest Checkin
+      summary: Updates multiple guests to a single checkin status
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: body
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/checkinBulk-guest-list-service'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Error creating guest tags
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/update-checkin-status:
+    post:
+      tags:
+      - Guest Checkin
+      summary: Updates multiple guests to multiple checkin statuses
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: body
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/checkinBulk-guest-list-service'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Error updating guests checkin status
+  /4.0/guestlists/{guestlist_id}/guests/{guest_id}/checkin:
+    post:
+      tags:
+      - Guest Checkin
+      summary: Updates the checkin status of an individual guest
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        required: true
+        in: path
+        type: string
+      - name: checked_in
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: checkin
+          schema:
+            $ref: '#/definitions/guests-guest-list-service'
+        '400':
+          description: Error setting guests checkin status
+        '410':
+          description: guestlist is deleted
+definitions:
+  meals-guest-list-service:
+    type: object
+    properties:
+      title:
+        type: string
+        description: name of meal
+    required:
+    - title
+  tags-guest-list-service:
+    type: object
+    properties:
+      title:
+        type: string
+        description: title of tag
+      color:
+        type: string
+        description: color of tag
+    required:
+    - title
+  checkinBulk-guest-list-service:
+    properties:
+      guests:
+        type: array
+        items:
+          type: string
+        description: Array of Guest IDs
+      checked_in:
+        type: integer
+        enum:
+        - 0
+        - 1
+        - 2
+        description: 0 = Check-in reset, 1 = Check-in, 2 = Check-out
+    required:
+    - guests
+    example:
+      guests:
+      - 99b4ae20-2779-11e6-b0b7-13c2616041ae
+      - 99b4ae21-2779-11e6-b0b7-13c2616041ae
+      checked_in: 1
+  guests-guest-list-service:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id of guest
+      first_name:
+        type: string
+        description: first name of guest
+      last_name:
+        type: string
+        description: last name of guest
+      email:
+        type: string
+        description: email address
+      checked_in_status:
+        type: object
+        description: checkin data
+        properties:
+          checked_in:
+            type: integer
+          checked_in_at:
+            type: string
+            format: date-time
+          checked_out_at:
+            type: string
+            format: date-time
+      tags:
+        type: array
+        items:
+          $ref: '#/definitions/tags-guest-list-service'
+      meals:
+        type: array
+        items:
+          $ref: '#/definitions/meals-guest-list-service'
+    required:
+    - id
+    - first_name
+    - last_name
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

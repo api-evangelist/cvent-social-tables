@@ -1,0 +1,59 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Properties API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Properties
+paths:
+  /4.0/properties:
+    get:
+      tags:
+      - Properties
+      summary: get active properties owned by the caller team
+      responses:
+        '200':
+          description: returns active properties owned by the caller team
+        '400':
+          description: team context is missing from request
+        '401':
+          description: unauthorized
+  /4.0/properties/{property_id}:
+    get:
+      tags:
+      - Properties
+      summary: get a property from a property ID
+      parameters:
+      - $ref: '#/parameters/property_id-property-service'
+      responses:
+        '200':
+          description: returns a property
+parameters:
+  property_id-property-service:
+    name: property_id
+    in: path
+    type: string
+    required: true
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

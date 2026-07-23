@@ -1,0 +1,324 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Events API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Events
+paths:
+  /4.0/events:
+    get:
+      tags:
+      - Events
+      summary: Retrieve all events an authenticated user has access to within their team.
+      produces:
+      - application/json
+      parameters:
+      - name: event_ids
+        in: query
+        required: false
+        type: string
+        description: Comma-separated list of event IDs.
+      - name: v2_event_ids
+        in: query
+        required: false
+        type: string
+        description: Comma-separated list of v2 event IDs.
+      - name: attachSpacesAndBookableRooms
+        in: query
+        required: false
+        type: boolean
+        description: Whether to include spaces and bookable rooms in the event response.
+      - name: permissionLevel
+        in: query
+        required: false
+        type: number
+        description: Permission level to include in the event response. 0 = default = add mobile permissions; 1 = skip mobile permissions;
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/data-social-tables-api'
+    post:
+      tags:
+      - Events
+      summary: Creates an event
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: Post40EventsBody
+        description: Creates an event
+        required: true
+        schema:
+          $ref: '#/definitions/Post40EventsBody-social-tables-api'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/data-social-tables-api'
+  /4.0/events/{event}:
+    delete:
+      tags:
+      - Events
+      summary: Delete an event
+      produces:
+      - application/json
+      parameters:
+      - name: event
+        in: path
+        required: true
+        type: string
+        description: ID or UID of the event to delete
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/data-social-tables-api'
+    get:
+      tags:
+      - Events
+      summary: Returns information about an event by its unique ID.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: event
+        in: path
+        required: true
+        type: string
+        description: The string or int unique identifier of the event.
+      - name: include_deleted
+        in: query
+        required: false
+        type: boolean
+        description: Whether to include deleted events in the response.
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/data-social-tables-api'
+    put:
+      tags:
+      - Events
+      summary: Update an event
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: event
+        in: path
+        required: true
+        type: string
+        description: ID or UID of the event to update
+      - in: body
+        name: Put40EventsEventBody
+        description: Update an event
+        required: true
+        schema:
+          $ref: '#/definitions/Put40EventsEventBody-social-tables-api'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/data-social-tables-api'
+  /4.0/events/page:
+    get:
+      tags:
+      - Events
+      summary: Retrieve a list of events that the user (specified via the token) has access to, with offset-based pagination
+      produces:
+      - application/json
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        type: number
+        description: The number of events to retrieve
+      - name: offset
+        in: query
+        required: false
+        type: number
+        description: The starting point for pagination
+      - name: name
+        in: query
+        required: false
+        type: string
+        description: Filter by name of the event
+      - name: owner_id
+        in: query
+        required: false
+        type: string
+        description: Filter by the owner ID of the event
+      - name: collaborator_id
+        in: query
+        required: false
+        type: string
+        description: Filter by collaborator who can access the event
+      - name: industry_type
+        in: query
+        required: false
+        type: string
+        description: Filter by industry type of the event
+      - name: start_date
+        in: query
+        required: false
+        type: number
+        description: Filter by start date (epoch time) of the event
+      - name: end_date
+        in: query
+        required: false
+        type: number
+        description: Filter by end date (epoch time) of the event
+      - name: last_activity
+        in: query
+        required: false
+        type: string
+        description: Filter by last activity date of the event
+      - name: event_type
+        in: query
+        required: false
+        type: string
+        description: Filter by event type of the event
+      - name: team_id
+        in: query
+        required: false
+        type: string
+        description: Filter by team ID of the user
+      - name: space_id
+        in: query
+        required: false
+        type: string
+        description: Filter by space IDs of the diagrams in the event
+      - name: sort_col
+        in: query
+        required: false
+        type: string
+        description: The field to sort by (e.g., name, start_date, end_date, etc.)
+      - name: sort_dir
+        in: query
+        required: false
+        type: string
+        description: The sort direction to use (ASC or DESC)
+      - name: date_filter
+        in: query
+        required: false
+        type: string
+        description: Convenience filter to get events that are upcoming, past, or all
+      - name: space_template_ids
+        in: query
+        required: false
+        type: string
+        description: Space template IDs to filter by
+      - name: bookable_room_ids
+        in: query
+        required: false
+        type: string
+        description: Bookable room IDs to filter by
+      - name: event_platform
+        in: query
+        required: false
+        type: string
+        description: 'Filter by event platform type. Valid values: ''prismm'' (events with prismm_occasion_id), ''ced'' (events without prismm_occasion_id, default), or ''all'' (no filtering)'
+      - name: event_ids
+        in: query
+        required: false
+        type: string
+        description: Comma-separated list of event UIDs to filter by
+      - name: v2_event_ids
+        in: query
+        required: false
+        type: string
+        description: Comma-separated list of v2 (legacy) event IDs to filter by
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/data-social-tables-api'
+definitions:
+  Put40EventsEventBody-social-tables-api:
+    properties:
+      name:
+        type: string
+        description: Name of the event
+      category:
+        type: string
+        description: 'Type of event. For example: Athletic, Catered Meal, Ceremony, Class/Lecture, Concert, Conference, Executive Meeting, Trade Show, Reception, Training'
+      start_epoch:
+        type: string
+        description: Start date in milliseconds since epoch
+      end_epoch:
+        type: string
+        description: End date in milliseconds since epoch
+      industry:
+        type: string
+        description: Industry associated with the event. Association, Corporate, Education, Government, Nonprofit, Religious, Social
+      is_public:
+        type: boolean
+        description: Whether to make this event and its diagrams public. Defaults to false.
+      uses_metric:
+        type: boolean
+        description: Whether to use metric system. Defaults to false
+      archived:
+        type: boolean
+        description: Whether to archive/delete the event. Defaults to false
+    required:
+    - name
+  data-social-tables-api:
+    properties: {}
+  Post40EventsBody-social-tables-api:
+    properties:
+      team_id:
+        type: number
+        description: Legacy team id
+      name:
+        type: string
+        description: Name of the event
+      category:
+        type: string
+        description: 'Type of event. For example: Athletic, Catered Meal, Ceremony, Class/Lecture, Concert, Conference, Executive Meeting, Trade Show, Reception, Training'
+      start_epoch:
+        type: string
+        description: Start date in milliseconds since epoch
+      end_epoch:
+        type: string
+        description: End date in milliseconds since epoch
+      industry:
+        type: string
+        description: Industry associated with the event. Association, Corporate, Education, Government, Nonprofit, Religious, Social
+      is_public:
+        type: boolean
+        description: Whether to make this event and its diagrams public
+      uses_metric:
+        type: boolean
+        description: Whether to use metric system. Defaults to false
+    required:
+    - name
+    - category
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

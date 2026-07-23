@@ -1,0 +1,589 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Guests API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Guests
+paths:
+  /4.0/guestlists/{guestlist_id}/guests/meals:
+    post:
+      tags:
+      - Guests
+      summary: assign/delete multiple guests to a tag
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: body
+        description: body object
+        required: true
+        in: body
+        schema:
+          type: object
+          required:
+          - action
+          - guests
+          - meals
+          properties:
+            action:
+              description: action to redirect to
+              type: string
+              enum:
+              - CREATE
+              - DELETE
+            meals:
+              type: array
+              items:
+                type: string
+            guests:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: collections for gueslist
+          schema:
+            $ref: '#/definitions/guests-guest-list-service'
+        '400':
+          description: Error adding or removing meals
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/tags:
+    post:
+      tags:
+      - Guests
+      summary: assign/delete multiple guests to a tag
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: body
+        description: body object
+        required: true
+        in: body
+        schema:
+          type: object
+          required:
+          - action
+          - guests
+          - tags
+          properties:
+            tags:
+              type: array
+              items:
+                type: string
+            action:
+              type: string
+            guests:
+              type: array
+              items:
+                $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: tag for guestlist
+          schema:
+            $ref: '#/definitions/tags-guest-list-service'
+        '400':
+          description: Error adding or removing tags
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests:
+    post:
+      tags:
+      - Guests
+      summary: Add a guest to a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guests
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: guest
+          schema:
+            $ref: '#/definitions/guests-guest-list-service'
+        '400':
+          description: Error creating guest
+        '410':
+          description: guestlist is deleted
+    get:
+      tags:
+      - Guests
+      summary: Retrieve all guests for a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: returns guests
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/guests-guest-list-service'
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/_bulk:
+    post:
+      tags:
+      - Guests
+      summary: add multiple guests to a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: body
+        description: body object
+        required: true
+        in: body
+        schema:
+          type: object
+          required:
+          - action
+          - guests
+          properties:
+            action:
+              type: string
+              default: CREATE
+              enum:
+              - CREATE
+              - DELETE
+              - UPDATE
+              description: CREATE | DELETE | UPDATE
+            guests:
+              type: array
+              items:
+                $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: collections for gueslist
+          schema:
+            $ref: '#/definitions/guests-guest-list-service'
+        '400':
+          description: Error creating guests
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/_dedupe:
+    post:
+      tags:
+      - Guests
+      summary: dedupe new guests against existing guests in a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guests
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: returns guests
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/guests-guest-list-service'
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/_replace:
+    post:
+      tags:
+      - Guests
+      summary: deletes existing guests that match new duplicate guests
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guests
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: returns guests
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/guests-guest-list-service'
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/{guest_id}:
+    get:
+      tags:
+      - Guests
+      summary: Retrieve a guest
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: returns guest
+          schema:
+            $ref: '#/definitions/guests-guest-list-service'
+        '410':
+          description: guestlist is deleted
+    patch:
+      tags:
+      - Guests
+      summary: update a guest
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        description: guest ID
+        in: path
+        type: string
+        required: true
+      - name: guest
+        in: body
+        schema:
+          $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: success, guest patched
+        '410':
+          description: guestlist is deleted
+    put:
+      tags:
+      - Guests
+      summary: update a guest
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        description: guest ID
+        in: path
+        type: string
+        required: true
+      - name: guest
+        in: body
+        schema:
+          $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: success, guest updated
+        '410':
+          description: guestlist is deleted
+    delete:
+      tags:
+      - Guests
+      summary: Delete a guest & remove from group
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: successfully deleted
+        '400':
+          description: Error with no id
+        '404':
+          description: Error with invalid id
+        '405':
+          description: Error with no id
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/{guest_id}/checkin:
+    post:
+      tags:
+      - Guests
+      summary: Updates the checkin status of an individual guest
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        required: true
+        in: path
+        type: string
+      - name: checked_in
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/guests-guest-list-service'
+      responses:
+        '200':
+          description: checkin
+          schema:
+            $ref: '#/definitions/guests-guest-list-service'
+        '400':
+          description: Error setting guests checkin status
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/{guest_id}/restore:
+    post:
+      tags:
+      - Guests
+      summary: Restore a deleted guest and their group if applicable
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        in: path
+        type: string
+        required: true
+      responses:
+        '200':
+          description: Successfully restored guest
+          schema:
+            $ref: '#/definitions/guests-guest-list-service'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Guestlist or guest not found
+        '410':
+          description: Guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/{guest_id}/seating:
+    get:
+      tags:
+      - Guests
+      summary: Retrieve a guest with seating information
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: returns guest with seating information
+          schema:
+            $ref: '#/definitions/guestsWithSeating-guest-list-service'
+        '410':
+          description: guestlist is deleted
+    post:
+      tags:
+      - Guests
+      summary: Seats a guest and any grouped guests with them
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guest_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: returns the diagram update
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/guests/seating:
+    get:
+      tags:
+      - Guests
+      summary: Retrieve all guests and their seatings for a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: returns guests with seatings
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/guestsWithSeating-guest-list-service'
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/team/{team_id}/guests/_filter:
+    get:
+      tags:
+      - Guests
+      summary: Retrieve all guests matching specified filter
+      parameters:
+      - name: team_id
+        required: true
+        in: path
+        type: string
+      - name: filter_key
+        required: true
+        in: query
+        type: string
+      - name: filter_value
+        required: true
+        in: query
+        type: string
+      - name: event_ids
+        required: true
+        in: query
+        type: string
+      responses:
+        '200':
+          description: returns guests matching specified filter
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/guests-guest-list-service'
+        '404':
+          description: no guests found
+definitions:
+  meals-guest-list-service:
+    type: object
+    properties:
+      title:
+        type: string
+        description: name of meal
+    required:
+    - title
+  guestsWithSeating-guest-list-service:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id of guest
+      first_name:
+        type: string
+        description: first name of guest
+      last_name:
+        type: string
+        description: last name of guest
+      email:
+        type: string
+        description: email address
+      checked_in_status:
+        type: object
+        description: checkin data
+        properties:
+          checked_in:
+            type: integer
+          checked_in_at:
+            type: string
+            format: date-time
+          checked_out_at:
+            type: string
+            format: date-time
+      tags:
+        type: array
+        items:
+          $ref: '#/definitions/tags-guest-list-service'
+      meals:
+        type: array
+        items:
+          $ref: '#/definitions/meals-guest-list-service'
+      seating:
+        type: object
+        description: seating data
+        properties:
+          table_name:
+            type: string
+          table_number:
+            type: string
+          seat_number:
+            type: string
+          section_name:
+            type: string
+    required:
+    - id
+    - first_name
+    - last_name
+  tags-guest-list-service:
+    type: object
+    properties:
+      title:
+        type: string
+        description: title of tag
+      color:
+        type: string
+        description: color of tag
+    required:
+    - title
+  guests-guest-list-service:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id of guest
+      first_name:
+        type: string
+        description: first name of guest
+      last_name:
+        type: string
+        description: last name of guest
+      email:
+        type: string
+        description: email address
+      checked_in_status:
+        type: object
+        description: checkin data
+        properties:
+          checked_in:
+            type: integer
+          checked_in_at:
+            type: string
+            format: date-time
+          checked_out_at:
+            type: string
+            format: date-time
+      tags:
+        type: array
+        items:
+          $ref: '#/definitions/tags-guest-list-service'
+      meals:
+        type: array
+        items:
+          $ref: '#/definitions/meals-guest-list-service'
+    required:
+    - id
+    - first_name
+    - last_name
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

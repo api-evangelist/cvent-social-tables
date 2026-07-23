@@ -1,0 +1,76 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Rooms API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Rooms
+paths:
+  /4.0/properties/{property_id}/rooms:
+    get:
+      tags:
+      - Rooms
+      summary: Returns all rooms for a given property ID
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - $ref: '#/parameters/property_id-property-service'
+      responses:
+        '200':
+          description: a body containing rooms for that respective property ID
+  /4.0/rooms/{room_id}:
+    get:
+      tags:
+      - Rooms
+      summary: get a room by ID
+      description: get a room by ID
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - $ref: '#/parameters/room_id-property-service'
+      - $ref: '#/parameters/archived-property-service'
+      responses:
+        '200':
+          description: success
+parameters:
+  archived-property-service:
+    name: archived
+    in: query
+    type: boolean
+  room_id-property-service:
+    name: room_id
+    in: path
+    type: string
+    required: true
+  property_id-property-service:
+    name: property_id
+    in: path
+    type: string
+    required: true
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

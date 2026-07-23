@@ -1,0 +1,358 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Diagram Template Presets API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Diagram Template Presets
+paths:
+  /4.0/template-presets:
+    get:
+      tags:
+      - Diagram Template Presets
+      summary: get multiple template presets
+      produces:
+      - application/json
+      parameters:
+      - name: user
+        in: query
+        type: string
+        required: false
+      - name: team
+        in: query
+        type: string
+        required: false
+      - name: setup
+        in: query
+        type: string
+        required: false
+      - name: propertyId
+        in: query
+        type: string
+        required: false
+        description: filters by property id, excludes presets associated with a property if 'null'
+      - name: catalogItemId
+        in: query
+        type: string
+        required: false
+      responses:
+        '200':
+          description: returns an array of template-presets
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/template-presets__template-preset-diagram-service'
+        '400':
+          description: validation error must specify either user or team
+        '401':
+          description: authorization missing or invalid
+    post:
+      tags:
+      - Diagram Template Presets
+      summary: inserts a template preset
+      produces:
+      - application/json
+      parameters:
+      - name: event_id
+        in: query
+        type: string
+        required: false
+      - name: body
+        in: body
+        description: the body of the template preset
+        required: true
+        schema:
+          $ref: '#/definitions/template-presets__template-preset-post-diagram-service'
+      responses:
+        '200':
+          description: inserted template preset with id
+          schema:
+            $ref: '#/definitions/template-presets__template-preset-diagram-service'
+        '400':
+          description: template preset not valid
+        '401':
+          description: authorization missing or invalid
+  /4.0/template-presets/{id}:
+    get:
+      tags:
+      - Diagram Template Presets
+      summary: get a template preset by id
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+      responses:
+        '200':
+          description: returns a template presets
+          schema:
+            $ref: '#/definitions/template-presets__template-preset-diagram-service'
+        '401':
+          description: authorization missing or invalid
+        '404':
+          description: template preset not found
+    delete:
+      tags:
+      - Diagram Template Presets
+      summary: deletes a template preset
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+      - name: event_id
+        in: query
+        type: string
+        required: false
+      responses:
+        '204':
+          description: OK
+        '401':
+          description: authorization missing or invalid
+        '404':
+          description: template preset not found
+    patch:
+      tags:
+      - Diagram Template Presets
+      summary: updates a template preset
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+      - name: event_id
+        in: query
+        type: string
+        required: false
+      - name: data
+        in: body
+        description: the body of the template preset update
+        required: true
+        schema:
+          type: object
+          properties:
+            data:
+              $ref: '#/definitions/template-presets__template-preset-diagram-service'
+      responses:
+        '200':
+          description: success
+          schema:
+            $ref: '#/definitions/template-presets__template-preset-diagram-service'
+        '400':
+          description: template preset update not valid
+        '401':
+          description: authorization missing or invalid
+definitions:
+  template-config__aisles-diagram-service:
+    title: Template Aisles
+    type: object
+    additionalProperties: false
+    properties:
+      vertical:
+        $ref: '#/definitions/template-config__aisle-diagram-service'
+      horizontal:
+        $ref: '#/definitions/template-config__aisle-diagram-service'
+  template-config__template-config-diagram-service:
+    title: Template Config
+    type: object
+    allOf:
+    - type: object
+      properties:
+        table:
+          $ref: '#/definitions/template-config__table-diagram-service'
+        aisles:
+          $ref: '#/definitions/template-config__aisles-diagram-service'
+        meta:
+          $ref: '#/definitions/template-config__meta-diagram-service'
+    - $ref: '#/definitions/template-config__template-config-core-diagram-service'
+  template-config__aisle-diagram-service:
+    title: Template Aisle
+    type: object
+    properties:
+      width:
+        type: number
+      floorElementsBetween:
+        type: number
+  template-config__meta-diagram-service:
+    title: Template Table
+    type: object
+    additionalProperties: false
+    properties:
+      rows:
+        type: integer
+      cols:
+        type: integer
+  template-config__template-config-core-diagram-service:
+    title: Template Config core fields
+    type: object
+    properties:
+      setup:
+        type: string
+      chevronAngle:
+        type: integer
+      chairs:
+        type: integer
+      chairOrientation:
+        type: string
+      chairType:
+        type: string
+      column:
+        type: object
+        properties:
+          spacing:
+            type: number
+      floorElementType:
+        type: string
+      chairSides:
+        type: object
+        additionalProperties: false
+        properties:
+          side_1_count:
+            type: integer
+          side_2_count:
+            type: integer
+          side_3_count:
+            type: integer
+          side_4_count:
+            type: integer
+      chair:
+        type: object
+        additionalProperties: false
+        properties:
+          size:
+            $ref: '#/definitions/dimensions-diagram-service'
+      rotation:
+        type: number
+      relativeRotation:
+        type: number
+      locations:
+        type: object
+        additionalProperties:
+          type: string
+      theaterCurve:
+        type: integer
+      theaterChairNumberOffset:
+        type: number
+      theaterChairNumberIsOddEven:
+        $ref: '#/definitions/theaterChairNumberIsOddEven-diagram-service'
+      theaterChairNumberIsReverse:
+        type: boolean
+      theaterChairNumbersOmitted:
+        type: array
+        items:
+          type: integer
+      sectionName:
+        type: string
+      sectionLabelling:
+        enum:
+        - alphabetical
+        - numerical
+        - none
+        type: string
+      sectionLabellingRowOffset:
+        type: number
+      sectionLabellingRowIsReverse:
+        type: boolean
+      sectionLabellingRowsOmitted:
+        type: array
+        items:
+          type: integer
+      catalogCategoryTypeItemId:
+        type: integer
+      chairCatalogCategoryTypeItemId:
+        type: integer
+      removedSeats:
+        type: integer
+      color:
+        type: string
+  xyPair-diagram-service:
+    type: object
+    additionalProperties: false
+    properties:
+      x:
+        type: number
+      y:
+        type: number
+  template-presets__template-preset-post-diagram-service:
+    title: Template Preset Post
+    allOf:
+    - $ref: '#/definitions/template-presets__template-preset-diagram-service'
+  theaterChairNumberIsOddEven-diagram-service:
+    enum:
+    - odd
+    - even
+    - true
+    - false
+  template-config__table-diagram-service:
+    title: Template Table
+    type: object
+    additionalProperties: false
+    properties:
+      size:
+        $ref: '#/definitions/dimensions-diagram-service'
+      spacing:
+        $ref: '#/definitions/xyPair-diagram-service'
+      rotation:
+        type: number
+  template-presets__template-preset-diagram-service:
+    title: Template Preset
+    type: object
+    additionalProperties: false
+    properties:
+      id:
+        type: string
+      type:
+        type: string
+      owner_id:
+        type: string
+      name:
+        type: string
+      legacy_property_id:
+        type: integer
+      definition:
+        type: object
+        additionalProperties: false
+        properties:
+          template_config:
+            $ref: '#/definitions/template-config__template-config-diagram-service'
+    required:
+    - definition
+  dimensions-diagram-service:
+    type: object
+    additionalProperties: false
+    properties:
+      width:
+        type: number
+      length:
+        type: number
+      radius:
+        type: number
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

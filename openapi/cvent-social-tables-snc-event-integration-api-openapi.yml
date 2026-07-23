@@ -1,0 +1,151 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication SNC Event Integration API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: SNC Event Integration
+paths:
+  /4.0/v1/integrations/{sncType}:
+    post:
+      tags:
+      - SNC Event Integration
+      summary: Accepts data about external events and persists them
+      description: 'This api creates a diagram in a specified room.
+
+        Unlike most of our other apis, this uses externally provided property and room ids instead of our ids, and requires coordination with our professional services team to map the rooms.
+
+        booking_id must be unique for each event and function_id must be unique for each diagram.
+
+        If you are interested in using this api, please contact your account manager or Cvent sales.
+
+        '
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: sncType
+        in: path
+        type: string
+        required: true
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/event_integrationsRequest-snc-integration-service'
+      responses:
+        '200':
+          description: Integration request successful.
+definitions:
+  event_integrationsRequest-snc-integration-service:
+    additionalProperties: true
+    type: object
+    properties:
+      property_id:
+        type: string
+      property_name:
+        type:
+        - string
+        - 'null'
+      booking_id:
+        type: string
+      booking_name:
+        type:
+        - string
+        - 'null'
+      account_id:
+        type:
+        - string
+        - 'null'
+      account_name:
+        type:
+        - string
+        - 'null'
+      booking_arrival_date:
+        type:
+        - string
+        - 'null'
+        format: date-time
+      booking_departure_date:
+        type:
+        - string
+        - 'null'
+        format: date-time
+      booking_status:
+        type:
+        - string
+        - 'null'
+      event_functions:
+        type: array
+        items:
+          type: object
+          additionalProperties: true
+          properties:
+            function_id:
+              type: string
+            function_name:
+              type:
+              - string
+              - 'null'
+            room_id:
+              type: string
+            room_name:
+              type:
+              - string
+              - 'null'
+            room_abbreviation:
+              type:
+              - string
+              - 'null'
+            room_setup:
+              type:
+              - string
+              - 'null'
+            room_setup_abbreviation:
+              type:
+              - string
+              - 'null'
+            event_type:
+              type:
+              - string
+              - 'null'
+            start_date_time:
+              type: string
+              format: date-time
+            end_date_time:
+              type: string
+              format: date-time
+            number_of_attendees:
+              type: integer
+          required:
+          - room_id
+          - start_date_time
+          - end_date_time
+    required:
+    - property_id
+    - booking_id
+    - booking_name
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

@@ -1,0 +1,348 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Guest Groups API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Guest Groups
+paths:
+  /4.0/guestlists/{guestlist_id}/groups:
+    post:
+      tags:
+      - Guest Groups
+      summary: Create a group
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: guests
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/groupBulk-guest-list-service'
+      responses:
+        '200':
+          description: group created
+          schema:
+            $ref: '#/definitions/group-guest-list-service'
+        '400':
+          description: Error creating group
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/groups/{group_id}:
+    get:
+      tags:
+      - Guest Groups
+      summary: Retrieve a GROUP
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: group_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: returns group
+          schema:
+            $ref: '#/definitions/group-guest-list-service'
+        '410':
+          description: guestlist is deleted
+    delete:
+      tags:
+      - Guest Groups
+      summary: Delete a GROUP
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: group_id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: successfully deleted
+        '400':
+          description: Error with no id
+        '404':
+          description: Error with invalid id
+        '405':
+          description: Error with no id
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/groups/{group_id}/guests/_bulk:
+    post:
+      tags:
+      - Guest Groups
+      summary: Bulk add/remove guests to/from group
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: group_id
+        required: true
+        in: path
+        type: string
+      - name: guest_data
+        required: true
+        in: body
+        schema:
+          $ref: '#/definitions/groupBulk-guest-list-service'
+      responses:
+        '200':
+          description: group created
+          schema:
+            $ref: '#/definitions/group-guest-list-service'
+        '400':
+          description: Error creating group
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/groups/{group_id}/guests/_bulk/create:
+    post:
+      tags:
+      - Guest Groups
+      summary: Bulk adds guests from group
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: group_id
+        required: true
+        in: path
+        type: string
+      - name: guest_ids
+        required: true
+        in: body
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: guests added to group
+          schema:
+            $ref: '#/definitions/group-guest-list-service'
+        '400':
+          description: Error adding guests
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/groups/{group_id}/guests/_bulk/delete:
+    post:
+      tags:
+      - Guest Groups
+      summary: Bulk deletes guests from group
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: group_id
+        required: true
+        in: path
+        type: string
+      - name: guests
+        required: true
+        in: body
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: guests removed from group
+          schema:
+            $ref: '#/definitions/group-guest-list-service'
+        '400':
+          description: Error removing guests
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/groups/{group_id}/name:
+    delete:
+      tags:
+      - Guest Groups
+      summary: Clear Group Name
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: group_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: group created
+          schema:
+            $ref: '#/definitions/group-guest-list-service'
+        '400':
+          description: Error removing group name
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/groups/{group_id}/name/{name}:
+    put:
+      tags:
+      - Guest Groups
+      summary: Set group name
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: group_id
+        required: true
+        in: path
+        type: string
+      - name: name
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: group name set
+          schema:
+            $ref: '#/definitions/group-guest-list-service'
+        '400':
+          description: Error setting group name
+        '410':
+          description: guestlist is deleted
+definitions:
+  groupBulk-guest-list-service:
+    type: object
+    properties:
+      action:
+        type: string
+        enum:
+        - CREATE
+        - DELETE
+      guests:
+        type: array
+        items:
+          $ref: '#/definitions/guests-guest-list-service'
+    required:
+    - guests
+    - action
+    example:
+      action: CREATE | DELETE
+      guests:
+      - 99b4ae20-2779-11e6-b0b7-13c2616041ae
+      - 99b4ae21-2779-11e6-b0b7-13c2616041ae
+  group-guest-list-service:
+    type: object
+    properties:
+      id:
+        type: string
+      guestlist_id:
+        type: string
+      guest_count:
+        type: integer
+      is_named:
+        type: boolean
+      guests:
+        type: array
+        items:
+          $ref: '#/definitions/guests-guest-list-service'
+    required:
+    - id
+    example:
+      id: 1db84340-2779-11e6-88c6-db7134cc99b6
+      name: Group A
+      guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+      guest_count: 2
+      guests:
+      - id: 1db18c80-2779-11e6-88c6-db7134cc99b6
+        guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+        first_name: Test
+        last_name: One
+      - id: 1db18c81-2779-11e6-88c6-db7134cc99b6
+        guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+        first_name: Test
+        last_name: Two
+  meals-guest-list-service:
+    type: object
+    properties:
+      title:
+        type: string
+        description: name of meal
+    required:
+    - title
+  guests-guest-list-service:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id of guest
+      first_name:
+        type: string
+        description: first name of guest
+      last_name:
+        type: string
+        description: last name of guest
+      email:
+        type: string
+        description: email address
+      checked_in_status:
+        type: object
+        description: checkin data
+        properties:
+          checked_in:
+            type: integer
+          checked_in_at:
+            type: string
+            format: date-time
+          checked_out_at:
+            type: string
+            format: date-time
+      tags:
+        type: array
+        items:
+          $ref: '#/definitions/tags-guest-list-service'
+      meals:
+        type: array
+        items:
+          $ref: '#/definitions/meals-guest-list-service'
+    required:
+    - id
+    - first_name
+    - last_name
+  tags-guest-list-service:
+    type: object
+    properties:
+      title:
+        type: string
+        description: title of tag
+      color:
+        type: string
+        description: color of tag
+    required:
+    - title
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

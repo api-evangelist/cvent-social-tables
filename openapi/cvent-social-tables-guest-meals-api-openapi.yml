@@ -1,0 +1,231 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Guest Meals API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Guest Meals
+paths:
+  /4.0/guestlists/{guestlist_id}/guests/meals:
+    post:
+      tags:
+      - Guest Meals
+      summary: assign/delete multiple guests to a tag
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: body
+        description: body object
+        required: true
+        in: body
+        schema:
+          type: object
+          required:
+          - action
+          - guests
+          - meals
+          properties:
+            action:
+              description: action to redirect to
+              type: string
+              enum:
+              - CREATE
+              - DELETE
+            meals:
+              type: array
+              items:
+                type: string
+            guests:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: collections for gueslist
+          schema:
+            $ref: '#/definitions/guests-guest-list-service'
+        '400':
+          description: Error adding or removing meals
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/meals:
+    post:
+      tags:
+      - Guest Meals
+      summary: create a meal on a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: body
+        description: body object
+        required: true
+        in: body
+        schema:
+          type: object
+          required:
+          - meal
+          properties:
+            meal:
+              type: object
+      responses:
+        '200':
+          description: meal for guestlist
+          schema:
+            $ref: '#/definitions/meals-guest-list-service'
+        '400':
+          description: Error creating meal
+        '410':
+          description: guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/meals/{meal_title}:
+    put:
+      tags:
+      - Guest Meals
+      summary: edit a meal on a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: meal_title
+        required: true
+        in: path
+        type: string
+      - name: body
+        description: body object
+        required: true
+        in: body
+        schema:
+          type: object
+          required:
+          - meals
+          properties:
+            meals:
+              type: object
+      responses:
+        '200':
+          description: meal for guestlist
+          schema:
+            $ref: '#/definitions/meals-guest-list-service'
+        '400':
+          description: Error editing meal
+        '410':
+          description: guestlist is deleted
+    delete:
+      tags:
+      - Guest Meals
+      summary: delete a meal on a guestlist
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      - name: meal_title
+        required: true
+        in: path
+        type: string
+      - name: body
+        description: body object
+        required: true
+        in: body
+        schema:
+          type: object
+          required:
+          - meals
+          properties:
+            meals:
+              type: object
+      responses:
+        '200':
+          description: meal for guestlist
+          schema:
+            $ref: '#/definitions/meals-guest-list-service'
+        '400':
+          description: Error deleting meal
+        '410':
+          description: guestlist is deleted
+definitions:
+  meals-guest-list-service:
+    type: object
+    properties:
+      title:
+        type: string
+        description: name of meal
+    required:
+    - title
+  tags-guest-list-service:
+    type: object
+    properties:
+      title:
+        type: string
+        description: title of tag
+      color:
+        type: string
+        description: color of tag
+    required:
+    - title
+  guests-guest-list-service:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id of guest
+      first_name:
+        type: string
+        description: first name of guest
+      last_name:
+        type: string
+        description: last name of guest
+      email:
+        type: string
+        description: email address
+      checked_in_status:
+        type: object
+        description: checkin data
+        properties:
+          checked_in:
+            type: integer
+          checked_in_at:
+            type: string
+            format: date-time
+          checked_out_at:
+            type: string
+            format: date-time
+      tags:
+        type: array
+        items:
+          $ref: '#/definitions/tags-guest-list-service'
+      meals:
+        type: array
+        items:
+          $ref: '#/definitions/meals-guest-list-service'
+    required:
+    - id
+    - first_name
+    - last_name
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

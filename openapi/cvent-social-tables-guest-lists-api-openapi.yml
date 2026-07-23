@@ -1,0 +1,238 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Guest Lists API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Guest Lists
+paths:
+  /4.0/guestlists:
+    get:
+      tags:
+      - Guest Lists
+      summary: Retrieve all guestlists by session or event id
+      parameters:
+      - name: event_id
+        required: false
+        in: query
+        type: string
+      - name: session_id
+        required: false
+        in: query
+        type: string
+      responses:
+        '200':
+          description: guestlists
+          schema:
+            $ref: '#/definitions/guestlists-guest-list-service'
+    post:
+      tags:
+      - Guest Lists
+      summary: Create a guestlist
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          type: object
+          properties:
+            event_id:
+              type: string
+              description: deprecated, use diagram_id
+            diagram_id:
+              type: string
+      responses:
+        '200':
+          description: guestlists response
+          schema:
+            $ref: '#/definitions/guestlists-guest-list-service'
+        '400':
+          description: Error creating guestlist
+  /4.0/guestlists/{guestlist_id}:
+    get:
+      tags:
+      - Guest Lists
+      summary: Retrieve all guestlists
+      parameters:
+      - name: guestlist_id
+        required: true
+        in: path
+        type: string
+      responses:
+        '200':
+          description: guestlists
+          schema:
+            $ref: '#/definitions/guestlists-guest-list-service'
+        '410':
+          description: requested guestlist is deleted
+    put:
+      tags:
+      - Guest Lists
+      summary: Update a guestlist
+      parameters:
+      - name: guestlist_id
+        description: guestlist ID
+        in: path
+        type: string
+        required: true
+      - name: guestlist
+        in: body
+        schema:
+          $ref: '#/definitions/guestlists-guest-list-service'
+      responses:
+        '200':
+          description: success, guestlist updated
+        '410':
+          description: requested guestlist is deleted
+    patch:
+      tags:
+      - Guest Lists
+      summary: Update a guestlist
+      parameters:
+      - name: guestlist_id
+        description: guestlist ID
+        in: path
+        type: string
+        required: true
+      - name: guestlist
+        in: body
+        schema:
+          $ref: '#/definitions/guestlists-guest-list-service'
+      responses:
+        '200':
+          description: success, guestlist updated
+        '410':
+          description: requested guestlist is deleted
+    delete:
+      tags:
+      - Guest Lists
+      summary: Delete a guestlist
+      parameters:
+      - name: guestlist_id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: successfully deleted
+        '404':
+          description: Error with invalid id or no id
+  /4.0/guestlists/{guestlist_id}/_clone:
+    post:
+      tags:
+      - Guest Lists
+      summary: Clone a guestlist
+      parameters:
+      - name: guestlist_id
+        in: path
+        type: string
+        required: true
+      - name: event_id
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/guestlists-guest-list-service'
+      responses:
+        '200':
+          description: successfully cloned
+        '400':
+          description: Error with no id
+        '404':
+          description: Error with invalid id
+        '405':
+          description: Error with no id
+        '410':
+          description: requested guestlist is deleted
+  /4.0/guestlists/{guestlist_id}/column_mapping:
+    get:
+      tags:
+      - Guest Lists
+      summary: Get a guestlist column mapping
+      parameters:
+      - name: guestlist_id
+        in: path
+        type: string
+        required: true
+      responses:
+        '200':
+          description: successfully fetched column mapping
+        '404':
+          description: column mapping for given guestlist_id doesn't exist
+  /4.0/guestlists/{guestlist_id}/cvent/seating:
+    delete:
+      tags:
+      - Guest Lists
+      summary: Delete a guestlist
+      parameters:
+      - name: guestlist_id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: successfully deleted
+        '404':
+          description: Error with invalid id or no id
+  /4.0/guestlists/{guestlist_id}/restore:
+    post:
+      tags:
+      - Guest Lists
+      summary: Restore a deleted guestlist
+      parameters:
+      - name: guestlist_id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: sucessfully restored a deleted guestlist
+        '400':
+          description: Error restoring deleted guestlist
+        '404':
+          description: Error restoring guestlist with invalid id
+definitions:
+  guestlists-guest-list-service:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id of guestlists
+      session_id:
+        type: string
+        description: session_id of guestlists
+      event_id:
+        type: string
+        description: event_id
+      name:
+        type: string
+        description: name
+      deleted:
+        type: integer
+        description: name
+    required:
+    - id
+    - name
+    - event_id
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token

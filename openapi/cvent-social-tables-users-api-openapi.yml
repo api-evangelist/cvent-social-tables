@@ -1,0 +1,92 @@
+swagger: '2.0'
+info:
+  title: Social Tables API Gateway Authentication Users API
+  version: 4.0.0
+  description: The Social Tables API
+host: api.socialtables.com
+basePath: /
+tags:
+- name: Users
+paths:
+  /4.0/teams/{team_id}/users:
+    get:
+      tags:
+      - Users
+      summary: get users for a given team
+      produces:
+      - application/json
+      parameters:
+      - $ref: '#/parameters/team_id-account-service'
+      - $ref: '#/parameters/page_size-account-service'
+      - $ref: '#/parameters/after-account-service'
+      - $ref: '#/parameters/before-account-service'
+      responses:
+        '200':
+          description: a paginated list of temas the user is on
+          schema:
+            type: object
+            properties:
+              paging:
+                $ref: '#/definitions/resultPaging-account-service'
+              data:
+                type: array
+                items:
+                  type: object
+                  description: user objects
+definitions:
+  resultPaging-account-service:
+    type: object
+    properties:
+      after:
+        type: string
+        description: cursor for next page
+      before:
+        type: string
+        description: cursor for previous page
+parameters:
+  after-account-service:
+    name: after
+    description: cursor for paging
+    in: query
+    type: string
+    required: false
+  team_id-account-service:
+    name: team_id
+    description: team ID
+    in: path
+    type: string
+    required: true
+  page_size-account-service:
+    name: page_size
+    description: page size
+    in: query
+    type: integer
+    required: false
+    default: 50
+  before-account-service:
+    name: before
+    description: before cursor for backpaging
+    in: query
+    type: string
+    required: false
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    description: OAuth
+    tokenUrl: https://auth.socialtables.com/oauth/token
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    flow: accessCode
+    scopes:
+      authenticated: any authentication whatsoever
+      create:oauth_client: oauth client create
+      userdata: All of the things.
+  user_token:
+    type: apiKey
+    name: user_token
+    in: header
+    description: Social Tables User Token
+  partner_token:
+    type: apiKey
+    name: partner_token
+    in: header
+    description: Social Tables Partner Token
