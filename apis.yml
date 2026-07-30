@@ -13,7 +13,20 @@ description: >-
   API and the Cvent Diagramming product.
 url: >-
   https://raw.githubusercontent.com/api-evangelist/cvent-social-tables/refs/heads/main/apis.yml
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cvent-social-tables.png
 type: Index
 access: 3rd-Party
 position: Consuming
@@ -35,32 +48,204 @@ tags:
   - Seating Charts
   - Venues
 apis:
-  - aid: cvent-social-tables:events-api
-    name: Social Tables Events API (Legacy)
-    description: >-
-      The legacy Social Tables Events API provided REST access to
-      events, venues, floor plans, diagrams, and seating arrangements
-      created in Social Tables. With Social Tables now part of Cvent's
-      Hospitality Cloud, programmatic access has largely consolidated
-      into the Cvent Platform REST API, though the developer portal at
-      developer.socialtables.com remains as historical reference.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developer.socialtables.com
-    baseURL: https://api.socialtables.com
-    tags:
-      - Diagramming
-      - Events
-      - Floor Plans
-      - Legacy
-      - Seating Charts
-      - Venues
-    properties:
-      - type: Documentation
-        url: https://developer.socialtables.com
-      - type: Authentication
-        url: https://developer.socialtables.com/docs/authentication
-      - type: ParentPlatform
-        url: https://developers.cvent.com/
+- aid: cvent-social-tables:events-api
+  name: Social Tables Events API (Legacy)
+  description: >-
+    The legacy Social Tables Events API provided REST access to events, venues, floor plans, diagrams,
+    and seating arrangements created in Social Tables. With Social Tables now part of Cvent's Hospitality
+    Cloud, programmatic access has largely consolidated into the Cvent Platform REST API, though the developer
+    portal at developer.socialtables.com remains as historical reference.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Diagramming
+  - Events
+  - Floor Plans
+  - Legacy
+  - Seating Charts
+  - Venues
+  properties:
+  - type: Documentation
+    url: https://developer.socialtables.com
+  - type: Authentication
+    url: https://developer.socialtables.com/docs/authentication
+  - type: ParentPlatform
+    url: https://developers.cvent.com/
+- aid: cvent-social-tables:cvent-social-tables-authentication-api
+  name: Cvent Social Tables Authentication API
+  description: The Authentication API from Cvent Social Tables — 1 operation(s) for authentication.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-authentication-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-diagram-favorites-api
+  name: Cvent Social Tables Diagram Favorites API
+  description: >-
+    The Diagram Favorites API from Cvent Social Tables — 3 operation(s) for diagram favorites.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Diagram Favorites
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-diagram-layouts-api
+  name: Cvent Social Tables Diagram Layouts API
+  description: The Diagram Layouts API from Cvent Social Tables — 3 operation(s) for diagram layouts.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Diagram Layouts
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-diagram-template-presets-api
+  name: Cvent Social Tables Diagram Template Presets API
+  description: >-
+    The Diagram Template Presets API from Cvent Social Tables — 2 operation(s) for diagram template presets.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Diagram Template Presets
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-diagrams-api
+  name: Cvent Social Tables Diagrams API
+  description: The Diagrams API from Cvent Social Tables — 6 operation(s) for diagrams.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Diagrams
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-diagrams-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-events-api
+  name: Cvent Social Tables Events API
+  description: The Events API from Cvent Social Tables — 3 operation(s) for events.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-events-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-guest-checkin-api
+  name: Cvent Social Tables Guest Checkin API
+  description: The Guest Checkin API from Cvent Social Tables — 4 operation(s) for guest checkin.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Guest Checkin
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-guest-groups-api
+  name: Cvent Social Tables Guest Groups API
+  description: The Guest Groups API from Cvent Social Tables — 7 operation(s) for guest groups.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Guest Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-guest-groups-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-guest-lists-api
+  name: Cvent Social Tables Guest Lists API
+  description: The Guest Lists API from Cvent Social Tables — 6 operation(s) for guest lists.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Guest Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-guest-lists-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-guest-meals-api
+  name: Cvent Social Tables Guest Meals API
+  description: The Guest Meals API from Cvent Social Tables — 3 operation(s) for guest meals.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Guest Meals
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-guest-meals-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-guest-tags-api
+  name: Cvent Social Tables Guest Tags API
+  description: The Guest Tags API from Cvent Social Tables — 3 operation(s) for guest tags.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Guest Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-guest-tags-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-guests-api
+  name: Cvent Social Tables Guests API
+  description: The Guests API from Cvent Social Tables — 12 operation(s) for guests.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Guests
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-guests-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-layout-automation-api
+  name: Cvent Social Tables Layout Automation API
+  description: >-
+    The Layout Automation API from Cvent Social Tables — 2 operation(s) for layout automation.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Layout Automation
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-layout-automation-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-properties-api
+  name: Cvent Social Tables Properties API
+  description: The Properties API from Cvent Social Tables — 2 operation(s) for properties.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Properties
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-properties-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-rooms-api
+  name: Cvent Social Tables Rooms API
+  description: The Rooms API from Cvent Social Tables — 2 operation(s) for rooms.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Rooms
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-rooms-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-snc-event-integration-api
+  name: Cvent Social Tables SNC Event Integration API
+  description: >-
+    The SNC Event Integration API from Cvent Social Tables — 1 operation(s) for snc event integration.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - SNC Event Integration
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+- aid: cvent-social-tables:cvent-social-tables-users-api
+  name: Cvent Social Tables Users API
+  description: The Users API from Cvent Social Tables — 1 operation(s) for users.
+  humanURL: https://developer.socialtables.com
+  baseURL: https://api.socialtables.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/cvent-social-tables-users-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/cvent-social-tables-agentic-access.yml
