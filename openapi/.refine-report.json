@@ -1,0 +1,51 @@
+{
+  "provider": "cvent-social-tables",
+  "sources": [
+    "cvent-social-tables-authentication-api-openapi.yml",
+    "cvent-social-tables-diagram-favorites-api-openapi.yml",
+    "cvent-social-tables-diagram-layouts-api-openapi.yml",
+    "cvent-social-tables-diagram-template-presets-api-openapi.yml",
+    "cvent-social-tables-diagrams-api-openapi.yml",
+    "cvent-social-tables-events-api-openapi.yml",
+    "cvent-social-tables-guest-checkin-api-openapi.yml",
+    "cvent-social-tables-guest-groups-api-openapi.yml",
+    "cvent-social-tables-guest-lists-api-openapi.yml",
+    "cvent-social-tables-guest-meals-api-openapi.yml",
+    "cvent-social-tables-guest-tags-api-openapi.yml",
+    "cvent-social-tables-guests-api-openapi.yml",
+    "cvent-social-tables-layout-automation-api-openapi.yml",
+    "cvent-social-tables-properties-api-openapi.yml",
+    "cvent-social-tables-rooms-api-openapi.yml",
+    "cvent-social-tables-snc-event-integration-api-openapi.yml",
+    "cvent-social-tables-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "cvent-social-tables-authentication-api-openapi.yml",
+    "cvent-social-tables-diagram-favorites-api-openapi.yml",
+    "cvent-social-tables-diagram-layouts-api-openapi.yml",
+    "cvent-social-tables-diagram-template-presets-api-openapi.yml",
+    "cvent-social-tables-diagrams-api-openapi.yml",
+    "cvent-social-tables-events-api-openapi.yml",
+    "cvent-social-tables-guest-checkin-api-openapi.yml",
+    "cvent-social-tables-guest-groups-api-openapi.yml",
+    "cvent-social-tables-guest-lists-api-openapi.yml",
+    "cvent-social-tables-guest-meals-api-openapi.yml",
+    "cvent-social-tables-guest-tags-api-openapi.yml",
+    "cvent-social-tables-guests-api-openapi.yml",
+    "cvent-social-tables-layout-automation-api-openapi.yml",
+    "cvent-social-tables-properties-api-openapi.yml",
+    "cvent-social-tables-rooms-api-openapi.yml",
+    "cvent-social-tables-snc-event-integration-api-openapi.yml",
+    "cvent-social-tables-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "cvent-social-tables-diagram-favorites-api-openapi.yml: dangling $ref: #/definitions/floor-elements__components~1theater-chairs-diagram-service",
+    "cvent-social-tables-diagram-layouts-api-openapi.yml: dangling $ref: #/definitions/floor-elements__components~1theater-chairs-diagram-service",
+    "cvent-social-tables-diagrams-api-openapi.yml: dangling $ref: #/definitions/diagrams__components~1boundary-visibility-diagram-service",
+    "cvent-social-tables-diagrams-api-openapi.yml: dangling $ref: #/definitions/floor-elements__components~1theater-chairs-diagram-service"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
