@@ -1,0 +1,202 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Guest Groups API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guest Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a group"
+        },
+        {
+          "info": {
+            "name": "Retrieve a GROUP",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a GROUP"
+        },
+        {
+          "info": {
+            "name": "Delete a GROUP",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a GROUP"
+        },
+        {
+          "info": {
+            "name": "Bulk add/remove guests to/from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/guests/_bulk",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Bulk add/remove guests to/from group"
+        },
+        {
+          "info": {
+            "name": "Bulk adds guests from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/guests/_bulk/create",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Bulk adds guests from group"
+        },
+        {
+          "info": {
+            "name": "Bulk deletes guests from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/guests/_bulk/delete",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Bulk deletes guests from group"
+        },
+        {
+          "info": {
+            "name": "Clear Group Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/name",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Clear Group Name"
+        },
+        {
+          "info": {
+            "name": "Set group name",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/groups/:group_id/name/:name",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Set group name"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

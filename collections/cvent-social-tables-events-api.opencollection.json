@@ -1,0 +1,262 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Events API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all events an authenticated user has access to within their team.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/events",
+            "params": [
+              {
+                "name": "event_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of event IDs."
+              },
+              {
+                "name": "v2_event_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of v2 event IDs."
+              },
+              {
+                "name": "attachSpacesAndBookableRooms",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include spaces and bookable rooms in the event response."
+              },
+              {
+                "name": "permissionLevel",
+                "value": "",
+                "type": "query",
+                "description": "Permission level to include in the event response. 0 = default = add mobile permissions; 1 = skip mobile permissions;"
+              }
+            ]
+          },
+          "docs": "Retrieve all events an authenticated user has access to within their team."
+        },
+        {
+          "info": {
+            "name": "Creates an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/events"
+          },
+          "docs": "Creates an event"
+        },
+        {
+          "info": {
+            "name": "Returns information about an event by its unique ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/events/:event",
+            "params": [
+              {
+                "name": "event",
+                "value": "",
+                "type": "path",
+                "description": "The string or int unique identifier of the event."
+              },
+              {
+                "name": "include_deleted",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include deleted events in the response."
+              }
+            ]
+          },
+          "docs": "Returns information about an event by its unique ID."
+        },
+        {
+          "info": {
+            "name": "Update an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/events/:event",
+            "params": [
+              {
+                "name": "event",
+                "value": "",
+                "type": "path",
+                "description": "ID or UID of the event to update"
+              }
+            ]
+          },
+          "docs": "Update an event"
+        },
+        {
+          "info": {
+            "name": "Delete an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/events/:event",
+            "params": [
+              {
+                "name": "event",
+                "value": "",
+                "type": "path",
+                "description": "ID or UID of the event to delete"
+              }
+            ]
+          },
+          "docs": "Delete an event"
+        },
+        {
+          "info": {
+            "name": "Retrieve a list of events that the user (specified via the token) has access to, with offset-based pagination",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/events/page",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of events to retrieve"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The starting point for pagination"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Filter by name of the event"
+              },
+              {
+                "name": "owner_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by the owner ID of the event"
+              },
+              {
+                "name": "collaborator_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by collaborator who can access the event"
+              },
+              {
+                "name": "industry_type",
+                "value": "",
+                "type": "query",
+                "description": "Filter by industry type of the event"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "Filter by start date (epoch time) of the event"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "Filter by end date (epoch time) of the event"
+              },
+              {
+                "name": "last_activity",
+                "value": "",
+                "type": "query",
+                "description": "Filter by last activity date of the event"
+              },
+              {
+                "name": "event_type",
+                "value": "",
+                "type": "query",
+                "description": "Filter by event type of the event"
+              },
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by team ID of the user"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by space IDs of the diagrams in the event"
+              },
+              {
+                "name": "sort_col",
+                "value": "",
+                "type": "query",
+                "description": "The field to sort by (e.g., name, start_date, end_date, etc.)"
+              },
+              {
+                "name": "sort_dir",
+                "value": "",
+                "type": "query",
+                "description": "The sort direction to use (ASC or DESC)"
+              },
+              {
+                "name": "date_filter",
+                "value": "",
+                "type": "query",
+                "description": "Convenience filter to get events that are upcoming, past, or all"
+              },
+              {
+                "name": "space_template_ids",
+                "value": "",
+                "type": "query",
+                "description": "Space template IDs to filter by"
+              },
+              {
+                "name": "bookable_room_ids",
+                "value": "",
+                "type": "query",
+                "description": "Bookable room IDs to filter by"
+              },
+              {
+                "name": "event_platform",
+                "value": "",
+                "type": "query",
+                "description": "Filter by event platform type. Valid values: 'prismm' (events with prismm_occasion_id), 'ced' (events without prismm_occasion_id, default), or 'all' (no filtering)"
+              },
+              {
+                "name": "event_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of event UIDs to filter by"
+              },
+              {
+                "name": "v2_event_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of v2 (legacy) event IDs to filter by"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of events that the user (specified via the token) has access to, with offset-based pagination"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,99 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Diagram Favorites API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Diagram Favorites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get multiple favorites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/favorites",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get multiple favorites"
+        },
+        {
+          "info": {
+            "name": "inserts a favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/favorites/"
+          },
+          "docs": "inserts a favorite"
+        },
+        {
+          "info": {
+            "name": "updates a favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/favorites/"
+          },
+          "docs": "updates a favorite"
+        },
+        {
+          "info": {
+            "name": "get a favorite by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/favorites/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a favorite by ID"
+        },
+        {
+          "info": {
+            "name": "deletes a favorite",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/favorites/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "deletes a favorite"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

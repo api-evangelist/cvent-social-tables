@@ -1,0 +1,198 @@
+{
+  "item": [
+    {
+      "id": "1f29a88c-7c13-4631-91d6-37babc01c7ad",
+      "name": "Rooms",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b8bad6e9-2b67-4bb5-bb2a-48695fa4b087",
+          "name": "Returns all rooms for a given property ID",
+          "request": {
+            "name": "Returns all rooms for a given property ID",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "properties",
+                ":property_id",
+                "rooms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "property_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98a4234d-ffa3-4988-969d-58249e7b1220",
+              "name": "a body containing rooms for that respective property ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "properties",
+                    ":property_id",
+                    "rooms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "property_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0641e4ac-6c05-45b1-9b78-a4bc8705f097",
+          "name": "get a room by ID",
+          "request": {
+            "name": "get a room by ID",
+            "description": {
+              "content": "get a room by ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "4.0",
+                "rooms",
+                ":room_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "archived",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "room_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a9c2989-6384-4bd3-9b3b-0f22bcee9970",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "rooms",
+                    ":room_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "archived",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "room_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ccaba021-b5bd-4290-91a7-140ae854d33e",
+    "name": "Social Tables API Gateway Authentication Rooms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

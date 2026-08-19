@@ -1,0 +1,738 @@
+{
+  "item": [
+    {
+      "id": "b21f58df-4234-4c39-9067-29d5cd5b7e7b",
+      "name": "Diagram Layouts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2965b8d0-5ee8-465c-96af-53dcf7cc4db6",
+          "name": "get multiple layouts",
+          "request": {
+            "name": "get multiple layouts",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "layouts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bookable_room",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "space_template",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "team_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7cf76fb5-30a1-4bd1-a22b-b6aaef349896",
+              "name": "returns an array of layouts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bookable_room",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "space_template",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "team_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"rotation\": 5739.100198291266,\n    \"length\": 9341.820276281522,\n    \"width\": 1708.0942576411362,\n    \"space_id\": 5907,\n    \"legacy_team_id\": 9101,\n    \"space_template_id\": 4269,\n    \"bookable_room_id\": 4377,\n    \"team_id\": \"string\",\n    \"floor_elements\": {\n      \"key_0\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 5829.518304783134,\n          \"length\": 7282.842103218745,\n          \"radius\": 8396.768882608332\n        },\n        \"id\": \"string\",\n        \"layer\": 7175,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 8588.127391324751,\n          \"y\": 513.8722693829844\n        },\n        \"rotation\": 2475.661352991936,\n        \"catalogCategoryTypeItemId\": 7550,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 6552.980906977471,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": false,\n        \"is_locked\": true,\n        \"name\": \"string\",\n        \"number\": 7253,\n        \"objectLabelSize\": 592.3192986797832,\n        \"objectLabelType\": \"text\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      },\n      \"key_1\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 7518.323677231911,\n          \"length\": 3852.6682063893945,\n          \"radius\": 9045.033810190356\n        },\n        \"id\": \"string\",\n        \"layer\": 4639,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 5457.862649059742,\n          \"y\": 509.7757951788329\n        },\n        \"rotation\": 6996.295783184104,\n        \"catalogCategoryTypeItemId\": 3590,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 868.6378817248441,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": false,\n        \"is_locked\": false,\n        \"name\": \"string\",\n        \"number\": 1695,\n        \"objectLabelSize\": 1407.0777830979564,\n        \"objectLabelType\": \"icon\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      }\n    },\n    \"groups\": {\n      \"key_0\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"setup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"table\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"aisles\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"meta\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chevronAngle\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairOrientation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"column\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"floorElementType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairSides\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chair\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"relativeRotation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"locations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterCurve\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberOffset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberIsOddEven\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberIsReverse\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumbersOmitted\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabelling\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowOffset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowIsReverse\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowsOmitted\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"catalogCategoryTypeItemId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairCatalogCategoryTypeItemId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"removedSeats\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"color\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 8467,\n        \"template_preset_id\": \"string\"\n      }\n    },\n    \"catalog_id\": 1642\n  },\n  {\n    \"name\": \"string\",\n    \"rotation\": 8309.415881551911,\n    \"length\": 3013.4546940433484,\n    \"width\": 6409.535883763714,\n    \"space_id\": 1832,\n    \"legacy_team_id\": 3409,\n    \"space_template_id\": 7752,\n    \"bookable_room_id\": 7382,\n    \"team_id\": \"string\",\n    \"floor_elements\": {\n      \"key_0\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 3752.660278259611,\n          \"length\": 9612.137256805048,\n          \"radius\": 9556.665937081445\n        },\n        \"id\": \"string\",\n        \"layer\": 177,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 4703.867458180658,\n          \"y\": 6992.508707086193\n        },\n        \"rotation\": 1365.1148705559635,\n        \"catalogCategoryTypeItemId\": 6711,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 5828.1816950785,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": false,\n        \"is_locked\": true,\n        \"name\": \"string\",\n        \"number\": 260,\n        \"objectLabelSize\": 7634.014769457681,\n        \"objectLabelType\": \"icon\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      }\n    },\n    \"groups\": {\n      \"key_0\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"setup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"table\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"aisles\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"meta\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chevronAngle\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairOrientation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"column\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"floorElementType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairSides\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chair\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"relativeRotation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"locations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterCurve\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberOffset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberIsOddEven\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberIsReverse\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumbersOmitted\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabelling\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowOffset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowIsReverse\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowsOmitted\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"catalogCategoryTypeItemId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairCatalogCategoryTypeItemId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"removedSeats\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"color\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 1055,\n        \"template_preset_id\": \"string\"\n      },\n      \"key_1\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"setup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"table\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"aisles\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"meta\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chevronAngle\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairOrientation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"column\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"floorElementType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairSides\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chair\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"relativeRotation\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"locations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterCurve\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberOffset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberIsOddEven\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumberIsReverse\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"theaterChairNumbersOmitted\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionName\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabelling\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowOffset\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowIsReverse\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"sectionLabellingRowsOmitted\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"catalogCategoryTypeItemId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"chairCatalogCategoryTypeItemId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"removedSeats\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"color\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 728,\n        \"template_preset_id\": \"string\"\n      }\n    },\n    \"catalog_id\": 4361\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c70cb018-acbf-4197-9c32-7b12bd7d316b",
+              "name": "validation error must specify either bookable_room or space_template",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bookable_room",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "space_template",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "team_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c76c7f7-70a5-4651-be6c-8a477d1cea94",
+          "name": "inserts a layout",
+          "request": {
+            "name": "inserts a layout",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "layouts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"rotation\": \"<number>\",\n  \"length\": \"<number>\",\n  \"width\": \"<number>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_template_id\": \"<integer>\",\n  \"bookable_room_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": \"<object>\",\n    \"key_1\": \"<object>\",\n    \"key_2\": \"<object>\"\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"<string>\",\n      \"template_config\": \"<object>\",\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    }\n  },\n  \"catalog_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7bb4e9f6-ab20-46d7-a9e3-b8f53cc0a6df",
+              "name": "inserted layout with id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"rotation\": \"<number>\",\n  \"length\": \"<number>\",\n  \"width\": \"<number>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_template_id\": \"<integer>\",\n  \"bookable_room_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 5561,\n          \"cols\": true\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\",\n          \"key_3\": \"<string>\",\n          \"key_4\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 2491,\n          \"cols\": 3771.590398146293\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_2\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": true,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_3\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 1367.1889011049,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    }\n  },\n  \"catalog_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"rotation\": \"<number>\",\n  \"length\": \"<number>\",\n  \"width\": \"<number>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_template_id\": \"<integer>\",\n  \"bookable_room_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 5561,\n          \"cols\": true\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\",\n          \"key_3\": \"<string>\",\n          \"key_4\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 2491,\n          \"cols\": 3771.590398146293\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_2\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": true,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_3\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 1367.1889011049,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    }\n  },\n  \"catalog_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4798f3af-3270-4eb1-873c-0001bd094c29",
+              "name": "layout not valid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"rotation\": \"<number>\",\n  \"length\": \"<number>\",\n  \"width\": \"<number>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_template_id\": \"<integer>\",\n  \"bookable_room_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 5561,\n          \"cols\": true\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\",\n          \"key_3\": \"<string>\",\n          \"key_4\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 2491,\n          \"cols\": 3771.590398146293\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_2\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": true,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_3\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 1367.1889011049,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    }\n  },\n  \"catalog_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a892e6f-8e5c-443e-bbed-f13b0a7e1eb1",
+              "name": "duplicate layout name",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"rotation\": \"<number>\",\n  \"length\": \"<number>\",\n  \"width\": \"<number>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_template_id\": \"<integer>\",\n  \"bookable_room_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 5561,\n          \"cols\": true\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\",\n          \"key_3\": \"<string>\",\n          \"key_4\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 2491,\n          \"cols\": 3771.590398146293\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_2\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": true,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_3\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 1367.1889011049,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    }\n  },\n  \"catalog_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03de6832-35c8-4337-ab23-d3e1d53acdc4",
+          "name": "get a layout by ID",
+          "request": {
+            "name": "get a layout by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "layouts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "06df13a7-3fae-4d6c-9f35-2da757cdde10",
+              "name": "returns a layout",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"rotation\": \"<number>\",\n  \"length\": \"<number>\",\n  \"width\": \"<number>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_template_id\": \"<integer>\",\n  \"bookable_room_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 5561,\n          \"cols\": true\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\",\n          \"key_3\": \"<string>\",\n          \"key_4\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 2491,\n          \"cols\": 3771.590398146293\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_2\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": true,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_3\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 1367.1889011049,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    }\n  },\n  \"catalog_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06572ab6-8978-4b92-b8c6-51e01946e42d",
+              "name": "layout not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c00e473-615a-4c55-a27a-2caef959bfdd",
+          "name": "deletes a layout",
+          "request": {
+            "name": "deletes a layout",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "layouts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed05ba1b-f957-41cb-a5e3-6f4926bebbed",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "454bccfa-ea2b-49c0-97f1-47e5c125501a",
+              "name": "layout not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05be20f5-3941-428b-a091-7526ec07d2ed",
+          "name": "updates a layout",
+          "request": {
+            "name": "updates a layout",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "layouts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"name\": \"<string>\",\n    \"deleted\": \"<boolean>\",\n    \"proposeMetadata\": {\n      \"capacity\": \"<integer>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "70c1cd53-b7de-4868-9e21-85ba0d419433",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"name\": \"<string>\",\n    \"deleted\": \"<boolean>\",\n    \"proposeMetadata\": {\n      \"capacity\": \"<integer>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"rotation\": \"<number>\",\n  \"length\": \"<number>\",\n  \"width\": \"<number>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_template_id\": \"<integer>\",\n  \"bookable_room_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 5561,\n          \"cols\": true\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\",\n          \"key_3\": \"<string>\",\n          \"key_4\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 2491,\n          \"cols\": 3771.590398146293\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_2\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": true,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    },\n    \"key_3\": {\n      \"id\": \"<string>\",\n      \"template_config\": {\n        \"setup\": \"<string>\",\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 1367.1889011049,\n          \"cols\": \"string\"\n        },\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      },\n      \"favorite_id\": \"<string>\",\n      \"group_rotation\": \"<integer>\",\n      \"template_preset_id\": \"<string>\"\n    }\n  },\n  \"catalog_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2cb7ff5-1f02-4fd3-bfaa-1004db6d969d",
+              "name": "layout update not valid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layouts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"name\": \"<string>\",\n    \"deleted\": \"<boolean>\",\n    \"proposeMetadata\": {\n      \"capacity\": \"<integer>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6581f5ff-ead1-45e8-868f-9a8e35dc01cd",
+    "name": "Social Tables API Gateway Authentication Diagram Layouts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

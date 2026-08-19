@@ -1,0 +1,381 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Guests API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "assign/delete multiple guests to a tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/meals",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "assign/delete multiple guests to a tag"
+        },
+        {
+          "info": {
+            "name": "assign/delete multiple guests to a tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/tags",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "assign/delete multiple guests to a tag"
+        },
+        {
+          "info": {
+            "name": "Retrieve all guests for a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all guests for a guestlist"
+        },
+        {
+          "info": {
+            "name": "Add a guest to a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add a guest to a guestlist"
+        },
+        {
+          "info": {
+            "name": "add multiple guests to a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/_bulk",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "add multiple guests to a guestlist"
+        },
+        {
+          "info": {
+            "name": "dedupe new guests against existing guests in a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/_dedupe",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "dedupe new guests against existing guests in a guestlist"
+        },
+        {
+          "info": {
+            "name": "deletes existing guests that match new duplicate guests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/_replace",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "deletes existing guests that match new duplicate guests"
+        },
+        {
+          "info": {
+            "name": "Retrieve a guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a guest"
+        },
+        {
+          "info": {
+            "name": "update a guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path",
+                "description": "guest ID"
+              }
+            ]
+          },
+          "docs": "update a guest"
+        },
+        {
+          "info": {
+            "name": "update a guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path",
+                "description": "guest ID"
+              }
+            ]
+          },
+          "docs": "update a guest"
+        },
+        {
+          "info": {
+            "name": "Delete a guest & remove from group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a guest & remove from group"
+        },
+        {
+          "info": {
+            "name": "Updates the checkin status of an individual guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/checkin",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates the checkin status of an individual guest"
+        },
+        {
+          "info": {
+            "name": "Restore a deleted guest and their group if applicable",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/restore",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Restore a deleted guest and their group if applicable"
+        },
+        {
+          "info": {
+            "name": "Retrieve a guest with seating information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/seating",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a guest with seating information"
+        },
+        {
+          "info": {
+            "name": "Seats a guest and any grouped guests with them",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/seating",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Seats a guest and any grouped guests with them"
+        },
+        {
+          "info": {
+            "name": "Retrieve all guests and their seatings for a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/seating",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all guests and their seatings for a guestlist"
+        },
+        {
+          "info": {
+            "name": "Retrieve all guests matching specified filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/team/:team_id/guests/_filter",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filter_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter_value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "event_ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all guests matching specified filter"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

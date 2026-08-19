@@ -1,0 +1,135 @@
+{
+  "item": [
+    {
+      "id": "f3b0fc1c-87af-478b-b20f-5c40a53fa50b",
+      "name": "SNC Event Integration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "452e5bc3-42e4-4fca-96ad-5b56527f23be",
+          "name": "Accepts data about external events and persists them",
+          "request": {
+            "name": "Accepts data about external events and persists them",
+            "description": {
+              "content": "This api creates a diagram in a specified room.\nUnlike most of our other apis, this uses externally provided property and room ids instead of our ids, and requires coordination with our professional services team to map the rooms.\nbooking_id must be unique for each event and function_id must be unique for each diagram.\nIf you are interested in using this api, please contact your account manager or Cvent sales.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "4.0",
+                "v1",
+                "integrations",
+                ":sncType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sncType",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"property_id\": \"<string>\",\n  \"booking_id\": \"<string>\",\n  \"booking_name\": \"<string>\",\n  \"property_name\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"account_name\": \"<string>\",\n  \"booking_arrival_date\": \"<dateTime>\",\n  \"booking_departure_date\": \"<dateTime>\",\n  \"booking_status\": \"<string>\",\n  \"event_functions\": [\n    {\n      \"room_id\": \"<string>\",\n      \"start_date_time\": \"<dateTime>\",\n      \"end_date_time\": \"<dateTime>\",\n      \"function_id\": \"<string>\",\n      \"function_name\": \"<string>\",\n      \"room_name\": \"<string>\",\n      \"room_abbreviation\": \"<string>\",\n      \"room_setup\": \"<string>\",\n      \"room_setup_abbreviation\": \"<string>\",\n      \"event_type\": \"<string>\",\n      \"number_of_attendees\": \"<integer>\"\n    },\n    {\n      \"room_id\": \"<string>\",\n      \"start_date_time\": \"<dateTime>\",\n      \"end_date_time\": \"<dateTime>\",\n      \"function_id\": \"<string>\",\n      \"function_name\": \"<string>\",\n      \"room_name\": \"<string>\",\n      \"room_abbreviation\": \"<string>\",\n      \"room_setup\": \"<string>\",\n      \"room_setup_abbreviation\": \"<string>\",\n      \"event_type\": \"<string>\",\n      \"number_of_attendees\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3c538ef9-f9fc-4b01-afaf-c2c6e7c66e67",
+              "name": "Integration request successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "v1",
+                    "integrations",
+                    ":sncType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sncType",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"property_id\": \"<string>\",\n  \"booking_id\": \"<string>\",\n  \"booking_name\": \"<string>\",\n  \"property_name\": \"<string>\",\n  \"account_id\": \"<string>\",\n  \"account_name\": \"<string>\",\n  \"booking_arrival_date\": \"<dateTime>\",\n  \"booking_departure_date\": \"<dateTime>\",\n  \"booking_status\": \"<string>\",\n  \"event_functions\": [\n    {\n      \"room_id\": \"<string>\",\n      \"start_date_time\": \"<dateTime>\",\n      \"end_date_time\": \"<dateTime>\",\n      \"function_id\": \"<string>\",\n      \"function_name\": \"<string>\",\n      \"room_name\": \"<string>\",\n      \"room_abbreviation\": \"<string>\",\n      \"room_setup\": \"<string>\",\n      \"room_setup_abbreviation\": \"<string>\",\n      \"event_type\": \"<string>\",\n      \"number_of_attendees\": \"<integer>\"\n    },\n    {\n      \"room_id\": \"<string>\",\n      \"start_date_time\": \"<dateTime>\",\n      \"end_date_time\": \"<dateTime>\",\n      \"function_id\": \"<string>\",\n      \"function_name\": \"<string>\",\n      \"room_name\": \"<string>\",\n      \"room_abbreviation\": \"<string>\",\n      \"room_setup\": \"<string>\",\n      \"room_setup_abbreviation\": \"<string>\",\n      \"event_type\": \"<string>\",\n      \"number_of_attendees\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7e14effa-7586-4868-aa1a-3113576b87a8",
+    "name": "Social Tables API Gateway Authentication SNC Event Integration API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

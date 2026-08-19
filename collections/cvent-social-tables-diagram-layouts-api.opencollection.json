@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Diagram Layouts API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Diagram Layouts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get multiple layouts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/layouts",
+            "params": [
+              {
+                "name": "bookable_room",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "space_template",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get multiple layouts"
+        },
+        {
+          "info": {
+            "name": "inserts a layout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/layouts/"
+          },
+          "docs": "inserts a layout"
+        },
+        {
+          "info": {
+            "name": "get a layout by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/layouts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a layout by ID"
+        },
+        {
+          "info": {
+            "name": "updates a layout",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/layouts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "updates a layout"
+        },
+        {
+          "info": {
+            "name": "deletes a layout",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/layouts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "deletes a layout"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Guest Meals API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guest Meals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "assign/delete multiple guests to a tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/meals",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "assign/delete multiple guests to a tag"
+        },
+        {
+          "info": {
+            "name": "create a meal on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/meals",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "create a meal on a guestlist"
+        },
+        {
+          "info": {
+            "name": "edit a meal on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/meals/:meal_title",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "meal_title",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "edit a meal on a guestlist"
+        },
+        {
+          "info": {
+            "name": "delete a meal on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/meals/:meal_title",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "meal_title",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "delete a meal on a guestlist"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

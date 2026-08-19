@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication SNC Event Integration API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SNC Event Integration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Accepts data about external events and persists them",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/v1/integrations/:sncType",
+            "params": [
+              {
+                "name": "sncType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This api creates a diagram in a specified room.\nUnlike most of our other apis, this uses externally provided property and room ids instead of our ids, and requires coordination with our professional services team to map the rooms.\nbooking_id must be unique for each event and function_id must be unique for each diagram.\nIf you are interested in using this api, please contact your account manager or Cvent sales.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

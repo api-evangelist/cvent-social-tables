@@ -1,0 +1,224 @@
+{
+  "item": [
+    {
+      "id": "a3df6e31-c58a-4d3e-af23-78062c932d9a",
+      "name": "Properties",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d63342e-7bf2-4ecc-877d-dedbcba80e34",
+          "name": "get active properties owned by the caller team",
+          "request": {
+            "name": "get active properties owned by the caller team",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2efd7e64-985e-4ef4-9ba8-eb3068a31101",
+              "name": "returns active properties owned by the caller team",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a9f7cf93-9bdd-4371-b428-85e394968669",
+              "name": "team context is missing from request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8ccb15c5-7f33-49f7-a8bc-01fb5424cf36",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2033ffe6-a199-49ff-a711-b1c1db687c15",
+          "name": "get a property from a property ID",
+          "request": {
+            "name": "get a property from a property ID",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "properties",
+                ":property_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "property_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73e3fab8-bfdd-413a-bb04-1a357fd01e76",
+              "name": "returns a property",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "properties",
+                    ":property_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "property_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0a4de64b-1547-4546-8b14-d9afac85171d",
+    "name": "Social Tables API Gateway Authentication Properties API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

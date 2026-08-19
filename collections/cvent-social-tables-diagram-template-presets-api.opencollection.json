@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Diagram Template Presets API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Diagram Template Presets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get multiple template presets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/template-presets",
+            "params": [
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "setup",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query",
+                "description": "filters by property id, excludes presets associated with a property if 'null'"
+              },
+              {
+                "name": "catalogItemId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get multiple template presets"
+        },
+        {
+          "info": {
+            "name": "inserts a template preset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/template-presets",
+            "params": [
+              {
+                "name": "event_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "inserts a template preset"
+        },
+        {
+          "info": {
+            "name": "get a template preset by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/template-presets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a template preset by id"
+        },
+        {
+          "info": {
+            "name": "updates a template preset",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/template-presets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "event_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "updates a template preset"
+        },
+        {
+          "info": {
+            "name": "deletes a template preset",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/template-presets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "event_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "deletes a template preset"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

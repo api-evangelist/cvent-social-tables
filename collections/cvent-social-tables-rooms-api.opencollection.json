@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Rooms API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rooms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns all rooms for a given property ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/properties/:property_id/rooms",
+            "params": [
+              {
+                "name": "property_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns all rooms for a given property ID"
+        },
+        {
+          "info": {
+            "name": "get a room by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/rooms/:room_id",
+            "params": [
+              {
+                "name": "room_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "archived",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get a room by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

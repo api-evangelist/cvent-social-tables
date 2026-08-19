@@ -1,0 +1,141 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Guest Tags API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guest Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "assign/delete multiple guests to a tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/tags",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "assign/delete multiple guests to a tag"
+        },
+        {
+          "info": {
+            "name": "get the tags status on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get the tags status on a guestlist"
+        },
+        {
+          "info": {
+            "name": "create a tag on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "create a tag on a guestlist"
+        },
+        {
+          "info": {
+            "name": "get a tag on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags/:tag_title_or_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tag_title_or_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a tag on a guestlist"
+        },
+        {
+          "info": {
+            "name": "edit a tag on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags/:tag_title_or_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tag_title_or_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "edit a tag on a guestlist"
+        },
+        {
+          "info": {
+            "name": "delete a tag on a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/tags/:tag_title_or_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tag_title_or_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "delete a tag on a guestlist"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Properties API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Properties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get active properties owned by the caller team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/properties"
+          },
+          "docs": "get active properties owned by the caller team"
+        },
+        {
+          "info": {
+            "name": "get a property from a property ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/properties/:property_id",
+            "params": [
+              {
+                "name": "property_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get a property from a property ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

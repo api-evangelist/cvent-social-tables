@@ -1,0 +1,312 @@
+{
+  "item": [
+    {
+      "id": "73643cff-d31f-4df0-97f0-dc99ee227ae3",
+      "name": "Layout Automation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5d54151f-9f56-4903-8c0e-a8a3cd951e92",
+          "name": "actively calculates layout and creates an event/space/diagram",
+          "request": {
+            "name": "actively calculates layout and creates an event/space/diagram",
+            "description": {
+              "content": "actively calculates layout and creates an event/space/diagram",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "4.0",
+                "layout-automation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category\": \"<string>\",\n  \"spaces\": [\n    {\n      \"name\": \"<string>\",\n      \"attendees\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"wizard\": {\n        \"attendees\": \"<integer>\",\n        \"setup\": \"aligned\",\n        \"chairType\": \"<string>\",\n        \"chairs\": {\n          \"size\": {\n            \"length\": \"<number>\",\n            \"width\": \"<number>\"\n          }\n        },\n        \"rotation\": 0,\n        \"table\": {\n          \"chairs\": \"<integer>\",\n          \"size\": {\n            \"width\": \"<number>\",\n            \"length\": \"<number>\",\n            \"radius\": \"<number>\"\n          },\n          \"spacing\": {\n            \"x\": 0,\n            \"y\": 0\n          },\n          \"type\": \"<string>\",\n          \"position\": \"center\",\n          \"cullAdditionalTables\": \"<boolean>\",\n          \"placeEvenlyAcrossLayout\": \"<boolean>\",\n          \"removeChairs\": \"<integer>\",\n          \"rotateCrescentOffset\": \"<number>\"\n        },\n        \"aisles\": {\n          \"horizontal\": {},\n          \"vertical\": {}\n        },\n        \"chevronAngle\": 0,\n        \"ignore_doors_and_columns\": \"<boolean>\",\n        \"best_effort_capacity\": \"<boolean>\",\n        \"errors_in_diagram\": true,\n        \"nudgeOnCollide\": \"<boolean>\",\n        \"updatedRects\": \"<boolean>\"\n      },\n      \"layoutSpec\": {\n        \"attendees\": \"<integer>\",\n        \"setup\": \"aligned\",\n        \"chairType\": \"<string>\",\n        \"chairs\": {\n          \"size\": {\n            \"length\": \"<number>\",\n            \"width\": \"<number>\"\n          }\n        },\n        \"rotation\": 0,\n        \"table\": {\n          \"chairs\": \"<integer>\",\n          \"size\": {\n            \"width\": \"<number>\",\n            \"length\": \"<number>\",\n            \"radius\": \"<number>\"\n          },\n          \"spacing\": {\n            \"x\": 0,\n            \"y\": 0\n          },\n          \"type\": \"<string>\",\n          \"position\": \"center\",\n          \"cullAdditionalTables\": \"<boolean>\",\n          \"placeEvenlyAcrossLayout\": \"<boolean>\",\n          \"removeChairs\": \"<integer>\",\n          \"rotateCrescentOffset\": \"<number>\"\n        },\n        \"aisles\": {\n          \"horizontal\": {},\n          \"vertical\": {}\n        },\n        \"chevronAngle\": 0,\n        \"ignore_doors_and_columns\": \"<boolean>\",\n        \"best_effort_capacity\": \"<boolean>\",\n        \"errors_in_diagram\": true,\n        \"nudgeOnCollide\": \"<boolean>\",\n        \"updatedRects\": \"<boolean>\"\n      },\n      \"external_event_id\": \"<string>\",\n      \"external_diagram_id\": \"<string>\",\n      \"venue_id\": \"<string>\",\n      \"custom_setup\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"attendees\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"wizard\": {\n        \"attendees\": \"<integer>\",\n        \"setup\": \"aligned\",\n        \"chairType\": \"<string>\",\n        \"chairs\": {\n          \"size\": {\n            \"length\": \"<number>\",\n            \"width\": \"<number>\"\n          }\n        },\n        \"rotation\": 0,\n        \"table\": {\n          \"chairs\": \"<integer>\",\n          \"size\": {\n            \"width\": \"<number>\",\n            \"length\": \"<number>\",\n            \"radius\": \"<number>\"\n          },\n          \"spacing\": {\n            \"x\": 0,\n            \"y\": 0\n          },\n          \"type\": \"<string>\",\n          \"position\": \"center\",\n          \"cullAdditionalTables\": \"<boolean>\",\n          \"placeEvenlyAcrossLayout\": \"<boolean>\",\n          \"removeChairs\": \"<integer>\",\n          \"rotateCrescentOffset\": \"<number>\"\n        },\n        \"aisles\": {\n          \"horizontal\": {},\n          \"vertical\": {}\n        },\n        \"chevronAngle\": 0,\n        \"ignore_doors_and_columns\": \"<boolean>\",\n        \"best_effort_capacity\": \"<boolean>\",\n        \"errors_in_diagram\": true,\n        \"nudgeOnCollide\": \"<boolean>\",\n        \"updatedRects\": \"<boolean>\"\n      },\n      \"layoutSpec\": {\n        \"attendees\": \"<integer>\",\n        \"setup\": \"aligned\",\n        \"chairType\": \"<string>\",\n        \"chairs\": {\n          \"size\": {\n            \"length\": \"<number>\",\n            \"width\": \"<number>\"\n          }\n        },\n        \"rotation\": 0,\n        \"table\": {\n          \"chairs\": \"<integer>\",\n          \"size\": {\n            \"width\": \"<number>\",\n            \"length\": \"<number>\",\n            \"radius\": \"<number>\"\n          },\n          \"spacing\": {\n            \"x\": 0,\n            \"y\": 0\n          },\n          \"type\": \"<string>\",\n          \"position\": \"center\",\n          \"cullAdditionalTables\": \"<boolean>\",\n          \"placeEvenlyAcrossLayout\": \"<boolean>\",\n          \"removeChairs\": \"<integer>\",\n          \"rotateCrescentOffset\": \"<number>\"\n        },\n        \"aisles\": {\n          \"horizontal\": {},\n          \"vertical\": {}\n        },\n        \"chevronAngle\": 0,\n        \"ignore_doors_and_columns\": \"<boolean>\",\n        \"best_effort_capacity\": \"<boolean>\",\n        \"errors_in_diagram\": true,\n        \"nudgeOnCollide\": \"<boolean>\",\n        \"updatedRects\": \"<boolean>\"\n      },\n      \"external_event_id\": \"<string>\",\n      \"external_diagram_id\": \"<string>\",\n      \"venue_id\": \"<string>\",\n      \"custom_setup\": \"<string>\"\n    }\n  ],\n  \"event_id\": \"<number>\",\n  \"uses_metric\": \"<boolean>\",\n  \"start_time\": \"<dateTime>\",\n  \"end_time\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"public\": \"<boolean>\",\n  \"attendee_management\": \"<boolean>\",\n  \"useSocialDistance\": \"<boolean>\",\n  \"user_email\": \"<string>\",\n  \"team_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e0da5176-25d6-453c-9def-08015065e7b3",
+              "name": "full event created by the layout automation service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layout-automation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": \"<string>\",\n  \"spaces\": [\n    {\n      \"name\": \"<string>\",\n      \"attendees\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"wizard\": {\n        \"attendees\": \"<integer>\",\n        \"setup\": \"aligned\",\n        \"chairType\": \"<string>\",\n        \"chairs\": {\n          \"size\": {\n            \"length\": \"<number>\",\n            \"width\": \"<number>\"\n          }\n        },\n        \"rotation\": 0,\n        \"table\": {\n          \"chairs\": \"<integer>\",\n          \"size\": {\n            \"width\": \"<number>\",\n            \"length\": \"<number>\",\n            \"radius\": \"<number>\"\n          },\n          \"spacing\": {\n            \"x\": 0,\n            \"y\": 0\n          },\n          \"type\": \"<string>\",\n          \"position\": \"center\",\n          \"cullAdditionalTables\": \"<boolean>\",\n          \"placeEvenlyAcrossLayout\": \"<boolean>\",\n          \"removeChairs\": \"<integer>\",\n          \"rotateCrescentOffset\": \"<number>\"\n        },\n        \"aisles\": {\n          \"horizontal\": {},\n          \"vertical\": {}\n        },\n        \"chevronAngle\": 0,\n        \"ignore_doors_and_columns\": \"<boolean>\",\n        \"best_effort_capacity\": \"<boolean>\",\n        \"errors_in_diagram\": true,\n        \"nudgeOnCollide\": \"<boolean>\",\n        \"updatedRects\": \"<boolean>\"\n      },\n      \"layoutSpec\": {\n        \"attendees\": \"<integer>\",\n        \"setup\": \"aligned\",\n        \"chairType\": \"<string>\",\n        \"chairs\": {\n          \"size\": {\n            \"length\": \"<number>\",\n            \"width\": \"<number>\"\n          }\n        },\n        \"rotation\": 0,\n        \"table\": {\n          \"chairs\": \"<integer>\",\n          \"size\": {\n            \"width\": \"<number>\",\n            \"length\": \"<number>\",\n            \"radius\": \"<number>\"\n          },\n          \"spacing\": {\n            \"x\": 0,\n            \"y\": 0\n          },\n          \"type\": \"<string>\",\n          \"position\": \"center\",\n          \"cullAdditionalTables\": \"<boolean>\",\n          \"placeEvenlyAcrossLayout\": \"<boolean>\",\n          \"removeChairs\": \"<integer>\",\n          \"rotateCrescentOffset\": \"<number>\"\n        },\n        \"aisles\": {\n          \"horizontal\": {},\n          \"vertical\": {}\n        },\n        \"chevronAngle\": 0,\n        \"ignore_doors_and_columns\": \"<boolean>\",\n        \"best_effort_capacity\": \"<boolean>\",\n        \"errors_in_diagram\": true,\n        \"nudgeOnCollide\": \"<boolean>\",\n        \"updatedRects\": \"<boolean>\"\n      },\n      \"external_event_id\": \"<string>\",\n      \"external_diagram_id\": \"<string>\",\n      \"venue_id\": \"<string>\",\n      \"custom_setup\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"attendees\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"wizard\": {\n        \"attendees\": \"<integer>\",\n        \"setup\": \"aligned\",\n        \"chairType\": \"<string>\",\n        \"chairs\": {\n          \"size\": {\n            \"length\": \"<number>\",\n            \"width\": \"<number>\"\n          }\n        },\n        \"rotation\": 0,\n        \"table\": {\n          \"chairs\": \"<integer>\",\n          \"size\": {\n            \"width\": \"<number>\",\n            \"length\": \"<number>\",\n            \"radius\": \"<number>\"\n          },\n          \"spacing\": {\n            \"x\": 0,\n            \"y\": 0\n          },\n          \"type\": \"<string>\",\n          \"position\": \"center\",\n          \"cullAdditionalTables\": \"<boolean>\",\n          \"placeEvenlyAcrossLayout\": \"<boolean>\",\n          \"removeChairs\": \"<integer>\",\n          \"rotateCrescentOffset\": \"<number>\"\n        },\n        \"aisles\": {\n          \"horizontal\": {},\n          \"vertical\": {}\n        },\n        \"chevronAngle\": 0,\n        \"ignore_doors_and_columns\": \"<boolean>\",\n        \"best_effort_capacity\": \"<boolean>\",\n        \"errors_in_diagram\": true,\n        \"nudgeOnCollide\": \"<boolean>\",\n        \"updatedRects\": \"<boolean>\"\n      },\n      \"layoutSpec\": {\n        \"attendees\": \"<integer>\",\n        \"setup\": \"aligned\",\n        \"chairType\": \"<string>\",\n        \"chairs\": {\n          \"size\": {\n            \"length\": \"<number>\",\n            \"width\": \"<number>\"\n          }\n        },\n        \"rotation\": 0,\n        \"table\": {\n          \"chairs\": \"<integer>\",\n          \"size\": {\n            \"width\": \"<number>\",\n            \"length\": \"<number>\",\n            \"radius\": \"<number>\"\n          },\n          \"spacing\": {\n            \"x\": 0,\n            \"y\": 0\n          },\n          \"type\": \"<string>\",\n          \"position\": \"center\",\n          \"cullAdditionalTables\": \"<boolean>\",\n          \"placeEvenlyAcrossLayout\": \"<boolean>\",\n          \"removeChairs\": \"<integer>\",\n          \"rotateCrescentOffset\": \"<number>\"\n        },\n        \"aisles\": {\n          \"horizontal\": {},\n          \"vertical\": {}\n        },\n        \"chevronAngle\": 0,\n        \"ignore_doors_and_columns\": \"<boolean>\",\n        \"best_effort_capacity\": \"<boolean>\",\n        \"errors_in_diagram\": true,\n        \"nudgeOnCollide\": \"<boolean>\",\n        \"updatedRects\": \"<boolean>\"\n      },\n      \"external_event_id\": \"<string>\",\n      \"external_diagram_id\": \"<string>\",\n      \"venue_id\": \"<string>\",\n      \"custom_setup\": \"<string>\"\n    }\n  ],\n  \"event_id\": \"<number>\",\n  \"uses_metric\": \"<boolean>\",\n  \"start_time\": \"<dateTime>\",\n  \"end_time\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"public\": \"<boolean>\",\n  \"attendee_management\": \"<boolean>\",\n  \"useSocialDistance\": \"<boolean>\",\n  \"user_email\": \"<string>\",\n  \"team_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4530,\n  \"name\": \"string\",\n  \"user_id\": 978,\n  \"created_at\": \"1957-09-19T00:43:51.493Z\",\n  \"updated_at\": \"1982-12-06T01:35:05.946Z\",\n  \"is_a_sample\": 7139,\n  \"category\": \"string\",\n  \"is_public\": true,\n  \"pricing_plan\": \"string\",\n  \"team_id\": 1511,\n  \"eventbrite_event_id\": \"string\",\n  \"eventbrite_access_token\": \"string\",\n  \"last_accessed\": \"1982-11-04T05:57:18.501Z\",\n  \"logo\": \"string\",\n  \"floor_only\": 3588,\n  \"is_archived\": false,\n  \"aim_only\": 6665,\n  \"start_time\": \"1998-06-30T16:40:03.697Z\",\n  \"end_time\": \"1961-12-05T02:36:09.134Z\",\n  \"mobile_col1\": 7568,\n  \"mobile_col2\": 6780,\n  \"event_url\": \"string\",\n  \"screenshot_url\": \"string\",\n  \"thumb_url\": \"string\",\n  \"forTraining\": true,\n  \"uses_metric\": 816,\n  \"collaborators_expire_at\": \"2002-06-22T23:38:00.667Z\",\n  \"venue_mapper_version\": 7309,\n  \"uid\": \"string\",\n  \"cvent_rfp_id\": \"string\",\n  \"last_activity\": \"1990-01-29T02:17:36.018Z\",\n  \"has_time\": true,\n  \"status\": \"string\",\n  \"industry\": \"string\",\n  \"author\": {\n    \"id\": 2585,\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"email_address\": \"string\"\n  },\n  \"spaces\": [\n    {\n      \"id\": 1204,\n      \"event_id\": 4527,\n      \"space_order\": 2263,\n      \"bookable_room\": \"string\",\n      \"venue_id\": \"string\",\n      \"name\": \"string\",\n      \"updated_at\": \"1947-12-12T12:29:11.895Z\",\n      \"is_new\": false,\n      \"diagram_id\": \"string\",\n      \"pdf_url\": \"string\",\n      \"warnings\": [\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        }\n      ],\n      \"errors\": [\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 4608,\n      \"event_id\": 2756,\n      \"space_order\": 2939,\n      \"bookable_room\": \"string\",\n      \"venue_id\": \"string\",\n      \"name\": \"string\",\n      \"updated_at\": \"2026-03-16T23:45:54.697Z\",\n      \"is_new\": false,\n      \"diagram_id\": \"string\",\n      \"pdf_url\": \"string\",\n      \"warnings\": [\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        }\n      ],\n      \"errors\": [\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aff68554-b12a-4f7d-bab0-5a44f280c1ba",
+          "name": "removes floor elements from previous automated and manual layouts",
+          "request": {
+            "name": "removes floor elements from previous automated and manual layouts",
+            "description": {
+              "content": "removes floor elements from previous automated and manual layouts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "4.0",
+                "layout-automation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "spaces",
+                  "value": "<string>",
+                  "description": "(Required) a comma-separated list of space IDs to clear"
+                },
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>",
+                  "description": "(Required) the ID of the event to clear"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardDelete",
+                  "value": "false",
+                  "description": "flag to hard delete diagram/space"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5121d6b3-fc88-4f2e-a5e8-892528c407c1",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layout-automation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "spaces",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hardDelete",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e454671-2860-49b3-8e1c-edc5b7e4065a",
+          "name": "actively calculates layout and creates an event/space/diagram using custom_setup defined from Home Team Setup Presets https://home-2018.socialtables.com/settings/team-setup-presets",
+          "request": {
+            "name": "actively calculates layout and creates an event/space/diagram using custom_setup defined from Home Team Setup Presets https://home-2018.socialtables.com/settings/team-setup-presets",
+            "description": {
+              "content": "actively calculates layout and creates an event/space/diagram using custom_setup defined from Home Team Setup Presets https://home-2018.socialtables.com/settings/team-setup-presets",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "4.0",
+                "layout-automation",
+                "custom-setup"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"category\": \"<string>\",\n  \"spaces\": [\n    {\n      \"name\": \"<string>\",\n      \"custom_setup\": \"<string>\",\n      \"attendees\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"external_event_id\": \"<string>\",\n      \"external_diagram_id\": \"<string>\",\n      \"venue_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"custom_setup\": \"<string>\",\n      \"attendees\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"external_event_id\": \"<string>\",\n      \"external_diagram_id\": \"<string>\",\n      \"venue_id\": \"<string>\"\n    }\n  ],\n  \"event_id\": \"<number>\",\n  \"uses_metric\": \"<boolean>\",\n  \"start_time\": \"<dateTime>\",\n  \"end_time\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"public\": \"<boolean>\",\n  \"attendee_management\": \"<boolean>\",\n  \"useSocialDistance\": \"<boolean>\",\n  \"user_email\": \"<string>\",\n  \"team_id\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95f702ec-aef4-42e6-bcaf-afc8918f5c24",
+              "name": "full event created by the layout automation service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "layout-automation",
+                    "custom-setup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"category\": \"<string>\",\n  \"spaces\": [\n    {\n      \"name\": \"<string>\",\n      \"custom_setup\": \"<string>\",\n      \"attendees\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"external_event_id\": \"<string>\",\n      \"external_diagram_id\": \"<string>\",\n      \"venue_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"custom_setup\": \"<string>\",\n      \"attendees\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"external_event_id\": \"<string>\",\n      \"external_diagram_id\": \"<string>\",\n      \"venue_id\": \"<string>\"\n    }\n  ],\n  \"event_id\": \"<number>\",\n  \"uses_metric\": \"<boolean>\",\n  \"start_time\": \"<dateTime>\",\n  \"end_time\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"public\": \"<boolean>\",\n  \"attendee_management\": \"<boolean>\",\n  \"useSocialDistance\": \"<boolean>\",\n  \"user_email\": \"<string>\",\n  \"team_id\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 139,\n  \"name\": \"string\",\n  \"user_id\": 2908,\n  \"created_at\": \"1994-06-26T16:13:31.978Z\",\n  \"updated_at\": \"1958-03-05T08:16:00.265Z\",\n  \"is_a_sample\": 2037,\n  \"category\": \"string\",\n  \"is_public\": true,\n  \"pricing_plan\": \"string\",\n  \"team_id\": 7761,\n  \"eventbrite_event_id\": \"string\",\n  \"eventbrite_access_token\": \"string\",\n  \"last_accessed\": \"1978-01-14T07:43:07.992Z\",\n  \"logo\": \"string\",\n  \"floor_only\": 5440,\n  \"is_archived\": false,\n  \"aim_only\": 5636,\n  \"start_time\": \"1972-09-25T18:17:41.108Z\",\n  \"end_time\": \"2000-12-09T16:37:08.597Z\",\n  \"mobile_col1\": 7207,\n  \"mobile_col2\": 8248,\n  \"event_url\": \"string\",\n  \"screenshot_url\": \"string\",\n  \"thumb_url\": \"string\",\n  \"forTraining\": true,\n  \"uses_metric\": 9749,\n  \"collaborators_expire_at\": \"1992-09-16T18:43:03.783Z\",\n  \"venue_mapper_version\": 2033,\n  \"uid\": \"string\",\n  \"cvent_rfp_id\": \"string\",\n  \"last_activity\": \"2000-04-07T23:26:47.988Z\",\n  \"has_time\": true,\n  \"status\": \"string\",\n  \"industry\": \"string\",\n  \"author\": {\n    \"id\": 9878,\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"email_address\": \"string\"\n  },\n  \"spaces\": [\n    {\n      \"id\": 7963,\n      \"event_id\": 6474,\n      \"space_order\": 9601,\n      \"bookable_room\": \"string\",\n      \"venue_id\": \"string\",\n      \"name\": \"string\",\n      \"updated_at\": \"2001-05-10T18:35:03.741Z\",\n      \"is_new\": true,\n      \"diagram_id\": \"string\",\n      \"pdf_url\": \"string\",\n      \"warnings\": [\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        }\n      ],\n      \"errors\": [\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 2214,\n      \"event_id\": 591,\n      \"space_order\": 8391,\n      \"bookable_room\": \"string\",\n      \"venue_id\": \"string\",\n      \"name\": \"string\",\n      \"updated_at\": \"2008-10-16T04:17:34.232Z\",\n      \"is_new\": true,\n      \"diagram_id\": \"string\",\n      \"pdf_url\": \"string\",\n      \"warnings\": [\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        }\n      ],\n      \"errors\": [\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"resolution\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "64235a7a-d777-40ff-82d9-028a1d72d3f9",
+    "name": "Social Tables API Gateway Authentication Layout Automation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

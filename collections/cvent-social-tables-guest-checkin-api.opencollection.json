@@ -1,0 +1,95 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Guest Checkin API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guest Checkin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all checked in guests for a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/checkin",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get all checked in guests for a guestlist"
+        },
+        {
+          "info": {
+            "name": "Updates multiple guests to a single checkin status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/checkin",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates multiple guests to a single checkin status"
+        },
+        {
+          "info": {
+            "name": "Updates multiple guests to multiple checkin statuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/update-checkin-status",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates multiple guests to multiple checkin statuses"
+        },
+        {
+          "info": {
+            "name": "Updates the checkin status of an individual guest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/guests/:guest_id/checkin",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "guest_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates the checkin status of an individual guest"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

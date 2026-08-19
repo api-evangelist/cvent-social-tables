@@ -1,0 +1,714 @@
+{
+  "item": [
+    {
+      "id": "fbd9e89b-4b38-4511-98fc-9b3e6727c398",
+      "name": "Guest Checkin",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "db99d461-ce82-465e-ad63-38ab52e7f1fb",
+          "name": "Get all checked in guests for a guestlist",
+          "request": {
+            "name": "Get all checked in guests for a guestlist",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "checkin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f67aa69-058b-480b-a03a-9ed784058187",
+              "name": "returns checked in guests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "checkin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"email\": \"string\",\n    \"checked_in_status\": {\n      \"checked_in\": 3425,\n      \"checked_in_at\": \"1953-08-15T15:12:41.388Z\",\n      \"checked_out_at\": \"1956-10-22T03:15:16.112Z\"\n    },\n    \"tags\": [\n      {\n        \"title\": \"string\",\n        \"color\": \"string\"\n      },\n      {\n        \"title\": \"string\",\n        \"color\": \"string\"\n      }\n    ],\n    \"meals\": [\n      {\n        \"title\": \"string\"\n      },\n      {\n        \"title\": \"string\"\n      }\n    ]\n  },\n  {\n    \"id\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"email\": \"string\",\n    \"checked_in_status\": {\n      \"checked_in\": 4402,\n      \"checked_in_at\": \"1998-08-16T13:02:21.399Z\",\n      \"checked_out_at\": \"1968-03-03T08:54:50.436Z\"\n    },\n    \"tags\": [\n      {\n        \"title\": \"string\",\n        \"color\": \"string\"\n      },\n      {\n        \"title\": \"string\",\n        \"color\": \"string\"\n      }\n    ],\n    \"meals\": [\n      {\n        \"title\": \"string\"\n      },\n      {\n        \"title\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7e6bd6ca-7b28-4153-a80f-8198058d6b97",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "checkin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2822a006-55f0-405a-a38b-856c4859f0e6",
+          "name": "Updates multiple guests to a single checkin status",
+          "request": {
+            "name": "Updates multiple guests to a single checkin status",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "guests",
+                "checkin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guests\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"checked_in\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b46b4e27-bbbb-497d-9616-9bb5dc2c7d6b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "guests",
+                    "checkin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "23421183-11d9-4e9c-a19b-3bb377c77207",
+              "name": "Error creating guest tags",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "guests",
+                    "checkin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3de18397-d623-4b57-b84f-39ebfb04bf82",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "guests",
+                    "checkin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8729e5ad-814f-4055-b33e-32faa5959916",
+          "name": "Updates multiple guests to multiple checkin statuses",
+          "request": {
+            "name": "Updates multiple guests to multiple checkin statuses",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "guests",
+                "update-checkin-status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guests\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"checked_in\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14e627ea-11de-43d5-b9be-db13bdda2ce7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "guests",
+                    "update-checkin-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "556c0b30-cfd6-40bb-9155-67c946eb14f8",
+              "name": "Error updating guests checkin status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "guests",
+                    "update-checkin-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f94940a3-8594-4b3a-a50c-3ec425c47bfd",
+          "name": "Updates the checkin status of an individual guest",
+          "request": {
+            "name": "Updates the checkin status of an individual guest",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "guests",
+                ":guest_id",
+                "checkin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guest_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"checked_in_status\": {\n    \"checked_in\": \"<integer>\",\n    \"checked_in_at\": \"<dateTime>\",\n    \"checked_out_at\": \"<dateTime>\"\n  },\n  \"tags\": [\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    }\n  ],\n  \"meals\": [\n    {\n      \"title\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ad31e6c2-ad1a-40b2-9836-924900b37175",
+              "name": "checkin",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "guests",
+                    ":guest_id",
+                    "checkin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guest_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"checked_in_status\": {\n    \"checked_in\": \"<integer>\",\n    \"checked_in_at\": \"<dateTime>\",\n    \"checked_out_at\": \"<dateTime>\"\n  },\n  \"tags\": [\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    }\n  ],\n  \"meals\": [\n    {\n      \"title\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"checked_in_status\": {\n    \"checked_in\": \"<integer>\",\n    \"checked_in_at\": \"<dateTime>\",\n    \"checked_out_at\": \"<dateTime>\"\n  },\n  \"tags\": [\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    }\n  ],\n  \"meals\": [\n    {\n      \"title\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b5ae3e3-6b9a-42a8-870b-877fa10b20df",
+              "name": "Error setting guests checkin status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "guests",
+                    ":guest_id",
+                    "checkin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guest_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"checked_in_status\": {\n    \"checked_in\": \"<integer>\",\n    \"checked_in_at\": \"<dateTime>\",\n    \"checked_out_at\": \"<dateTime>\"\n  },\n  \"tags\": [\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    }\n  ],\n  \"meals\": [\n    {\n      \"title\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e7f34398-d9ec-4afc-a4c0-140c1e436048",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "guests",
+                    ":guest_id",
+                    "checkin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guest_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"checked_in_status\": {\n    \"checked_in\": \"<integer>\",\n    \"checked_in_at\": \"<dateTime>\",\n    \"checked_out_at\": \"<dateTime>\"\n  },\n  \"tags\": [\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\",\n      \"color\": \"<string>\"\n    }\n  ],\n  \"meals\": [\n    {\n      \"title\": \"<string>\"\n    },\n    {\n      \"title\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4a475259-c613-4254-8cf7-4d4d5ae6e6bd",
+    "name": "Social Tables API Gateway Authentication Guest Checkin API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

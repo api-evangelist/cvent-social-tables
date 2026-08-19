@@ -1,0 +1,800 @@
+{
+  "item": [
+    {
+      "id": "3592f4fc-12be-4239-8160-b56e4d515c11",
+      "name": "Events",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b073ba7d-756e-4745-b965-cc8f06959e0f",
+          "name": "Retrieve all events an authenticated user has access to within their team.",
+          "request": {
+            "name": "Retrieve all events an authenticated user has access to within their team.",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "event_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of event IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "v2_event_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of v2 event IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "attachSpacesAndBookableRooms",
+                  "value": "<boolean>",
+                  "description": "Whether to include spaces and bookable rooms in the event response."
+                },
+                {
+                  "disabled": false,
+                  "key": "permissionLevel",
+                  "value": "<number>",
+                  "description": "Permission level to include in the event response. 0 = default = add mobile permissions; 1 = skip mobile permissions;"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "884f60a6-4ca2-4e55-abc3-30c1994121e4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "v2_event_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attachSpacesAndBookableRooms",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "permissionLevel",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "981b9f44-ab70-4fac-b82e-9b05490d420c",
+          "name": "Creates an event",
+          "request": {
+            "name": "Creates an event",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"category\": \"<string>\",\n  \"team_id\": \"<number>\",\n  \"start_epoch\": \"<string>\",\n  \"end_epoch\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"is_public\": \"<boolean>\",\n  \"uses_metric\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "024a5fea-a0ed-42de-9d97-2d267a4cc713",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"category\": \"<string>\",\n  \"team_id\": \"<number>\",\n  \"start_epoch\": \"<string>\",\n  \"end_epoch\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"is_public\": \"<boolean>\",\n  \"uses_metric\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4c28307-d6aa-4b76-a662-736c4eda2b6f",
+          "name": "Delete an event",
+          "request": {
+            "name": "Delete an event",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "events",
+                ":event"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "event",
+                  "description": "(Required) ID or UID of the event to delete"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f8da24de-5ed2-4de9-9d86-202e6f3030ec",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "events",
+                    ":event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "event",
+                      "description": "(Required) ID or UID of the event to delete"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01309d23-d70c-4ee8-b19b-fed4c7bc894f",
+          "name": "Returns information about an event by its unique ID.",
+          "request": {
+            "name": "Returns information about an event by its unique ID.",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "events",
+                ":event"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include_deleted",
+                  "value": "<boolean>",
+                  "description": "Whether to include deleted events in the response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "event",
+                  "description": "(Required) The string or int unique identifier of the event."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf380dec-f30c-4a52-a578-f01c033f9b78",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "events",
+                    ":event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include_deleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "event",
+                      "description": "(Required) The string or int unique identifier of the event."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "546fcee9-e7c0-4dec-8585-7c4504035b9d",
+          "name": "Update an event",
+          "request": {
+            "name": "Update an event",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "events",
+                ":event"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "event",
+                  "description": "(Required) ID or UID of the event to update"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"category\": \"<string>\",\n  \"start_epoch\": \"<string>\",\n  \"end_epoch\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"is_public\": \"<boolean>\",\n  \"uses_metric\": \"<boolean>\",\n  \"archived\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cee4178e-878b-4ee4-8b21-1a6d8fbaf4ee",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "events",
+                    ":event"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "event",
+                      "description": "(Required) ID or UID of the event to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"category\": \"<string>\",\n  \"start_epoch\": \"<string>\",\n  \"end_epoch\": \"<string>\",\n  \"industry\": \"<string>\",\n  \"is_public\": \"<boolean>\",\n  \"uses_metric\": \"<boolean>\",\n  \"archived\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "111960e9-8546-4275-b76c-db74b8fd0856",
+          "name": "Retrieve a list of events that the user (specified via the token) has access to, with offset-based pagination",
+          "request": {
+            "name": "Retrieve a list of events that the user (specified via the token) has access to, with offset-based pagination",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "events",
+                "page"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>",
+                  "description": "The number of events to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<number>",
+                  "description": "The starting point for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter by name of the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "owner_id",
+                  "value": "<string>",
+                  "description": "Filter by the owner ID of the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "collaborator_id",
+                  "value": "<string>",
+                  "description": "Filter by collaborator who can access the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "industry_type",
+                  "value": "<string>",
+                  "description": "Filter by industry type of the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<number>",
+                  "description": "Filter by start date (epoch time) of the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<number>",
+                  "description": "Filter by end date (epoch time) of the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "last_activity",
+                  "value": "<string>",
+                  "description": "Filter by last activity date of the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_type",
+                  "value": "<string>",
+                  "description": "Filter by event type of the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "team_id",
+                  "value": "<string>",
+                  "description": "Filter by team ID of the user"
+                },
+                {
+                  "disabled": false,
+                  "key": "space_id",
+                  "value": "<string>",
+                  "description": "Filter by space IDs of the diagrams in the event"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_col",
+                  "value": "<string>",
+                  "description": "The field to sort by (e.g., name, start_date, end_date, etc.)"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_dir",
+                  "value": "<string>",
+                  "description": "The sort direction to use (ASC or DESC)"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_filter",
+                  "value": "<string>",
+                  "description": "Convenience filter to get events that are upcoming, past, or all"
+                },
+                {
+                  "disabled": false,
+                  "key": "space_template_ids",
+                  "value": "<string>",
+                  "description": "Space template IDs to filter by"
+                },
+                {
+                  "disabled": false,
+                  "key": "bookable_room_ids",
+                  "value": "<string>",
+                  "description": "Bookable room IDs to filter by"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_platform",
+                  "value": "<string>",
+                  "description": "Filter by event platform type. Valid values: 'prismm' (events with prismm_occasion_id), 'ced' (events without prismm_occasion_id, default), or 'all' (no filtering)"
+                },
+                {
+                  "disabled": false,
+                  "key": "event_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of event UIDs to filter by"
+                },
+                {
+                  "disabled": false,
+                  "key": "v2_event_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of v2 (legacy) event IDs to filter by"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ab4af46-b19b-492c-bf99-a3a32572f610",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "events",
+                    "page"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "owner_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collaborator_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "industry_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "last_activity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "event_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "team_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "space_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_col",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "space_template_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bookable_room_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "event_platform",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "event_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "v2_event_ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8003dc95-f2bf-4245-ae54-f28a9afe733e",
+    "name": "Social Tables API Gateway Authentication Events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

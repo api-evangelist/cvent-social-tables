@@ -1,0 +1,1768 @@
+{
+  "item": [
+    {
+      "id": "4543bfe6-6e99-47e8-823b-dec23f5aea11",
+      "name": "Guest Groups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7355efb7-98c1-4a88-9fbb-68a95d898e00",
+          "name": "Create a group",
+          "request": {
+            "name": "Create a group",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cca82d8e-6e78-48a3-bef5-9e27cbdf3950",
+              "name": "group created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"guestlist_id\": \"string\",\n  \"guest_count\": 9586,\n  \"is_named\": false,\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09a5be43-ab99-464a-bd81-642ade7980cb",
+              "name": "Error creating group",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ff6f0a65-99cc-497b-acf6-b0de069f846c",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a1be0f3-185e-4191-b3a4-68a891830198",
+          "name": "Retrieve a GROUP",
+          "request": {
+            "name": "Retrieve a GROUP",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "groups",
+                ":group_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "group_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "804c7927-dac4-4966-8048-09cd77341f12",
+              "name": "returns group",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"guestlist_id\": \"string\",\n  \"guest_count\": 5056,\n  \"is_named\": false,\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "27ed0e01-1037-4443-bea5-728887af3c46",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "695c97a1-3c42-4357-9a78-8e33f6647e07",
+          "name": "Delete a GROUP",
+          "request": {
+            "name": "Delete a GROUP",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "groups",
+                ":group_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "group_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c861fc48-3698-430a-8d71-5abdc93ca268",
+              "name": "successfully deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1a592ce2-3dd0-48a2-8256-629cc6c99103",
+              "name": "Error with no id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7003f5ef-e77a-4d87-a776-d9911b5f48a0",
+              "name": "Error with invalid id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5af554a1-84e9-4ac3-b5f9-fc2e7712e718",
+              "name": "Error with no id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e5f3837f-483d-4a4b-930c-c5fdb7e384d8",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f80b0443-0c6b-46f4-927f-e9a417a8999e",
+          "name": "Bulk add/remove guests to/from group",
+          "request": {
+            "name": "Bulk add/remove guests to/from group",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "groups",
+                ":group_id",
+                "guests",
+                "_bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "group_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6b53d553-94eb-452c-b68f-8133ada0648c",
+              "name": "group created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"guestlist_id\": \"string\",\n  \"guest_count\": 5056,\n  \"is_named\": false,\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7b0ef5d-fe31-4993-9bd4-2e45705a3f1e",
+              "name": "Error creating group",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d7b7bb70-cbde-442c-b9af-89ab8a75b034",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b23601b-8bd4-4a40-b996-1a12df6b437e",
+          "name": "Bulk adds guests from group",
+          "request": {
+            "name": "Bulk adds guests from group",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "groups",
+                ":group_id",
+                "guests",
+                "_bulk",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "group_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9edc9f6c-04b0-4800-bc84-f24add1e844c",
+              "name": "guests added to group",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"guestlist_id\": \"string\",\n  \"guest_count\": 5056,\n  \"is_named\": false,\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0c72447-6e08-4ff9-9e36-a4fc903f282f",
+              "name": "Error adding guests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "239f67da-e92f-47b3-80a9-49a74f904a46",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87e7f3cc-7f0d-4fa3-acff-67f01337dedd",
+          "name": "Bulk deletes guests from group",
+          "request": {
+            "name": "Bulk deletes guests from group",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "groups",
+                ":group_id",
+                "guests",
+                "_bulk",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "group_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2bd2adde-8df7-47a5-a625-6599b1a180c8",
+              "name": "guests removed from group",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"guestlist_id\": \"string\",\n  \"guest_count\": 5056,\n  \"is_named\": false,\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b0b3bfd-29a3-41c4-aaff-fafc85463f19",
+              "name": "Error removing guests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c59ecd6f-0f41-4ccb-b85b-fa043354c668",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "guests",
+                    "_bulk",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ccdd94e6-873b-4c96-aed2-56c59e1a56d7",
+          "name": "Clear Group Name",
+          "request": {
+            "name": "Clear Group Name",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "groups",
+                ":group_id",
+                "name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "group_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "243d515e-e0a2-4a69-b251-ccb89ab93361",
+              "name": "group created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"guestlist_id\": \"string\",\n  \"guest_count\": 5056,\n  \"is_named\": false,\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4642a3e3-b6fc-4614-a700-3dd760302512",
+              "name": "Error removing group name",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2d3793bc-7c03-4e5b-b41a-33c2de4368cf",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2b883795-a9b9-4edc-9c8d-81604b786a94",
+          "name": "Set group name",
+          "request": {
+            "name": "Set group name",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "guestlists",
+                ":guestlist_id",
+                "groups",
+                ":group_id",
+                "name",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlist_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "group_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "790093a5-76c5-42c5-8459-096970b41ed0",
+              "name": "group name set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "name",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"guestlist_id\": \"string\",\n  \"guest_count\": 5056,\n  \"is_named\": false,\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"checked_in_status\": {\n        \"checked_in\": \"<integer>\",\n        \"checked_in_at\": \"<dateTime>\",\n        \"checked_out_at\": \"<dateTime>\"\n      },\n      \"tags\": [\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\",\n          \"color\": \"<string>\"\n        }\n      ],\n      \"meals\": [\n        {\n          \"title\": \"<string>\"\n        },\n        {\n          \"title\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "150e809e-411f-473f-a456-412accddf175",
+              "name": "Error setting group name",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "name",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "41b01ace-26dc-4f58-b097-47334d560534",
+              "name": "guestlist is deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "guestlists",
+                    ":guestlist_id",
+                    "groups",
+                    ":group_id",
+                    "name",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlist_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "group_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "74538b8e-ee7a-4b22-8386-74efeff3320c",
+    "name": "Social Tables API Gateway Authentication Guest Groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

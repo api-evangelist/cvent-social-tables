@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Layout Automation API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Layout Automation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /4.0/layout-automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/layout-automation"
+          },
+          "docs": "actively calculates layout and creates an event/space/diagram"
+        },
+        {
+          "info": {
+            "name": "DELETE /4.0/layout-automation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/layout-automation",
+            "params": [
+              {
+                "name": "spaces",
+                "value": "",
+                "type": "query",
+                "description": "a comma-separated list of space IDs to clear"
+              },
+              {
+                "name": "event",
+                "value": "",
+                "type": "query",
+                "description": "the ID of the event to clear"
+              },
+              {
+                "name": "hardDelete",
+                "value": "",
+                "type": "query",
+                "description": "flag to hard delete diagram/space"
+              }
+            ]
+          },
+          "docs": "removes floor elements from previous automated and manual layouts"
+        },
+        {
+          "info": {
+            "name": "POST /4.0/layout-automation/custom-setup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/layout-automation/custom-setup"
+          },
+          "docs": "actively calculates layout and creates an event/space/diagram using custom_setup defined from Home Team Setup Presets https://home-2018.socialtables.com/settings/team-setup-presets"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

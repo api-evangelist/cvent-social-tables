@@ -1,0 +1,1672 @@
+{
+  "item": [
+    {
+      "id": "0a32ce16-d76d-4640-b27c-03638eb1b477",
+      "name": "Diagrams",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d00fa998-d642-426a-8f9e-506a1d5c4579",
+          "name": "get multiple diagrams",
+          "request": {
+            "name": "get multiple diagrams",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "diagrams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "space",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guestlist",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "legacy_event",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_diagram_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_event_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "997f0843-e766-4c29-8a93-4f2573c73cfa",
+              "name": "returns an array of diagrams",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "space",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "guestlist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legacy_event",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_diagram_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_event_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"updated_at\": \"string\",\n    \"created_at\": \"string\",\n    \"chair_count\": 5192,\n    \"space_id\": 8179,\n    \"session_id\": \"string\",\n    \"event_id\": \"string\",\n    \"legacy_event_id\": 6009,\n    \"team_id\": \"string\",\n    \"floor_elements\": {\n      \"key_0\": {\n        \"color\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layer\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"position\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rotation\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"catalogCategoryTypeItemId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"table_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"key_1\": {\n        \"color\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layer\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"position\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rotation\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"catalogCategoryTypeItemId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"table_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"key_2\": {\n        \"color\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layer\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"position\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rotation\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"catalogCategoryTypeItemId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"table_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"key_3\": {\n        \"color\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layer\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"position\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rotation\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"catalogCategoryTypeItemId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"table_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"groups\": {\n      \"key_0\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 639,\n        \"template_preset_id\": \"string\"\n      },\n      \"key_1\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 3319,\n        \"template_preset_id\": \"string\"\n      },\n      \"key_2\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 9522,\n        \"template_preset_id\": \"string\"\n      },\n      \"key_3\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 4278,\n        \"template_preset_id\": \"string\"\n      }\n    },\n    \"sections\": {\n      \"key_0\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"key_1\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"boundary_visibility\": {\n      \"value\": \"reference #/components/schemas/diagrams__components~1boundary-visibility-diagram-service not found in the OpenAPI spec\"\n    },\n    \"deleted\": true,\n    \"external_diagram_id\": \"string\",\n    \"external_event_id\": \"string\",\n    \"floorPlan\": {\n      \"type\": \"spaceTemplate\",\n      \"id\": 8771,\n      \"url\": \"string\",\n      \"background_type\": \"string\"\n    },\n    \"guestlist_id\": \"string\",\n    \"length\": 1076.0791823112518,\n    \"name\": \"string\",\n    \"notes\": \"string\",\n    \"prefunction_perimeter\": 5437.557240169271,\n    \"rotation\": 7189.055974863038,\n    \"service_perimeter\": 3025.0095781468954,\n    \"sort_order\": 3239.128114472356,\n    \"table_numbering\": {\n      \"allowRepeats\": false,\n      \"evenOnly\": true,\n      \"oddOnly\": false,\n      \"skipNumbers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"skipNumbersWith\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"startingNumber\": 4204\n    },\n    \"team_uploads_id\": \"string\",\n    \"update_id\": \"string\",\n    \"width\": 1177.0802926134545,\n    \"start_datetime\": \"2007-06-12T13:32:15.472Z\",\n    \"end_datetime\": \"1974-11-08T11:20:41.497Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"updated_at\": \"string\",\n    \"created_at\": \"string\",\n    \"chair_count\": 3779,\n    \"space_id\": 6401,\n    \"session_id\": \"string\",\n    \"event_id\": \"string\",\n    \"legacy_event_id\": 2293,\n    \"team_id\": \"string\",\n    \"floor_elements\": {\n      \"key_0\": {\n        \"color\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layer\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"layout\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"position\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rotation\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"catalogCategoryTypeItemId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"table_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"groups\": {\n      \"key_0\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 3205,\n        \"template_preset_id\": \"string\"\n      },\n      \"key_1\": {\n        \"id\": \"string\",\n        \"template_config\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"favorite_id\": \"string\",\n        \"group_rotation\": 4504,\n        \"template_preset_id\": \"string\"\n      }\n    },\n    \"sections\": {\n      \"key_0\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"key_1\": {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"boundary_visibility\": {\n      \"value\": \"reference #/components/schemas/diagrams__components~1boundary-visibility-diagram-service not found in the OpenAPI spec\"\n    },\n    \"deleted\": true,\n    \"external_diagram_id\": \"string\",\n    \"external_event_id\": \"string\",\n    \"floorPlan\": {\n      \"type\": \"background\",\n      \"id\": 7480,\n      \"url\": \"string\",\n      \"background_type\": \"string\"\n    },\n    \"guestlist_id\": \"string\",\n    \"length\": 2383.8898227535883,\n    \"name\": \"string\",\n    \"notes\": \"string\",\n    \"prefunction_perimeter\": 4208.5462373544515,\n    \"rotation\": 2563.0515405999786,\n    \"service_perimeter\": 6685.644967505661,\n    \"sort_order\": 5766.093405599126,\n    \"table_numbering\": {\n      \"allowRepeats\": true,\n      \"evenOnly\": true,\n      \"oddOnly\": true,\n      \"skipNumbers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"skipNumbersWith\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"startingNumber\": 6789\n    },\n    \"team_uploads_id\": \"string\",\n    \"update_id\": \"string\",\n    \"width\": 1940.6096380492102,\n    \"start_datetime\": \"1956-03-26T00:49:58.491Z\",\n    \"end_datetime\": \"1974-07-18T06:37:00.804Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a631b741-3603-464c-867d-65995ed155f3",
+              "name": "validation error must specify either event, space, or guestlist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "space",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "guestlist",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "legacy_event",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_diagram_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_event_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4b4fecf-4f68-403c-8faa-dd7875db7304",
+          "name": "get a diagram by ID",
+          "request": {
+            "name": "get a diagram by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "diagrams",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba6b8669-3314-470e-9980-c066c12a98eb",
+              "name": "returns a diagram",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"updated_at\": \"string\",\n  \"created_at\": \"string\",\n  \"chair_count\": 4337,\n  \"space_id\": 7020,\n  \"session_id\": \"string\",\n  \"event_id\": \"string\",\n  \"legacy_event_id\": 5949,\n  \"team_id\": \"string\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"string\",\n      \"dimensions\": {\n        \"width\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"length\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"radius\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"id\": \"string\",\n      \"layer\": 7805,\n      \"layout\": \"string\",\n      \"position\": {\n        \"x\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"y\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"rotation\": 6795.219458393704,\n      \"catalogCategoryTypeItemId\": 754,\n      \"table_meta\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"font_size\": 93.91361877213345,\n      \"group_id\": \"string\",\n      \"isObjectLabelToggled\": true,\n      \"is_locked\": false,\n      \"name\": \"string\",\n      \"number\": 1787,\n      \"objectLabelSize\": 1364.2361379012236,\n      \"objectLabelType\": \"text\",\n      \"object_meta\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"section_id\": \"string\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"string\",\n      \"template_config\": {\n        \"table\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"aisles\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"favorite_id\": \"string\",\n      \"group_rotation\": 8842,\n      \"template_preset_id\": \"string\"\n    }\n  },\n  \"sections\": {\n    \"key_0\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"key_1\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"key_2\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"boundary_visibility\": {\n    \"value\": \"reference #/components/schemas/diagrams__components~1boundary-visibility-diagram-service not found in the OpenAPI spec\"\n  },\n  \"deleted\": true,\n  \"external_diagram_id\": \"string\",\n  \"external_event_id\": \"string\",\n  \"floorPlan\": {\n    \"type\": \"bookableRoom\",\n    \"id\": 6348,\n    \"url\": \"string\",\n    \"background_type\": \"string\"\n  },\n  \"guestlist_id\": \"string\",\n  \"length\": 1825.5782341262022,\n  \"name\": \"string\",\n  \"notes\": \"string\",\n  \"prefunction_perimeter\": 4212.979736197545,\n  \"rotation\": 8408.53299461983,\n  \"service_perimeter\": 8861.21568764084,\n  \"sort_order\": 8587.780495959203,\n  \"table_numbering\": {\n    \"allowRepeats\": false,\n    \"evenOnly\": false,\n    \"oddOnly\": false,\n    \"skipNumbers\": [\n      3251,\n      3632\n    ],\n    \"skipNumbersWith\": [\n      3294,\n      6941\n    ],\n    \"startingNumber\": 4800\n  },\n  \"team_uploads_id\": \"string\",\n  \"update_id\": \"string\",\n  \"width\": 5318.975482686946,\n  \"start_datetime\": \"1949-09-04T17:17:20.790Z\",\n  \"end_datetime\": \"2011-10-11T21:19:51.589Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0b0bb2f-b991-46bc-be56-b950f68321d7",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "259cb7c1-dffa-42b4-bc2c-fac1269b2ce1",
+              "name": "Diagram not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31a6a54a-1155-4419-9129-fc1183aa7a42",
+          "name": "deletes a diagram",
+          "request": {
+            "name": "deletes a diagram",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "diagrams",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "70b4cb38-78f1-4b7d-b742-a7350b9b6de3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "927de329-7ff6-4364-b568-a2b4acaaf2be",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9c8f1757-a21e-4bad-887e-76b4793d14cf",
+              "name": "diagram not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a969a63-0932-4f2b-9ebf-6b27de19e298",
+          "name": "automatically seat array of guest objects at available chairs",
+          "request": {
+            "name": "automatically seat array of guest objects at available chairs",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "diagrams",
+                ":id",
+                "auto-seat"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) id of diagram to seat guests in"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    }\n  ],\n  \"floor_elements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"update_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f34a10ed-0f1d-4282-b6ec-bc386b0e4b01",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "auto-seat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram to seat guests in"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    }\n  ],\n  \"floor_elements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"update_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"guest_seats\": [\n    {\n      \"floor_element_id\": \"string\",\n      \"chair_id\": \"string\",\n      \"guest_id\": \"string\"\n    },\n    {\n      \"floor_element_id\": \"string\",\n      \"chair_id\": \"string\",\n      \"guest_id\": \"string\"\n    }\n  ],\n  \"update_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68110c20-1921-45b5-a997-271e7eec425f",
+              "name": "unable to seat guests, returns an error object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "auto-seat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram to seat guests in"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    }\n  ],\n  \"floor_elements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"update_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "82c448dd-6bd1-4883-8fdd-dd668789ef4a",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "auto-seat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram to seat guests in"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    }\n  ],\n  \"floor_elements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"update_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "022f10ec-dbe3-471b-aeb0-57918ba63a04",
+              "name": "diagram does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "auto-seat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram to seat guests in"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"guests\": [\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"group_id\": \"<string>\"\n    }\n  ],\n  \"floor_elements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"update_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5797ef66-e5cd-4a2f-aa6d-4394a86e2449",
+          "name": "get chair and floor element information for seated guests",
+          "request": {
+            "name": "get chair and floor element information for seated guests",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "diagrams",
+                ":id",
+                "guests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "585c5dd9-e028-4c45-9dac-38d6688e363e",
+              "name": "returns a map of guest ids to chair and fe infos",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "guests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"updated_at\": \"string\",\n  \"created_at\": \"string\",\n  \"chair_count\": 4337,\n  \"space_id\": 7020,\n  \"session_id\": \"string\",\n  \"event_id\": \"string\",\n  \"legacy_event_id\": 5949,\n  \"team_id\": \"string\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"string\",\n      \"dimensions\": {\n        \"width\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"length\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"radius\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"id\": \"string\",\n      \"layer\": 7805,\n      \"layout\": \"string\",\n      \"position\": {\n        \"x\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"y\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"rotation\": 6795.219458393704,\n      \"catalogCategoryTypeItemId\": 754,\n      \"table_meta\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"font_size\": 93.91361877213345,\n      \"group_id\": \"string\",\n      \"isObjectLabelToggled\": true,\n      \"is_locked\": false,\n      \"name\": \"string\",\n      \"number\": 1787,\n      \"objectLabelSize\": 1364.2361379012236,\n      \"objectLabelType\": \"text\",\n      \"object_meta\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"section_id\": \"string\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"string\",\n      \"template_config\": {\n        \"table\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"aisles\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"favorite_id\": \"string\",\n      \"group_rotation\": 8842,\n      \"template_preset_id\": \"string\"\n    }\n  },\n  \"sections\": {\n    \"key_0\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"key_1\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"key_2\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"boundary_visibility\": {\n    \"value\": \"reference #/components/schemas/diagrams__components~1boundary-visibility-diagram-service not found in the OpenAPI spec\"\n  },\n  \"deleted\": true,\n  \"external_diagram_id\": \"string\",\n  \"external_event_id\": \"string\",\n  \"floorPlan\": {\n    \"type\": \"bookableRoom\",\n    \"id\": 6348,\n    \"url\": \"string\",\n    \"background_type\": \"string\"\n  },\n  \"guestlist_id\": \"string\",\n  \"length\": 1825.5782341262022,\n  \"name\": \"string\",\n  \"notes\": \"string\",\n  \"prefunction_perimeter\": 4212.979736197545,\n  \"rotation\": 8408.53299461983,\n  \"service_perimeter\": 8861.21568764084,\n  \"sort_order\": 8587.780495959203,\n  \"table_numbering\": {\n    \"allowRepeats\": false,\n    \"evenOnly\": false,\n    \"oddOnly\": false,\n    \"skipNumbers\": [\n      3251,\n      3632\n    ],\n    \"skipNumbersWith\": [\n      3294,\n      6941\n    ],\n    \"startingNumber\": 4800\n  },\n  \"team_uploads_id\": \"string\",\n  \"update_id\": \"string\",\n  \"width\": 5318.975482686946,\n  \"start_datetime\": \"1949-09-04T17:17:20.790Z\",\n  \"end_datetime\": \"2011-10-11T21:19:51.589Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "273efb37-e438-4260-974d-962e256f1978",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "guests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "624797f8-7115-4516-b9bf-a51b717f3c98",
+              "name": "Diagram not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "guests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae07548e-b5ec-4a4c-9f0d-877c1a9eca92",
+          "name": "Detaches a diagram's guestlist and unseats all guests",
+          "request": {
+            "name": "Detaches a diagram's guestlist and unseats all guests",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "diagrams",
+                ":id",
+                "guests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) id of diagram"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11e62a18-8a83-4400-bd54-982b32e20634",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "guests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "989a1f65-73e1-448c-b627-761101f96359",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "guests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b8b18caa-0783-4cb1-80ea-a65bd85ae40b",
+              "name": "diagram not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "guests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56dd2576-e08c-4e6b-ab5d-d5018cd75c98",
+          "name": "seat guests at specified floor elements in a diagram",
+          "request": {
+            "name": "seat guests at specified floor elements in a diagram",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "diagrams",
+                ":id",
+                "seat"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) id of diagram to seat guests in"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guest_seats\": [\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    },\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    }\n  ],\n  \"update_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d187df04-df0c-4384-bdfc-66bad8eea1b1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "seat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram to seat guests in"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"guest_seats\": [\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    },\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    }\n  ],\n  \"update_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"updated_at\": \"string\",\n  \"created_at\": \"string\",\n  \"chair_count\": 4337,\n  \"space_id\": 7020,\n  \"session_id\": \"string\",\n  \"event_id\": \"string\",\n  \"legacy_event_id\": 5949,\n  \"team_id\": \"string\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"string\",\n      \"dimensions\": {\n        \"width\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"length\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"radius\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"id\": \"string\",\n      \"layer\": 7805,\n      \"layout\": \"string\",\n      \"position\": {\n        \"x\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"y\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"rotation\": 6795.219458393704,\n      \"catalogCategoryTypeItemId\": 754,\n      \"table_meta\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"font_size\": 93.91361877213345,\n      \"group_id\": \"string\",\n      \"isObjectLabelToggled\": true,\n      \"is_locked\": false,\n      \"name\": \"string\",\n      \"number\": 1787,\n      \"objectLabelSize\": 1364.2361379012236,\n      \"objectLabelType\": \"text\",\n      \"object_meta\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"section_id\": \"string\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"string\",\n      \"template_config\": {\n        \"table\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"aisles\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"favorite_id\": \"string\",\n      \"group_rotation\": 8842,\n      \"template_preset_id\": \"string\"\n    }\n  },\n  \"sections\": {\n    \"key_0\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"key_1\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"key_2\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"boundary_visibility\": {\n    \"value\": \"reference #/components/schemas/diagrams__components~1boundary-visibility-diagram-service not found in the OpenAPI spec\"\n  },\n  \"deleted\": true,\n  \"external_diagram_id\": \"string\",\n  \"external_event_id\": \"string\",\n  \"floorPlan\": {\n    \"type\": \"bookableRoom\",\n    \"id\": 6348,\n    \"url\": \"string\",\n    \"background_type\": \"string\"\n  },\n  \"guestlist_id\": \"string\",\n  \"length\": 1825.5782341262022,\n  \"name\": \"string\",\n  \"notes\": \"string\",\n  \"prefunction_perimeter\": 4212.979736197545,\n  \"rotation\": 8408.53299461983,\n  \"service_perimeter\": 8861.21568764084,\n  \"sort_order\": 8587.780495959203,\n  \"table_numbering\": {\n    \"allowRepeats\": false,\n    \"evenOnly\": false,\n    \"oddOnly\": false,\n    \"skipNumbers\": [\n      3251,\n      3632\n    ],\n    \"skipNumbersWith\": [\n      3294,\n      6941\n    ],\n    \"startingNumber\": 4800\n  },\n  \"team_uploads_id\": \"string\",\n  \"update_id\": \"string\",\n  \"width\": 5318.975482686946,\n  \"start_datetime\": \"1949-09-04T17:17:20.790Z\",\n  \"end_datetime\": \"2011-10-11T21:19:51.589Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3ef474f-f73f-4ab1-9ab2-c7156300c823",
+              "name": "seating data is not valid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "seat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram to seat guests in"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"guest_seats\": [\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    },\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    }\n  ],\n  \"update_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51fba021-6d2e-4732-8f48-775d3058b487",
+              "name": "unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "seat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram to seat guests in"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"guest_seats\": [\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    },\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    }\n  ],\n  \"update_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6cd03ba1-d0f3-43ee-b486-118f7e95c9fe",
+              "name": "diagram does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    ":id",
+                    "seat"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) id of diagram to seat guests in"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"guest_seats\": [\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    },\n    {\n      \"floor_element_id\": \"<string>\",\n      \"chair_id\": \"<string>\",\n      \"guest_id\": \"<string>\"\n    }\n  ],\n  \"update_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c9a6c62-dfed-48ec-953c-0d0ed272a106",
+          "name": "Get a diagram by its guestlist ID",
+          "request": {
+            "name": "Get a diagram by its guestlist ID",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "diagrams",
+                "guestlist",
+                ":guestlistId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "guestlistId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "320907e2-9744-443a-863b-0ed46b457d0b",
+              "name": "returns a diagram",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    "guestlist",
+                    ":guestlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlistId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"updated_at\": \"string\",\n  \"created_at\": \"string\",\n  \"chair_count\": 4337,\n  \"space_id\": 7020,\n  \"session_id\": \"string\",\n  \"event_id\": \"string\",\n  \"legacy_event_id\": 5949,\n  \"team_id\": \"string\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"string\",\n      \"dimensions\": {\n        \"width\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"length\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"radius\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"id\": \"string\",\n      \"layer\": 7805,\n      \"layout\": \"string\",\n      \"position\": {\n        \"x\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"y\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"rotation\": 6795.219458393704,\n      \"catalogCategoryTypeItemId\": 754,\n      \"table_meta\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"font_size\": 93.91361877213345,\n      \"group_id\": \"string\",\n      \"isObjectLabelToggled\": true,\n      \"is_locked\": false,\n      \"name\": \"string\",\n      \"number\": 1787,\n      \"objectLabelSize\": 1364.2361379012236,\n      \"objectLabelType\": \"text\",\n      \"object_meta\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"section_id\": \"string\"\n    }\n  },\n  \"groups\": {\n    \"key_0\": {\n      \"id\": \"string\",\n      \"template_config\": {\n        \"table\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"aisles\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"favorite_id\": \"string\",\n      \"group_rotation\": 8842,\n      \"template_preset_id\": \"string\"\n    }\n  },\n  \"sections\": {\n    \"key_0\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"key_1\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"key_2\": {\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"template_config\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"boundary_visibility\": {\n    \"value\": \"reference #/components/schemas/diagrams__components~1boundary-visibility-diagram-service not found in the OpenAPI spec\"\n  },\n  \"deleted\": true,\n  \"external_diagram_id\": \"string\",\n  \"external_event_id\": \"string\",\n  \"floorPlan\": {\n    \"type\": \"bookableRoom\",\n    \"id\": 6348,\n    \"url\": \"string\",\n    \"background_type\": \"string\"\n  },\n  \"guestlist_id\": \"string\",\n  \"length\": 1825.5782341262022,\n  \"name\": \"string\",\n  \"notes\": \"string\",\n  \"prefunction_perimeter\": 4212.979736197545,\n  \"rotation\": 8408.53299461983,\n  \"service_perimeter\": 8861.21568764084,\n  \"sort_order\": 8587.780495959203,\n  \"table_numbering\": {\n    \"allowRepeats\": false,\n    \"evenOnly\": false,\n    \"oddOnly\": false,\n    \"skipNumbers\": [\n      3251,\n      3632\n    ],\n    \"skipNumbersWith\": [\n      3294,\n      6941\n    ],\n    \"startingNumber\": 4800\n  },\n  \"team_uploads_id\": \"string\",\n  \"update_id\": \"string\",\n  \"width\": 5318.975482686946,\n  \"start_datetime\": \"1949-09-04T17:17:20.790Z\",\n  \"end_datetime\": \"2011-10-11T21:19:51.589Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e46e5d9-24d4-4a36-b445-1e7b434fc102",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    "guestlist",
+                    ":guestlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlistId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "559b8d75-8dcd-4b0d-903a-5e6f5c432641",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    "guestlist",
+                    ":guestlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlistId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a9258de2-3cbd-40d9-ab56-ce7d649404e1",
+              "name": "Diagram not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "diagrams",
+                    "guestlist",
+                    ":guestlistId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "guestlistId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "856f2e5a-cf9a-4746-9895-ebd2f6e338e3",
+    "name": "Social Tables API Gateway Authentication Diagrams API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

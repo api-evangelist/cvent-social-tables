@@ -1,0 +1,1000 @@
+{
+  "item": [
+    {
+      "id": "20940cd8-75b7-4ba8-ac43-c4ca7e07d2c9",
+      "name": "Diagram Template Presets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3510cc43-0f57-451a-b4a9-9f7f9bf8b401",
+          "name": "get multiple template presets",
+          "request": {
+            "name": "get multiple template presets",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "template-presets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "team",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "setup",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "propertyId",
+                  "value": "<string>",
+                  "description": "filters by property id, excludes presets associated with a property if 'null'"
+                },
+                {
+                  "disabled": false,
+                  "key": "catalogItemId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4d4a645c-c953-477b-b982-a1be8af911f0",
+              "name": "returns an array of template-presets",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "setup",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "propertyId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "catalogItemId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"definition\": {\n      \"template_config\": {\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": 9444.044304358758\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 2314,\n          \"cols\": 7613\n        },\n        \"setup\": \"string\",\n        \"chevronAngle\": 8676,\n        \"chairs\": 623,\n        \"chairOrientation\": \"string\",\n        \"chairType\": \"string\",\n        \"column\": {\n          \"spacing\": 1884.171161486261\n        },\n        \"floorElementType\": \"string\",\n        \"chairSides\": {\n          \"side_1_count\": 5555,\n          \"side_2_count\": 100,\n          \"side_3_count\": 2407,\n          \"side_4_count\": 3871\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": 8835.831225028667,\n        \"relativeRotation\": 3626.1863168956456,\n        \"locations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\"\n        },\n        \"theaterCurve\": 5483,\n        \"theaterChairNumberOffset\": 9863.760292330982,\n        \"theaterChairNumberIsOddEven\": \"string\",\n        \"theaterChairNumberIsReverse\": true,\n        \"theaterChairNumbersOmitted\": [\n          402,\n          2130\n        ],\n        \"sectionName\": \"string\",\n        \"sectionLabelling\": \"alphabetical\",\n        \"sectionLabellingRowOffset\": 2000.7079139593675,\n        \"sectionLabellingRowIsReverse\": false,\n        \"sectionLabellingRowsOmitted\": [\n          6105,\n          3026\n        ],\n        \"catalogCategoryTypeItemId\": 1000,\n        \"chairCatalogCategoryTypeItemId\": 9478,\n        \"removedSeats\": 9778,\n        \"color\": \"string\"\n      }\n    },\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"owner_id\": \"string\",\n    \"name\": \"string\",\n    \"legacy_property_id\": 6780\n  },\n  {\n    \"definition\": {\n      \"template_config\": {\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": 1827.0813064210467\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": 6604,\n          \"cols\": 1633\n        },\n        \"setup\": \"string\",\n        \"chevronAngle\": 1960,\n        \"chairs\": 9247,\n        \"chairOrientation\": \"string\",\n        \"chairType\": \"string\",\n        \"column\": {\n          \"spacing\": 6550.133791903726\n        },\n        \"floorElementType\": \"string\",\n        \"chairSides\": {\n          \"side_1_count\": 8004,\n          \"side_2_count\": 2651,\n          \"side_3_count\": 8954,\n          \"side_4_count\": 9923\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": 8074.539660264609,\n        \"relativeRotation\": 193.08547142890765,\n        \"locations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        },\n        \"theaterCurve\": 9249,\n        \"theaterChairNumberOffset\": 149.42159577005953,\n        \"theaterChairNumberIsOddEven\": \"string\",\n        \"theaterChairNumberIsReverse\": false,\n        \"theaterChairNumbersOmitted\": [\n          1440,\n          2742\n        ],\n        \"sectionName\": \"string\",\n        \"sectionLabelling\": \"numerical\",\n        \"sectionLabellingRowOffset\": 290.3660604158143,\n        \"sectionLabellingRowIsReverse\": true,\n        \"sectionLabellingRowsOmitted\": [\n          4031,\n          5928\n        ],\n        \"catalogCategoryTypeItemId\": 3891,\n        \"chairCatalogCategoryTypeItemId\": 6789,\n        \"removedSeats\": 7167,\n        \"color\": \"string\"\n      }\n    },\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"owner_id\": \"string\",\n    \"name\": \"string\",\n    \"legacy_property_id\": 2480\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6e1d288-5db5-49b9-bbc8-93fd949b9077",
+              "name": "validation error must specify either user or team",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "setup",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "propertyId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "catalogItemId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b59d3163-dfcf-405b-8987-7b7ec7bda7a5",
+              "name": "authorization missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "setup",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "propertyId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "catalogItemId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "26a5ab60-fbd6-409a-9c05-cf2e81db355f",
+          "name": "inserts a template preset",
+          "request": {
+            "name": "inserts a template preset",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "template-presets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "event_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"definition\": {\n    \"template_config\": \"<object>\"\n  },\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"owner_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d0c1808a-c40d-417b-8496-666fb1f312aa",
+              "name": "inserted template preset with id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definition\": {\n    \"template_config\": {\n      \"table\": {\n        \"size\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"spacing\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rotation\": \"<number>\"\n      },\n      \"aisles\": {\n        \"vertical\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"horizontal\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"meta\": {\n        \"rows\": \"<integer>\",\n        \"cols\": \"<integer>\"\n      },\n      \"setup\": \"<string>\",\n      \"chevronAngle\": \"<integer>\",\n      \"chairs\": \"<integer>\",\n      \"chairOrientation\": \"<string>\",\n      \"chairType\": \"<string>\",\n      \"column\": {\n        \"spacing\": \"<number>\"\n      },\n      \"floorElementType\": \"<string>\",\n      \"chairSides\": {\n        \"side_1_count\": \"<integer>\",\n        \"side_2_count\": \"<integer>\",\n        \"side_3_count\": \"<integer>\",\n        \"side_4_count\": \"<integer>\"\n      },\n      \"chair\": {\n        \"size\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"rotation\": \"<number>\",\n      \"relativeRotation\": \"<number>\",\n      \"locations\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"theaterCurve\": \"<integer>\",\n      \"theaterChairNumberOffset\": \"<number>\",\n      \"theaterChairNumberIsOddEven\": \"<string>\",\n      \"theaterChairNumberIsReverse\": \"<boolean>\",\n      \"theaterChairNumbersOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"sectionName\": \"<string>\",\n      \"sectionLabelling\": \"<string>\",\n      \"sectionLabellingRowOffset\": \"<number>\",\n      \"sectionLabellingRowIsReverse\": \"<boolean>\",\n      \"sectionLabellingRowsOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n      \"removedSeats\": \"<integer>\",\n      \"color\": \"<string>\"\n    }\n  },\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"owner_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"definition\": {\n    \"template_config\": {\n      \"table\": {\n        \"size\": {\n          \"width\": 8563.457057873558,\n          \"length\": 3956.3910399857605,\n          \"radius\": 3557.4956949993284\n        },\n        \"spacing\": {\n          \"x\": 3184.2348508291175,\n          \"y\": 4409.603569825334\n        },\n        \"rotation\": \"<number>\"\n      },\n      \"aisles\": {\n        \"vertical\": {\n          \"width\": 1659.8194148792256,\n          \"floorElementsBetween\": 4229.097516037386\n        },\n        \"horizontal\": {\n          \"width\": 2581.3849729351236,\n          \"floorElementsBetween\": 9720.680039697038\n        }\n      },\n      \"meta\": {\n        \"rows\": \"<integer>\",\n        \"cols\": \"<integer>\"\n      },\n      \"setup\": \"<string>\",\n      \"chevronAngle\": \"<integer>\",\n      \"chairs\": \"<integer>\",\n      \"chairOrientation\": \"<string>\",\n      \"chairType\": \"<string>\",\n      \"column\": {\n        \"spacing\": \"<number>\"\n      },\n      \"floorElementType\": \"<string>\",\n      \"chairSides\": {\n        \"side_1_count\": \"<integer>\",\n        \"side_2_count\": \"<integer>\",\n        \"side_3_count\": \"<integer>\",\n        \"side_4_count\": \"<integer>\"\n      },\n      \"chair\": {\n        \"size\": {\n          \"width\": 7042.93983624239,\n          \"length\": 5034.674739646889,\n          \"radius\": 1859.204858288327\n        }\n      },\n      \"rotation\": \"<number>\",\n      \"relativeRotation\": \"<number>\",\n      \"locations\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"theaterCurve\": \"<integer>\",\n      \"theaterChairNumberOffset\": \"<number>\",\n      \"theaterChairNumberIsOddEven\": \"<string>\",\n      \"theaterChairNumberIsReverse\": \"<boolean>\",\n      \"theaterChairNumbersOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"sectionName\": \"<string>\",\n      \"sectionLabelling\": \"<string>\",\n      \"sectionLabellingRowOffset\": \"<number>\",\n      \"sectionLabellingRowIsReverse\": \"<boolean>\",\n      \"sectionLabellingRowsOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n      \"removedSeats\": \"<integer>\",\n      \"color\": \"<string>\"\n    }\n  },\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"owner_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8e2f4f6-4d29-4d54-aabc-38f4631ae321",
+              "name": "template preset not valid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definition\": {\n    \"template_config\": {\n      \"table\": {\n        \"size\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"spacing\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rotation\": \"<number>\"\n      },\n      \"aisles\": {\n        \"vertical\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"horizontal\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"meta\": {\n        \"rows\": \"<integer>\",\n        \"cols\": \"<integer>\"\n      },\n      \"setup\": \"<string>\",\n      \"chevronAngle\": \"<integer>\",\n      \"chairs\": \"<integer>\",\n      \"chairOrientation\": \"<string>\",\n      \"chairType\": \"<string>\",\n      \"column\": {\n        \"spacing\": \"<number>\"\n      },\n      \"floorElementType\": \"<string>\",\n      \"chairSides\": {\n        \"side_1_count\": \"<integer>\",\n        \"side_2_count\": \"<integer>\",\n        \"side_3_count\": \"<integer>\",\n        \"side_4_count\": \"<integer>\"\n      },\n      \"chair\": {\n        \"size\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"rotation\": \"<number>\",\n      \"relativeRotation\": \"<number>\",\n      \"locations\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"theaterCurve\": \"<integer>\",\n      \"theaterChairNumberOffset\": \"<number>\",\n      \"theaterChairNumberIsOddEven\": \"<string>\",\n      \"theaterChairNumberIsReverse\": \"<boolean>\",\n      \"theaterChairNumbersOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"sectionName\": \"<string>\",\n      \"sectionLabelling\": \"<string>\",\n      \"sectionLabellingRowOffset\": \"<number>\",\n      \"sectionLabellingRowIsReverse\": \"<boolean>\",\n      \"sectionLabellingRowsOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n      \"removedSeats\": \"<integer>\",\n      \"color\": \"<string>\"\n    }\n  },\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"owner_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a85a86d-b136-4843-8076-47d808dcd7e9",
+              "name": "authorization missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"definition\": {\n    \"template_config\": {\n      \"table\": {\n        \"size\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"spacing\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rotation\": \"<number>\"\n      },\n      \"aisles\": {\n        \"vertical\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"horizontal\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"meta\": {\n        \"rows\": \"<integer>\",\n        \"cols\": \"<integer>\"\n      },\n      \"setup\": \"<string>\",\n      \"chevronAngle\": \"<integer>\",\n      \"chairs\": \"<integer>\",\n      \"chairOrientation\": \"<string>\",\n      \"chairType\": \"<string>\",\n      \"column\": {\n        \"spacing\": \"<number>\"\n      },\n      \"floorElementType\": \"<string>\",\n      \"chairSides\": {\n        \"side_1_count\": \"<integer>\",\n        \"side_2_count\": \"<integer>\",\n        \"side_3_count\": \"<integer>\",\n        \"side_4_count\": \"<integer>\"\n      },\n      \"chair\": {\n        \"size\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"rotation\": \"<number>\",\n      \"relativeRotation\": \"<number>\",\n      \"locations\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"theaterCurve\": \"<integer>\",\n      \"theaterChairNumberOffset\": \"<number>\",\n      \"theaterChairNumberIsOddEven\": \"<string>\",\n      \"theaterChairNumberIsReverse\": \"<boolean>\",\n      \"theaterChairNumbersOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"sectionName\": \"<string>\",\n      \"sectionLabelling\": \"<string>\",\n      \"sectionLabellingRowOffset\": \"<number>\",\n      \"sectionLabellingRowIsReverse\": \"<boolean>\",\n      \"sectionLabellingRowsOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n      \"removedSeats\": \"<integer>\",\n      \"color\": \"<string>\"\n    }\n  },\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"owner_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35f93ec2-7a4d-40da-b46f-95f830921705",
+          "name": "get a template preset by id",
+          "request": {
+            "name": "get a template preset by id",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "template-presets",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba162bcd-b837-4cbf-92b0-d0e18350ed30",
+              "name": "returns a template presets",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"definition\": {\n    \"template_config\": {\n      \"table\": {\n        \"size\": {\n          \"width\": 8563.457057873558,\n          \"length\": 3956.3910399857605,\n          \"radius\": 3557.4956949993284\n        },\n        \"spacing\": {\n          \"x\": 3184.2348508291175,\n          \"y\": 4409.603569825334\n        },\n        \"rotation\": \"<number>\"\n      },\n      \"aisles\": {\n        \"vertical\": {\n          \"width\": 1659.8194148792256,\n          \"floorElementsBetween\": 4229.097516037386\n        },\n        \"horizontal\": {\n          \"width\": 2581.3849729351236,\n          \"floorElementsBetween\": 9720.680039697038\n        }\n      },\n      \"meta\": {\n        \"rows\": \"<integer>\",\n        \"cols\": \"<integer>\"\n      },\n      \"setup\": \"<string>\",\n      \"chevronAngle\": \"<integer>\",\n      \"chairs\": \"<integer>\",\n      \"chairOrientation\": \"<string>\",\n      \"chairType\": \"<string>\",\n      \"column\": {\n        \"spacing\": \"<number>\"\n      },\n      \"floorElementType\": \"<string>\",\n      \"chairSides\": {\n        \"side_1_count\": \"<integer>\",\n        \"side_2_count\": \"<integer>\",\n        \"side_3_count\": \"<integer>\",\n        \"side_4_count\": \"<integer>\"\n      },\n      \"chair\": {\n        \"size\": {\n          \"width\": 7042.93983624239,\n          \"length\": 5034.674739646889,\n          \"radius\": 1859.204858288327\n        }\n      },\n      \"rotation\": \"<number>\",\n      \"relativeRotation\": \"<number>\",\n      \"locations\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"theaterCurve\": \"<integer>\",\n      \"theaterChairNumberOffset\": \"<number>\",\n      \"theaterChairNumberIsOddEven\": \"<string>\",\n      \"theaterChairNumberIsReverse\": \"<boolean>\",\n      \"theaterChairNumbersOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"sectionName\": \"<string>\",\n      \"sectionLabelling\": \"<string>\",\n      \"sectionLabellingRowOffset\": \"<number>\",\n      \"sectionLabellingRowIsReverse\": \"<boolean>\",\n      \"sectionLabellingRowsOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n      \"removedSeats\": \"<integer>\",\n      \"color\": \"<string>\"\n    }\n  },\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"owner_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a651b112-783b-49f1-92da-2e7fc8db0a7f",
+              "name": "authorization missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7a023272-1301-43f3-8d5c-a0fedf4eb71e",
+              "name": "template preset not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36f1b26a-05b9-48a0-852a-c1415b3d8546",
+          "name": "deletes a template preset",
+          "request": {
+            "name": "deletes a template preset",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "template-presets",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "event_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b5894f6-9f21-4966-ae54-943239ed0073",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d30705c1-1924-4cc0-8a6d-220e57f3a988",
+              "name": "authorization missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "566b7582-c4aa-4345-9df9-fd6c8b79cc92",
+              "name": "template preset not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3860978f-31a8-4b24-ad2a-c42e7f9bacb5",
+          "name": "updates a template preset",
+          "request": {
+            "name": "updates a template preset",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "template-presets",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "event_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"definition\": {\n      \"template_config\": \"<object>\"\n    },\n    \"id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"owner_id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"legacy_property_id\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fd0bfde6-0951-4f7e-aab3-8cc78f01ad5d",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"definition\": {\n      \"template_config\": {\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": \"<integer>\",\n          \"cols\": \"<integer>\"\n        },\n        \"setup\": \"<string>\",\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      }\n    },\n    \"id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"owner_id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"legacy_property_id\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"definition\": {\n    \"template_config\": {\n      \"table\": {\n        \"size\": {\n          \"width\": 8563.457057873558,\n          \"length\": 3956.3910399857605,\n          \"radius\": 3557.4956949993284\n        },\n        \"spacing\": {\n          \"x\": 3184.2348508291175,\n          \"y\": 4409.603569825334\n        },\n        \"rotation\": \"<number>\"\n      },\n      \"aisles\": {\n        \"vertical\": {\n          \"width\": 1659.8194148792256,\n          \"floorElementsBetween\": 4229.097516037386\n        },\n        \"horizontal\": {\n          \"width\": 2581.3849729351236,\n          \"floorElementsBetween\": 9720.680039697038\n        }\n      },\n      \"meta\": {\n        \"rows\": \"<integer>\",\n        \"cols\": \"<integer>\"\n      },\n      \"setup\": \"<string>\",\n      \"chevronAngle\": \"<integer>\",\n      \"chairs\": \"<integer>\",\n      \"chairOrientation\": \"<string>\",\n      \"chairType\": \"<string>\",\n      \"column\": {\n        \"spacing\": \"<number>\"\n      },\n      \"floorElementType\": \"<string>\",\n      \"chairSides\": {\n        \"side_1_count\": \"<integer>\",\n        \"side_2_count\": \"<integer>\",\n        \"side_3_count\": \"<integer>\",\n        \"side_4_count\": \"<integer>\"\n      },\n      \"chair\": {\n        \"size\": {\n          \"width\": 7042.93983624239,\n          \"length\": 5034.674739646889,\n          \"radius\": 1859.204858288327\n        }\n      },\n      \"rotation\": \"<number>\",\n      \"relativeRotation\": \"<number>\",\n      \"locations\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"theaterCurve\": \"<integer>\",\n      \"theaterChairNumberOffset\": \"<number>\",\n      \"theaterChairNumberIsOddEven\": \"<string>\",\n      \"theaterChairNumberIsReverse\": \"<boolean>\",\n      \"theaterChairNumbersOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"sectionName\": \"<string>\",\n      \"sectionLabelling\": \"<string>\",\n      \"sectionLabellingRowOffset\": \"<number>\",\n      \"sectionLabellingRowIsReverse\": \"<boolean>\",\n      \"sectionLabellingRowsOmitted\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n      \"removedSeats\": \"<integer>\",\n      \"color\": \"<string>\"\n    }\n  },\n  \"id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"owner_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "facc7e56-df42-4747-904e-6c5449ae67e1",
+              "name": "template preset update not valid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"definition\": {\n      \"template_config\": {\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": \"<integer>\",\n          \"cols\": \"<integer>\"\n        },\n        \"setup\": \"<string>\",\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      }\n    },\n    \"id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"owner_id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"legacy_property_id\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "57bcdfa0-3ca3-4b1c-947c-d78ce134c38c",
+              "name": "authorization missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "template-presets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"definition\": {\n      \"template_config\": {\n        \"table\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"spacing\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"rotation\": \"<number>\"\n        },\n        \"aisles\": {\n          \"vertical\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"horizontal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"meta\": {\n          \"rows\": \"<integer>\",\n          \"cols\": \"<integer>\"\n        },\n        \"setup\": \"<string>\",\n        \"chevronAngle\": \"<integer>\",\n        \"chairs\": \"<integer>\",\n        \"chairOrientation\": \"<string>\",\n        \"chairType\": \"<string>\",\n        \"column\": {\n          \"spacing\": \"<number>\"\n        },\n        \"floorElementType\": \"<string>\",\n        \"chairSides\": {\n          \"side_1_count\": \"<integer>\",\n          \"side_2_count\": \"<integer>\",\n          \"side_3_count\": \"<integer>\",\n          \"side_4_count\": \"<integer>\"\n        },\n        \"chair\": {\n          \"size\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"rotation\": \"<number>\",\n        \"relativeRotation\": \"<number>\",\n        \"locations\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        },\n        \"theaterCurve\": \"<integer>\",\n        \"theaterChairNumberOffset\": \"<number>\",\n        \"theaterChairNumberIsOddEven\": \"<string>\",\n        \"theaterChairNumberIsReverse\": \"<boolean>\",\n        \"theaterChairNumbersOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"sectionName\": \"<string>\",\n        \"sectionLabelling\": \"<string>\",\n        \"sectionLabellingRowOffset\": \"<number>\",\n        \"sectionLabellingRowIsReverse\": \"<boolean>\",\n        \"sectionLabellingRowsOmitted\": [\n          \"<integer>\",\n          \"<integer>\"\n        ],\n        \"catalogCategoryTypeItemId\": \"<integer>\",\n        \"chairCatalogCategoryTypeItemId\": \"<integer>\",\n        \"removedSeats\": \"<integer>\",\n        \"color\": \"<string>\"\n      }\n    },\n    \"id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"owner_id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"legacy_property_id\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dd5d499d-5ef9-40b3-9c38-6720c8775e0b",
+    "name": "Social Tables API Gateway Authentication Diagram Template Presets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

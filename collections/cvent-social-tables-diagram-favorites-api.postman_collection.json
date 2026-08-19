@@ -1,0 +1,701 @@
+{
+  "item": [
+    {
+      "id": "87ae7be5-18f7-45fc-adbd-e698f8285209",
+      "name": "Diagram Favorites",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b24e5d03-8201-4933-bfbf-12fceba0d1fa",
+          "name": "get multiple favorites",
+          "request": {
+            "name": "get multiple favorites",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "favorites"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "user",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "team",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38a5695f-0d56-4aad-878a-b59f14e341b9",
+              "name": "returns an array of favorites",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"floor_elements\": {\n      \"key_0\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 7825.897082959434,\n          \"length\": 1167.9406145988157,\n          \"radius\": 9574.065782689107\n        },\n        \"id\": \"string\",\n        \"layer\": 8127,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 2124.3099410790587,\n          \"y\": 181.17394132615038\n        },\n        \"rotation\": 3915.1111956574237,\n        \"catalogCategoryTypeItemId\": 9574,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 4091.5280329075863,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": true,\n        \"is_locked\": true,\n        \"name\": \"string\",\n        \"number\": 9710,\n        \"objectLabelSize\": 4314.524574947201,\n        \"objectLabelType\": \"text\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      },\n      \"key_1\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 5078.9445361918815,\n          \"length\": 910.0678731198741,\n          \"radius\": 310.6398841634506\n        },\n        \"id\": \"string\",\n        \"layer\": 4508,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 8125.822318164515,\n          \"y\": 6403.6804795519\n        },\n        \"rotation\": 2945.173825570341,\n        \"catalogCategoryTypeItemId\": 8058,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 8451.114399435848,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": false,\n        \"is_locked\": true,\n        \"name\": \"string\",\n        \"number\": 1340,\n        \"objectLabelSize\": 411.45782143561905,\n        \"objectLabelType\": \"icon\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      },\n      \"key_2\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 4743.680877383621,\n          \"length\": 562.7897974968143,\n          \"radius\": 2042.6407232231159\n        },\n        \"id\": \"string\",\n        \"layer\": 1927,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 4647.862091921984,\n          \"y\": 7801.835882471272\n        },\n        \"rotation\": 6185.242439488589,\n        \"catalogCategoryTypeItemId\": 8372,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 4980.05493113891,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": true,\n        \"is_locked\": false,\n        \"name\": \"string\",\n        \"number\": 6946,\n        \"objectLabelSize\": 9996.563325548557,\n        \"objectLabelType\": \"icon\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      }\n    },\n    \"user_id\": \"string\",\n    \"legacy_user_id\": 2053,\n    \"team_id\": \"string\",\n    \"legacy_team_id\": 1393,\n    \"space_id\": 3236,\n    \"legacy_property_id\": 7270\n  },\n  {\n    \"name\": \"string\",\n    \"floor_elements\": {\n      \"key_0\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 2154.887368828271,\n          \"length\": 1614.4227766641784,\n          \"radius\": 7459.463617931387\n        },\n        \"id\": \"string\",\n        \"layer\": 6825,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 6395.488616644749,\n          \"y\": 2912.1601645080773\n        },\n        \"rotation\": 5185.498183276953,\n        \"catalogCategoryTypeItemId\": 3618,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 1364.3021916649345,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": false,\n        \"is_locked\": false,\n        \"name\": \"string\",\n        \"number\": 5424,\n        \"objectLabelSize\": 6483.134743732365,\n        \"objectLabelType\": \"icon\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      },\n      \"key_1\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 523.3596752712666,\n          \"length\": 3174.5911933875414,\n          \"radius\": 8208.853343383074\n        },\n        \"id\": \"string\",\n        \"layer\": 2877,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 2015.5843312483412,\n          \"y\": 2050.4627995015335\n        },\n        \"rotation\": 1488.880002150923,\n        \"catalogCategoryTypeItemId\": 101,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 2055.2684385622965,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": false,\n        \"is_locked\": false,\n        \"name\": \"string\",\n        \"number\": 6570,\n        \"objectLabelSize\": 8019.889572815333,\n        \"objectLabelType\": \"icon\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      },\n      \"key_2\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 9361.089534705263,\n          \"length\": 6858.860254625199,\n          \"radius\": 2848.420007129917\n        },\n        \"id\": \"string\",\n        \"layer\": 9516,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 6405.965002598127,\n          \"y\": 3065.973192826258\n        },\n        \"rotation\": 5399.971837028602,\n        \"catalogCategoryTypeItemId\": 2615,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 4226.114154546991,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": false,\n        \"is_locked\": false,\n        \"name\": \"string\",\n        \"number\": 5178,\n        \"objectLabelSize\": 4659.736810104171,\n        \"objectLabelType\": \"text\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      },\n      \"key_3\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 2349.1683473110024,\n          \"length\": 9042.437055791273,\n          \"radius\": 187.9819783444925\n        },\n        \"id\": \"string\",\n        \"layer\": 7407,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 272.7672450762941,\n          \"y\": 3768.4112904363874\n        },\n        \"rotation\": 355.68194706798727,\n        \"catalogCategoryTypeItemId\": 5697,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 6963.603195125382,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": true,\n        \"is_locked\": false,\n        \"name\": \"string\",\n        \"number\": 4161,\n        \"objectLabelSize\": 2085.5056201324905,\n        \"objectLabelType\": \"icon\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      },\n      \"key_4\": {\n        \"color\": \"string\",\n        \"dimensions\": {\n          \"width\": 9428.382556428494,\n          \"length\": 9828.13882611281,\n          \"radius\": 3605.7135165548184\n        },\n        \"id\": \"string\",\n        \"layer\": 7416,\n        \"layout\": \"string\",\n        \"position\": {\n          \"x\": 6877.501345892118,\n          \"y\": 8975.631436075057\n        },\n        \"rotation\": 9282.214053757334,\n        \"catalogCategoryTypeItemId\": 124,\n        \"table_meta\": {\n          \"chairs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"font_size\": 8211.88186998091,\n        \"group_id\": \"string\",\n        \"isObjectLabelToggled\": true,\n        \"is_locked\": true,\n        \"name\": \"string\",\n        \"number\": 1389,\n        \"objectLabelSize\": 4103.257395975148,\n        \"objectLabelType\": \"icon\",\n        \"object_meta\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"section_id\": \"string\"\n      }\n    },\n    \"user_id\": \"string\",\n    \"legacy_user_id\": 4923,\n    \"team_id\": \"string\",\n    \"legacy_team_id\": 9372,\n    \"space_id\": 2478,\n    \"legacy_property_id\": 3397\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d8b7e3b-0d9a-422d-bfce-8f16854aa7ef",
+              "name": "validation error must specify either user and / or team",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "user",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38a3e049-71e3-41c5-9225-7929b6259b4f",
+          "name": "inserts a favorite",
+          "request": {
+            "name": "inserts a favorite",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "favorites",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": \"<object>\",\n    \"key_1\": \"<object>\"\n  },\n  \"user_id\": \"<string>\",\n  \"legacy_user_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95ee5e37-83ce-4b13-bb0c-6f4a8d50effa",
+              "name": "inserted favorite with id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"user_id\": \"<string>\",\n  \"legacy_user_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"user_id\": \"<string>\",\n  \"legacy_user_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc945b05-2f04-4c71-8c4f-9c66dbe66124",
+              "name": "favorite not valid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"user_id\": \"<string>\",\n  \"legacy_user_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1523d0fe-50c5-4680-8f94-e187caf76374",
+              "name": "created a favorite with an existing name",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"user_id\": \"<string>\",\n  \"legacy_user_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "605db75e-d68a-4850-97bd-9f9ced9606bf",
+          "name": "updates a favorite",
+          "request": {
+            "name": "updates a favorite",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "favorites",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"name\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "50508194-8b0a-435f-a82b-fe2d81665306",
+              "name": "success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"name\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"user_id\": \"<string>\",\n  \"legacy_user_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe67105f-9288-41b5-a7ad-8ff8d3a46842",
+              "name": "favorite update not valid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"name\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef8d4076-f3f5-4757-8f77-8abdcdb41b80",
+          "name": "get a favorite by ID",
+          "request": {
+            "name": "get a favorite by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "favorites",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f089ac8-f48a-4301-9c90-25b8cce1d3aa",
+              "name": "returns a favorite",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"floor_elements\": {\n    \"key_0\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"key_1\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    },\n    \"key_1\": {\n      \"color\": \"<string>\",\n      \"dimensions\": {\n        \"width\": \"<number>\",\n        \"length\": \"<number>\",\n        \"radius\": \"<number>\"\n      },\n      \"id\": \"<string>\",\n      \"layer\": \"<integer>\",\n      \"layout\": \"<string>\",\n      \"position\": {\n        \"x\": \"<number>\",\n        \"y\": \"<number>\"\n      },\n      \"rotation\": \"<number>\",\n      \"catalogCategoryTypeItemId\": \"<integer>\",\n      \"table_meta\": {\n        \"chairs\": {\n          \"key_0\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"removed\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"theater_curve\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSeatNumbering\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"useCustomSectionLabelling\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"font_size\": \"<number>\",\n      \"group_id\": \"<string>\",\n      \"isObjectLabelToggled\": \"<boolean>\",\n      \"is_locked\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"number\": \"<integer>\",\n      \"objectLabelSize\": \"<number>\",\n      \"objectLabelType\": \"<string>\",\n      \"object_meta\": {\n        \"image\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"path_def\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"legacy_id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"steps\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_thickness\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tile_dimensions\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"rope_number\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"connections\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"projector_image_type\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"line_endpoints\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"tents\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"section_id\": \"<string>\"\n    }\n  },\n  \"user_id\": \"<string>\",\n  \"legacy_user_id\": \"<integer>\",\n  \"team_id\": \"<string>\",\n  \"legacy_team_id\": \"<integer>\",\n  \"space_id\": \"<integer>\",\n  \"legacy_property_id\": \"<integer>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e2b2859-2699-48e5-9e1c-abc179ffba11",
+              "name": "favorite not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ba59370-dfe6-4ca9-802b-65f59bbe25ab",
+          "name": "deletes a favorite",
+          "request": {
+            "name": "deletes a favorite",
+            "description": {},
+            "url": {
+              "path": [
+                "4.0",
+                "favorites",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94fef4c1-ca9b-4602-9919-454e5556ca3b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a79efddc-4433-4b69-8bcf-c7a3e9ac00fe",
+              "name": "favorite not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "4.0",
+                    "favorites",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "//api.socialtables.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4809883e-d48f-4b37-be7f-9277fc16d22e",
+    "name": "Social Tables API Gateway Authentication Diagram Favorites API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Social Tables API",
+      "type": "text/plain"
+    }
+  }
+}

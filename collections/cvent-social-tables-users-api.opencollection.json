@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Users API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get users for a given team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/teams/:team_id/users",
+            "params": [
+              {
+                "name": "team_id",
+                "value": "",
+                "type": "path",
+                "description": "team ID"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "page size"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "cursor for paging"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "before cursor for backpaging"
+              }
+            ]
+          },
+          "docs": "get users for a given team"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

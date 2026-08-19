@@ -1,0 +1,220 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Diagrams API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Diagrams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get multiple diagrams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/diagrams",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "event",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "space",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "guestlist",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "legacy_event",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_diagram_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_event_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get multiple diagrams"
+        },
+        {
+          "info": {
+            "name": "get a diagram by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/diagrams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get a diagram by ID"
+        },
+        {
+          "info": {
+            "name": "deletes a diagram",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/diagrams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "deletes a diagram"
+        },
+        {
+          "info": {
+            "name": "automatically seat array of guest objects at available chairs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/diagrams/:id/auto-seat",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of diagram to seat guests in"
+              }
+            ]
+          },
+          "docs": "automatically seat array of guest objects at available chairs"
+        },
+        {
+          "info": {
+            "name": "get chair and floor element information for seated guests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/diagrams/:id/guests",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "get chair and floor element information for seated guests"
+        },
+        {
+          "info": {
+            "name": "Detaches a diagram's guestlist and unseats all guests",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/diagrams/:id/guests",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of diagram"
+              }
+            ]
+          },
+          "docs": "Detaches a diagram's guestlist and unseats all guests"
+        },
+        {
+          "info": {
+            "name": "seat guests at specified floor elements in a diagram",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/diagrams/:id/seat",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "id of diagram to seat guests in"
+              }
+            ]
+          },
+          "docs": "seat guests at specified floor elements in a diagram"
+        },
+        {
+          "info": {
+            "name": "Get a diagram by its guestlist ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/diagrams/guestlist/:guestlistId",
+            "params": [
+              {
+                "name": "guestlistId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a diagram by its guestlist ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

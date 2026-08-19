@@ -1,0 +1,198 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Social Tables API Gateway Authentication Guest Lists API",
+    "version": "4.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guest Lists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all guestlists by session or event id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists",
+            "params": [
+              {
+                "name": "event_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve all guestlists by session or event id"
+        },
+        {
+          "info": {
+            "name": "Create a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists"
+          },
+          "docs": "Create a guestlist"
+        },
+        {
+          "info": {
+            "name": "Retrieve all guestlists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all guestlists"
+        },
+        {
+          "info": {
+            "name": "Update a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path",
+                "description": "guestlist ID"
+              }
+            ]
+          },
+          "docs": "Update a guestlist"
+        },
+        {
+          "info": {
+            "name": "Update a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path",
+                "description": "guestlist ID"
+              }
+            ]
+          },
+          "docs": "Update a guestlist"
+        },
+        {
+          "info": {
+            "name": "Delete a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a guestlist"
+        },
+        {
+          "info": {
+            "name": "Clone a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/_clone",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Clone a guestlist"
+        },
+        {
+          "info": {
+            "name": "Get a guestlist column mapping",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/column_mapping",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a guestlist column mapping"
+        },
+        {
+          "info": {
+            "name": "Delete a guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/cvent/seating",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a guestlist"
+        },
+        {
+          "info": {
+            "name": "Restore a deleted guestlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/4.0/guestlists/:guestlist_id/restore",
+            "params": [
+              {
+                "name": "guestlist_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Restore a deleted guestlist"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
