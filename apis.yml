@@ -39,6 +39,20 @@ tags:
   - Diagramming
   - Event Design
   - Event Management
+  - Event
+  - Floor Plans
+  - Hospitality
+  - Hotel
+  - Meetings
+  - Seating
+  - Seating Charts
+  - Venues
+tags_raw:
+  - 3D Design
+  - Catering
+  - Diagramming
+  - Event Design
+  - Event Management
   - Events
   - Floor Plans
   - Hospitality
@@ -59,6 +73,13 @@ apis:
   humanURL: https://developer.socialtables.com
   baseURL: https://api.socialtables.com
   tags:
+  - Diagramming
+  - Event
+  - Floor Plans
+  - Legacy
+  - Seating Charts
+  - Venues
+  tags_raw:
   - Diagramming
   - Events
   - Floor Plans
@@ -130,6 +151,8 @@ apis:
   humanURL: https://developer.socialtables.com
   baseURL: https://api.socialtables.com
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -242,6 +265,8 @@ apis:
   humanURL: https://developer.socialtables.com
   baseURL: https://api.socialtables.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
