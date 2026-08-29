@@ -284,6 +284,9 @@ apis:
   - type: OpenAPI
     url: openapi/cvent-social-tables-users-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/cvent-social-tables-capability-edges.yml
+    name: Cvent Social Tables Business Capability Map
   - type: AgenticAccess
     url: agentic-access/cvent-social-tables-agentic-access.yml
   - type: DomainSecurity
