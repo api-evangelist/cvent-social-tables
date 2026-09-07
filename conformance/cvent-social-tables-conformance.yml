@@ -1,0 +1,119 @@
+generated: '2026-09-07'
+method: derived
+source: >-
+  openapi/_original/cvent-social-tables-openapi.json;
+  https://developer.socialtables.com/docs/authentication/; https://trust.cvent.com/
+description: >-
+  Cross-cutting standards the Social Tables 4.0 API conforms to, asserted only where the
+  contract or the provider's own documentation shows it. Non-conformance is recorded too — an
+  honest false is data.
+conformance:
+  - id: rfc6749-oauth2-authorization-code
+    conforms: true
+    evidence: >-
+      securityDefinitions.oauth2 declares flow "accessCode" with
+      authorizationUrl https://auth.socialtables.com/oauth/authorize and
+      tokenUrl https://auth.socialtables.com/oauth/token; the docs describe the full
+      authorization-code exchange (client_id, redirect_uri, response_type=code, then
+      grant_type=authorization_code with client_secret).
+      https://developer.socialtables.com/docs/authentication/
+  - id: rfc6750-bearer-token
+    conforms: true
+    evidence: >-
+      'Authorization: Bearer <token>' is the documented call convention throughout the tutorial
+      and the Legacy IDs page.
+  - id: rfc7636-pkce
+    conforms: false
+    evidence: >-
+      No code_challenge / code_verifier parameter appears in the contract or the docs; the
+      documented flow is a confidential-client exchange using client_secret.
+  - id: openid-connect
+    conforms: false
+    evidence: >-
+      No /.well-known/openid-configuration on any host (5 hosts probed, all 404) and no id_token
+      in the documented token response. Note the contract carries an Okta-issued JWT in a legacy
+      magic-link example, but no OIDC surface is offered to third parties.
+  - id: rfc8414-oauth-authorization-server-metadata
+    conforms: false
+    evidence: >-
+      https://auth.socialtables.com/.well-known/oauth-authorization-server returns 404. Endpoints
+      are discoverable only from prose docs.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: 404 on all five hosts probed — see well-known/cvent-social-tables-well-known.yml.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      The layout-automation error envelope is RFC 7807-shaped (title/status/detail + a `key`
+      discriminator + requestId) but is served as application/json, not
+      application/problem+json, and the rest of the surface returns an undeclared
+      {code,message} gateway envelope.
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: No Sunset or Deprecation header, and no deprecation policy, is published.
+  - id: cursor-pagination
+    conforms: partial
+    evidence: >-
+      page_size / before / after query parameters and a {after, before} paging envelope are
+      declared on the account, property and 3.0-route services; guest, guest-list, diagram and
+      event collections declare no paging at all.
+  - id: iso8601-datetimes
+    conforms: true
+    evidence: >-
+      Layout Automation start_time / end_time are documented as ISO-8601, and the
+      event-diagrams schemas require "ISO 8601 format" with date-time formats throughout.
+  - id: openapi-3
+    conforms: false
+    evidence: >-
+      The provider publishes Swagger 2.0 (info.version 4.0.0) at
+      https://developer.socialtables.com/swagger.json. This repo's openapi/ directory holds
+      OpenAPI 3.2 conversions produced by API Evangelist, not by the provider.
+  - id: idempotency-key
+    conforms: false
+    evidence: >-
+      No Idempotency-Key header on any of the 87 operations. See the unbound_mechanism block in
+      conventions/cvent-social-tables-conventions.yml.
+  - id: rate-limit-headers
+    conforms: false
+    evidence: No RateLimit-* / X-RateLimit-* header and no 429 response anywhere in the contract.
+domain_standards:
+  checked: true
+  found: false
+  note: >-
+    Event diagramming and hospitality room-layout have no machine-readable interchange standard
+    the contract could declare, and none is asserted. The nearest domain vocabularies in this
+    space — HTNG / OpenTravel messages for hospitality, and iCalendar for scheduling — appear
+    nowhere in the contract or the docs. This slot is reward-only, so an absent domain standard
+    is not held against the provider; it is recorded so the check is not re-litigated.
+compliance:
+  published: true
+  scope: company-level (Cvent, the owner of Social Tables)
+  source: https://trust.cvent.com/
+  certifications:
+    - SOC 1 Type II
+    - SOC 2 Type II
+    - SOC 3
+    - PCI DSS
+    - ISO/IEC 27001:2022
+    - ISO/IEC 27701
+    - Cyber Essentials Plus
+    - TX-RAMP
+    - VPAT
+    - SIG
+  privacy_frameworks:
+    - GDPR
+    - CCPA
+    - EU-US Data Privacy Framework
+    - Swiss-US Data Privacy Framework
+  note: >-
+    Detail and evidence live in security/cvent-social-tables-trust-center.yml. Nothing scopes a
+    certification to api.socialtables.com specifically.
+evidence:
+  - url: https://developer.socialtables.com/swagger.json
+    status: 200
+  - url: https://developer.socialtables.com/docs/authentication/
+    status: 200
+  - url: https://auth.socialtables.com/.well-known/oauth-authorization-server
+    status: 404
+  - url: https://trust.cvent.com/
+    status: 200

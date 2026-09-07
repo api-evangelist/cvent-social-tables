@@ -4,156 +4,147 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Cvent Social Tables
 providerId: cvent-social-tables
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-07'
+generated: '2026-09-07'
+method: searched
+source: https://www.socialtables.com/pricing/
+description: >-
+  Published plans for Social Tables / Cvent Event Diagramming, read from the provider's own
+  pricing page on 2026-09-07. This replaces a 2026-05-04 bulk-sweep scaffold whose tier names,
+  prices and quotas were placeholder defaults, not provider-published values. IMPORTANT: these
+  are PRODUCT plans. Social Tables publishes no API-specific plan, no API pricing, and no
+  quota expressed in API calls — API access is obtained by registering an OAuth app on the
+  developer portal, and the developer portal states no plan requirement or price.
 tags:
-  - 3D Design
-  - Catering
   - Diagramming
   - Event Design
   - Event Management
-  - Events
-  - Floor Plans
   - Hospitality
-  - Hotel
-  - Meetings
-  - Seating
   - Seating Charts
-  - Venues
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+currency: USD
+billing_note: >-
+  Prices below are the monthly figures shown on the pricing page. The page also offers annual
+  billing with a stated saving of 18% (Standard), 17% (Pro) and 9% (Premium); the annual
+  totals are rendered client-side and are not recorded here rather than being estimated.
+  The page states "All paid plans have a 12-month commitment."
+plan_count: 5
 plans:
   - id: cvent-social-tables-free
     name: Free
-    type: freemium
-    description: Free entry tier for the Cvent Social Tables API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.socialtables.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.socialtables.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Social Tables Events API (Legacy)
-  - id: cvent-social-tables-pro
-    name: Professional
+    type: free
+    price: 0
+    currency: USD
+    period: month
+    self_serve: true
+    description: >-
+      "Start for free, explore all features, and bring social events to life with our easy,
+      no-cost diagramming solution."
+    limits:
+      - metric: user accounts
+        value: 1
+      - metric: events
+        value: 3
+      - metric: diagrams per event
+        value: 2
+      - metric: attendees per attendee list
+        value: 150
+    features:
+      - Unlimited collaborators
+  - id: cvent-social-tables-standard
+    name: Standard
     type: paid
-    description: Production tier for Cvent Social Tables. Provides higher quotas, priority support, and
-      access to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.socialtables.com
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.socialtables.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.socialtables.com
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Social Tables Events API (Legacy)
+    price: 49
+    currency: USD
+    period: month
+    self_serve: true
+    description: >-
+      "Create polished, professional diagrams for the social events you run a few times a year."
+    annual_discount_stated: 18%
+    limits:
+      - metric: user accounts
+        value: 1
+      - metric: events
+        value: 15
+        window: year
+      - metric: diagrams per event
+        value: 3
+      - metric: attendees per attendee list
+        value: 150
+    features:
+      - Core diagramming features
+      - Unlimited collaborators
+  - id: cvent-social-tables-pro
+    name: Pro
+    type: paid
+    price: 150
+    currency: USD
+    period: month
+    self_serve: true
+    description: >-
+      "Manage frequent events with tools that standardize setups and keep teams aligned."
+    annual_discount_stated: 17%
+    limits:
+      - metric: user accounts
+        value: 1
+      - metric: events
+        value: 50
+        window: year
+      - metric: diagrams per event
+        value: 3
+      - metric: attendees per attendee list
+        value: 150
+    features:
+      - Advanced diagramming features
+      - Unlimited collaborators
+  - id: cvent-social-tables-premium
+    name: Premium
+    type: paid
+    price: 320
+    currency: USD
+    period: month
+    self_serve: true
+    description: >-
+      "Move faster with a workspace built for planners managing events every day."
+    annual_discount_stated: 9%
+    limits:
+      - metric: user accounts
+        value: 1
+      - metric: events
+        value: unlimited
+      - metric: diagrams per event
+        value: unlimited
+      - metric: attendees per attendee list
+        value: unlimited
+    features:
+      - Advanced diagramming features
+      - Unlimited collaborators
+      - Diagram deletion (the pricing table scopes diagram deletion to Premium)
+      - 'Attendee management add-ons: custom fields, check-in capabilities'
   - id: cvent-social-tables-enterprise
     name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for Cvent Social Tables. Includes dedicated capacity, contractual
-      SLAs, security review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://api.socialtables.com
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://api.socialtables.com
-        unit: 1
-        price: custom
-        userMultiplied: false
-    elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Social Tables Events API (Legacy)
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+    type: contact-sales
+    price: null
+    currency: USD
+    period: null
+    self_serve: false
+    description: >-
+      "Scale your diagramming with a tailored plan ... for in-house teams or third-party
+      planning firms managing multiple users, clients, or event portfolios." Priced by
+      conversation — "Talk to our team".
+    features:
+      - Custom square footage of professionally drawn floor plans
+      - Custom number of users
+      - Unlimited events, diagrams, collaborators
+      - Ability to delete diagrams
+      - Integration with Cvent Registration
+      - 3D rendering
+      - Trainings and customized add-ons
+api_access:
+  plan_required: unknown
+  note: >-
+    No tier on the pricing page mentions API access, and the developer portal
+    (https://developer.socialtables.com) offers app registration without naming a plan. Whether
+    the 4.0 API is reachable from a Free or Standard account is not stated anywhere public.
+evidence:
+  - url: https://www.socialtables.com/pricing/
+    status: 200

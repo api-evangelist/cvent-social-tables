@@ -1,0 +1,52 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements — Social Tables API Gateway Authentication Diagram Layouts API
+  version: 1.0.0
+x-provenance:
+  generated: '2026-09-07'
+  method: generated
+  source: openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  note: Overlay of API Evangelist enhancements over the provider contract. It never mutates the original.
+    operationId values are GENERATED from method+path — they are not names Social Tables publishes; the
+    provider declares no operationId on any of its 87 operations. contact and externalDocs are the provider's
+    own real URLs.
+extends: openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+actions:
+- target: $.info
+  description: Point the contract at the developer portal that publishes it.
+  update:
+    contact:
+      name: Social Tables Developer Portal
+      url: https://developer.socialtables.com
+    x-support-channel: Stack Overflow tag social-tables (https://developer.socialtables.com/docs/support/)
+- target: $
+  description: Attach the human documentation that explains auth, identifiers and permissions.
+  update:
+    externalDocs:
+      description: Socialtables Developer Documentation
+      url: https://developer.socialtables.com/docs/
+- target: $.paths['/4.0/layouts'].get
+  description: Add a stable operationId. The published Swagger 2.0 declares none, so generated clients
+    produce machine-named methods.
+  update:
+    operationId: get_layouts
+- target: $.paths['/4.0/layouts/'].post
+  description: Add a stable operationId. The published Swagger 2.0 declares none, so generated clients
+    produce machine-named methods.
+  update:
+    operationId: create_layouts
+- target: $.paths['/4.0/layouts/{id}'].get
+  description: Add a stable operationId. The published Swagger 2.0 declares none, so generated clients
+    produce machine-named methods.
+  update:
+    operationId: get_layouts_By_Id
+- target: $.paths['/4.0/layouts/{id}'].delete
+  description: Add a stable operationId. The published Swagger 2.0 declares none, so generated clients
+    produce machine-named methods.
+  update:
+    operationId: delete_layouts_By_Id
+- target: $.paths['/4.0/layouts/{id}'].patch
+  description: Add a stable operationId. The published Swagger 2.0 declares none, so generated clients
+    produce machine-named methods.
+  update:
+    operationId: update_layouts_By_Id

@@ -1,0 +1,205 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://developer.socialtables.com/docs/ (Authentication, Legacy IDs, Permissions, Layout
+  Automation, Tutorial, Support) and https://developer.socialtables.com/swagger.json
+description: >-
+  Cross-cutting runtime semantics for the Social Tables 4.0 API — what an agent has to know
+  that is not expressed operation by operation. Derived from the published Swagger 2.0 contract
+  and the developer portal's prose, both read 2026-09-07.
+auth:
+  style: OAuth 2.0 authorization code, bearer token
+  schemes:
+    - name: oauth2
+      type: oauth2
+      flow: authorization_code
+      authorization_url: https://auth.socialtables.com/oauth/authorize
+      token_url: https://auth.socialtables.com/oauth/token
+      scopes: [authenticated, 'create:oauth_client', userdata]
+    - name: user_token
+      type: apiKey
+      in: header
+      parameter: user_token
+    - name: partner_token
+      type: apiKey
+      in: header
+      parameter: partner_token
+  header: 'Authorization: Bearer <access_token>'
+  registration: >-
+    Apps are registered on the developer portal to obtain a client ID and secret; the redirect
+    URI must be pre-registered.
+  token_introspection: >-
+    GET /4.0/oauth/token returns the identity behind the presented token, including both the
+    4.0 `id` and the numeric `legacy_id` — the documented first call for any integration.
+  permission_model: >-
+    Role-based. A token carries the combination of app + user identity, and the API allows or
+    rejects per the user's roles on accounts, teams and entities. Documented at
+    https://developer.socialtables.com/docs/api-usage/permissions.html.
+  see_also: authentication/cvent-social-tables-authentication.yml
+pagination:
+  style: cursor
+  request_params:
+    - name: page_size
+      in: query
+      type: integer
+      default: 50
+    - name: after
+      in: query
+      type: string
+      description: cursor for the next page
+    - name: before
+      in: query
+      type: string
+      description: cursor for the previous page
+  response_shape:
+    envelope: 'paging: { after, before }'
+    evidence: >-
+      definitions resultPaging-account-service / resultPaging-property-service /
+      resultPaging-property-3.0-routes in the published contract.
+  coverage: partial
+  note: >-
+    Cursor paging is declared on the account, property and 3.0-route services (rooms,
+    properties, team users). Guest-list, guest, diagram and event collections declare no paging
+    parameters at all in the contract, so a caller cannot tell whether those return everything
+    or a truncated first page. GET /4.0/events/page is a separate paged variant of GET /4.0/events.
+identifiers:
+  dual_id_system: true
+  rule: >-
+    4.0 endpoints take alphanumeric IDs; 2.x, 3.x and /4.0/legacy-api endpoints take numeric
+    IDs. Responses expose both (`id` and `legacy_id`), and mixing them across generations is
+    the documented failure mode.
+  docs: https://developer.socialtables.com/docs/api-usage/legacy-ids.html
+  room_ids_note: >-
+    The Layout Automation reference states a bookable room id "must be prepended with an S"
+    when passed as venue_id — an identifier convention that exists only in prose.
+action_verbs:
+  convention: >-
+    Non-CRUD operations are namespaced with a leading underscore on the last path segment.
+  examples:
+    - 'POST /4.0/guestlists/{guestlist_id}/_clone'
+    - 'POST /4.0/guestlists/{guestlist_id}/guests/_bulk'
+    - 'POST /4.0/guestlists/{guestlist_id}/guests/_bulk/create'
+    - 'POST /4.0/guestlists/{guestlist_id}/guests/_bulk/delete'
+    - 'POST /4.0/guestlists/{guestlist_id}/guests/_dedupe'
+    - 'POST /4.0/guestlists/{guestlist_id}/guests/_replace'
+    - 'GET /4.0/guestlists/team/{team_id}/guests/_filter'
+media_types:
+  request: application/json
+  response: application/json
+dates:
+  format: ISO 8601 / RFC 3339, UTC
+  evidence: >-
+    Layout Automation start_time / end_time are "string (ISO-8601 Date)"; the event-diagrams
+    schemas state "Must be in ISO 8601 format".
+units:
+  note: >-
+    Diagram geometry is expressed in INCHES by default (table size, spacing and aisle width are
+    all documented in inches). A per-event `uses_metric` / `usesMetric` boolean switches
+    interpretation to centimetres. An agent that ignores this flag will lay out a room at
+    2.54x the intended scale.
+request_tracing:
+  header: null
+  body_field: requestId
+  note: >-
+    The layout-automation error envelope carries a required `requestId` — "A unique identifier
+    for this request, which can be used to help with debugging and support". No correlation
+    request header (X-Request-Id or similar) is documented, and no trace ID is returned on
+    success responses.
+errors:
+  envelopes: 2
+  primary:
+    shape: '{ title, status, detail, key, requestId }'
+    rfc7807_like: true
+    content_type: application/json
+    note: >-
+      RFC 7807-shaped in everything but the media type — `key` plays the role of `type` and is
+      the schema's discriminator. Declared by the layout-automation service schemas.
+  gateway:
+    shape: '{ code, message }'
+    note: >-
+      Observed live on api.socialtables.com for unrouted paths (e.g. HTTP 404
+      {"code":404,"message":"Not Found"}), and on auth.socialtables.com as
+      {"code":"ResourceNotFound","message":"..."}. Different from the service envelope above.
+  problem_json: false
+  see_also: errors/cvent-social-tables-problem-types.yml
+versioning:
+  style: url-path
+  current: '4.0'
+  see_also: lifecycle/cvent-social-tables-lifecycle.yml
+rate_limit_signaling:
+  documented: false
+  headers: []
+  see_also: rate-limits/cvent-social-tables-rate-limits.yml
+idempotency:
+  coverage: none
+  mechanism: null
+  header: null
+  note: >-
+    No Idempotency-Key header, no request-id replay window and no idempotent-retry guidance
+    exists on ANY of the 87 published operations, including the bulk writes
+    (guests/_bulk, _bulk/create, _bulk/delete, _replace) where a retried POST is most costly.
+    A retried create produces a duplicate.
+  unbound_mechanism:
+    what: >-
+      The contract DOES carry a business-key de-duplication design — `externalEventId` and
+      `externalDiagramId` (max 229 chars) on the EventDiagramsPostBody /
+      EventDiagramsIntegrationPostBody / EventDiagramsPartnerIntegrationPostBody schemas,
+      described as "used to idempotently resolve existing events. If this value matches an
+      existing event's external ID, diagrams are created on that event rather than creating a
+      new one", backed by a dedicated 409 error type
+      (ErrorResponse_ExternalIdConflict, keys `external_event_id_conflict` /
+      `external_diagram_id_conflict`, returning the conflicting diagrams and events).
+    why_it_does_not_count: >-
+      None of those schemas is referenced by any path in the published contract — they are
+      orphan definitions, so no documented operation accepts the key. A consumer of
+      developer.socialtables.com/swagger.json cannot call it. Coverage is recorded as `none`
+      rather than `partial` for exactly that reason, and no Idempotency pointer is emitted.
+    remedy: >-
+      Bind the event-diagrams endpoints into the published contract (or document them), and the
+      coverage becomes a real `partial` on named operations.
+reversibility:
+  grade: documented
+  note: >-
+    Reversal paths exist and are first-class, but no window is stated anywhere, so this grades
+    `documented` rather than `verified`. Nothing in the docs or the contract says how long a
+    deleted guest list or guest can be restored, and no window is inferred here.
+  reversals:
+    - write: 'DELETE /4.0/guestlists/{guestlist_id}'
+      reversal: 'POST /4.0/guestlists/{guestlist_id}/restore'
+      operation_summary: Restore a deleted guestlist
+      returns: 204 successfully restored a deleted guestlist
+      window: null
+      window_source: null
+    - write: 'DELETE /4.0/guestlists/{guestlist_id}/guests/{guest_id}'
+      reversal: 'POST /4.0/guestlists/{guestlist_id}/guests/{guest_id}/restore'
+      operation_summary: Restore a deleted guest and their group if applicable
+      returns: 200 Successfully restored guest
+      window: null
+      window_source: null
+    - write: 'PUT /4.0/events/{event} with archived/is_archived set'
+      reversal: 'PUT /4.0/events/{event} with is_archived = 0'
+      operation_summary: >-
+        Event archival is a soft, reversible flag — "If 0, the event is unarchived. If 1, the
+        event is archived" — not a delete.
+      window: unbounded (flag toggle, no expiry stated)
+      window_source: contract schema description
+  irreversible:
+    - 'DELETE /4.0/events/{event} — hard delete, no restore path published.'
+    - 'DELETE /4.0/diagrams/{id} — no restore path published.'
+    - 'DELETE /4.0/layouts/{id}, DELETE /4.0/template-presets/{id}, DELETE /4.0/favorites/{id}.'
+    - >-
+      DELETE /4.0/layout-automation — "removes floor elements from previous automated and
+      manual layouts"; it deletes human-authored floor plan work and has no undo.
+    - 'POST /4.0/guestlists/{guestlist_id}/guests/_replace — replaces a whole guest list.'
+  soft_delete_signal: >-
+    38 operations declare 410 Gone with the description "guestlist is deleted", so a caller can
+    distinguish a deleted-but-restorable guest list (410) from one that never existed (404).
+dry_run_mode:
+  present: false
+  note: No preview, validate-only or dry-run parameter is documented on any operation.
+bulk_operations:
+  present: true
+  note: >-
+    _bulk, _bulk/create, _bulk/delete, _replace and _dedupe accept arrays. None of them
+    documents partial-failure semantics, so an agent cannot tell whether a bulk write is
+    atomic or best-effort.

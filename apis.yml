@@ -43,7 +43,7 @@ type: Index
 access: 3rd-Party
 position: Consuming
 created: '2025-03-14'
-modified: '2026-04-28'
+modified: '2026-09-07'
 specificationVersion: '0.23'
 tags:
   - 3D Design
@@ -105,6 +105,10 @@ apis:
     url: https://developer.socialtables.com/docs/authentication
   - type: ParentPlatform
     url: https://developers.cvent.com/
+  - type: OpenAPI
+    url: https://developer.socialtables.com/swagger.json
+  - type: APIReference
+    url: https://developer.socialtables.com/api-console
 - aid: cvent-social-tables:cvent-social-tables-authentication-api
   name: Cvent Social Tables Authentication API
   description: The Authentication API from Cvent Social Tables — 1 operation(s) for authentication.
@@ -115,6 +119,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-authentication-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-authentication-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-diagram-favorites-api
   name: Cvent Social Tables Diagram Favorites API
   description: >-
@@ -126,6 +132,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-diagram-favorites-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-diagram-layouts-api
   name: Cvent Social Tables Diagram Layouts API
   description: The Diagram Layouts API from Cvent Social Tables — 3 operation(s) for diagram layouts.
@@ -136,6 +144,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-diagram-layouts-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-diagram-template-presets-api
   name: Cvent Social Tables Diagram Template Presets API
   description: >-
@@ -147,6 +157,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-diagram-template-presets-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-diagrams-api
   name: Cvent Social Tables Diagrams API
   description: The Diagrams API from Cvent Social Tables — 6 operation(s) for diagrams.
@@ -157,6 +169,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-diagrams-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-diagrams-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-events-api
   name: Cvent Social Tables Events API
   description: The Events API from Cvent Social Tables — 3 operation(s) for events.
@@ -169,6 +183,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-events-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-events-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-guest-checkin-api
   name: Cvent Social Tables Guest Checkin API
   description: The Guest Checkin API from Cvent Social Tables — 4 operation(s) for guest checkin.
@@ -179,6 +195,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-guest-checkin-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-guest-groups-api
   name: Cvent Social Tables Guest Groups API
   description: The Guest Groups API from Cvent Social Tables — 7 operation(s) for guest groups.
@@ -189,6 +207,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-guest-groups-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-guest-groups-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-guest-lists-api
   name: Cvent Social Tables Guest Lists API
   description: The Guest Lists API from Cvent Social Tables — 6 operation(s) for guest lists.
@@ -199,6 +219,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-guest-lists-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-guest-lists-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-guest-meals-api
   name: Cvent Social Tables Guest Meals API
   description: The Guest Meals API from Cvent Social Tables — 3 operation(s) for guest meals.
@@ -209,6 +231,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-guest-meals-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-guest-meals-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-guest-tags-api
   name: Cvent Social Tables Guest Tags API
   description: The Guest Tags API from Cvent Social Tables — 3 operation(s) for guest tags.
@@ -219,6 +243,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-guest-tags-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-guest-tags-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-guests-api
   name: Cvent Social Tables Guests API
   description: The Guests API from Cvent Social Tables — 12 operation(s) for guests.
@@ -229,6 +255,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-guests-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-guests-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-layout-automation-api
   name: Cvent Social Tables Layout Automation API
   description: >-
@@ -240,6 +268,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-layout-automation-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-layout-automation-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-properties-api
   name: Cvent Social Tables Properties API
   description: The Properties API from Cvent Social Tables — 2 operation(s) for properties.
@@ -250,6 +280,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-properties-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-properties-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-rooms-api
   name: Cvent Social Tables Rooms API
   description: The Rooms API from Cvent Social Tables — 2 operation(s) for rooms.
@@ -260,6 +292,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-rooms-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-rooms-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-snc-event-integration-api
   name: Cvent Social Tables SNC Event Integration API
   description: >-
@@ -271,6 +305,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-snc-event-integration-api-overlay.yaml
 - aid: cvent-social-tables:cvent-social-tables-users-api
   name: Cvent Social Tables Users API
   description: The Users API from Cvent Social Tables — 1 operation(s) for users.
@@ -283,6 +319,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cvent-social-tables-users-api-openapi.yml
+  - type: Overlay
+    url: overlays/cvent-social-tables-users-api-overlay.yaml
 common:
   - type: CapabilityMap
     url: capabilities/cvent-social-tables-capability-edges.yml
@@ -300,19 +338,19 @@ common:
   - type: Website
     url: https://www.socialtables.com
   - type: ProductPage
-    url: https://www.cvent.com/en/diagramming-event-design
+    url: https://www.socialtables.com/product/diagram/
   - type: DeveloperPortal
     url: https://developer.socialtables.com
   - type: ParentDeveloperPortal
     url: https://developers.cvent.com/
   - type: Login
-    url: https://app.socialtables.com/login
+    url: https://login.socialtables.com/login
   - type: Support
     url: https://support.cvent.com/
   - type: StatusPage
     url: https://status.cvent.com/
   - type: TermsOfService
-    url: https://www.cvent.com/en/terms-of-service
+    url: https://www.cvent.com/en/product-terms-of-use
   - type: PrivacyPolicy
     url: https://www.cvent.com/en/privacy-policy
   - type: Blog
@@ -321,6 +359,55 @@ common:
     url: https://twitter.com/socialtables
   - type: LinkedIn
     url: https://www.linkedin.com/showcase/social-tables/
+  - type: Documentation
+    url: https://developer.socialtables.com/docs
+  - type: APIReference
+    url: https://developer.socialtables.com/api-console
+  - type: GettingStarted
+    url: https://developer.socialtables.com/docs/apps/tutorial
+  - type: SignUp
+    url: https://login.socialtables.com/signup
+  - type: Pricing
+    url: https://www.socialtables.com/pricing/
+  - type: Plans
+    url: plans/cvent-social-tables-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cvent-social-tables-rate-limits.yml
+  - type: FinOps
+    url: finops/cvent-social-tables-finops.yml
+  - type: LLMsTxt
+    url: llms/cvent-social-tables-llms.txt
+  - type: Packages
+    url: packages/cvent-social-tables-packages.yml
+  - type: X-MCPServerCandidate
+    url: mcp/cvent-social-tables-mcp.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: Conventions
+    url: conventions/cvent-social-tables-conventions.yml
+  - type: ErrorCatalog
+    url: errors/cvent-social-tables-problem-types.yml
+  - type: DataModel
+    url: data-model/cvent-social-tables-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/cvent-social-tables-lifecycle.yml
+  - type: Sandbox
+    url: sandbox/cvent-social-tables-sandbox.yml
+  - type: Conformance
+    url: conformance/cvent-social-tables-conformance.yml
+  - type: Compliance
+    url: security/cvent-social-tables-trust-center.yml
+  - type: TrustCenter
+    url: security/cvent-social-tables-trust-center.yml
+  - type: Security
+    url: security/cvent-social-tables-vulnerability-disclosure.yml
+  - type: VulnerabilityDisclosure
+    url: security/cvent-social-tables-vulnerability-disclosure.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-07'
+  status: enriched
+  artifacts_added: 33
+  pass: local-v3

@@ -46,6 +46,25 @@
     "cvent-social-tables-diagrams-api-openapi.yml: dangling $ref: #/definitions/floor-elements__components~1theater-chairs-diagram-service"
   ],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "cvent-social-tables-authentication-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-diagram-favorites-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-diagram-layouts-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-diagram-template-presets-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-diagrams-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-events-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-guest-checkin-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-guest-groups-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-guest-lists-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-guest-meals-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-guest-tags-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-guests-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-layout-automation-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-properties-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-rooms-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-snc-event-integration-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "cvent-social-tables-users-api-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

@@ -1,0 +1,107 @@
+generated: '2026-09-07'
+method: probed
+source: live HTTPS probes of every host this record knows
+description: >-
+  Probe of the RFC 8615 well-known surface across every Social Tables host in this record —
+  the registrable domain and www, the API host, the developer portal, the login/auth host.
+  Nothing is served: every named path returns 404. The 404 bodies differ per host
+  (WordPress HTML on the marketing site, a JSON {"code":404} envelope on the API gateway,
+  an Express "Cannot GET" shell on the developer portal), which confirms the probes reached
+  the real origins rather than a single catch-all. No WellKnown or SecurityTxt pointer is
+  emitted, because a recorded absence is not a served document.
+hosts:
+  - host: socialtables.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: www.socialtables.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: api.socialtables.com
+    note: >-
+      The OpenAPI servers[] host and every apis[].baseURL. Returns a JSON
+      {"code":404,"message":"Not Found"} envelope on each path.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: developer.socialtables.com
+    note: The developer portal and the host that serves the live Swagger 2.0 contract.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: auth.socialtables.com
+    note: >-
+      The OAuth authorization + token host named by the contract's securityDefinitions.
+      No RFC 8414 authorization-server metadata and no OpenID discovery document is served,
+      so an agent cannot discover the endpoints without reading the prose docs.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+summary:
+  hosts_probed: 5
+  documents_probed: 35
+  documents_served: 0
+  llms_txt: >-
+    Served, but not under /.well-known/ — https://www.socialtables.com/llms.txt returns
+    HTTP 200 text/plain. Captured verbatim in llms/cvent-social-tables-llms.txt.

@@ -1,0 +1,53 @@
+generated: '2026-09-07'
+method: searched
+source: https://developer.socialtables.com/api-console
+description: >-
+  Social Tables ships an interactive API console on its developer portal — a Swagger UI bound
+  to the same Swagger 2.0 contract this repo harvests, with the OAuth plugin (swagger-oauth.js)
+  wired so a registered app's token can execute calls in the browser. That is the whole of the
+  try-it surface. There is NO separate sandbox tenant, no test-mode key prefix, no published
+  test fixtures, no seeded demo account and no time-simulation tooling; calls from the console
+  run against production api.socialtables.com with a real user's token.
+console:
+  present: true
+  url: https://developer.socialtables.com/api-console
+  http_status: 200
+  kind: swagger-ui
+  implementation: >-
+    Swagger UI (bundled under /swagger-ui/) with swagger-oauth.js, rendering the live contract
+    at https://developer.socialtables.com/swagger.json. Includes an API version selector.
+  auth_required: true
+  auth_note: >-
+    Executing a call needs an OAuth access token from a registered app; browsing the operations
+    does not. The portal's own docs say "You can observe this flow in action using our API
+    console" (https://developer.socialtables.com/docs/authentication/).
+sandbox_environment:
+  present: false
+  note: >-
+    No sandbox host, staging base URL or test tenant is published. Every documented base URL is
+    production: https://api.socialtables.com. The only non-production host visible anywhere is
+    an internal gateway name embedded in the portal's own bootstrap state, which is not
+    documented for third parties and is deliberately not recorded here as an endpoint.
+test_credentials:
+  published: false
+  test_key_prefixes: []
+  test_data: []
+  note: >-
+    No test cards, magic identifiers, seeded events or fixture guest lists are published —
+    unsurprising for an event-diagramming API, but it means a developer's first successful
+    call mutates real account data.
+time_simulation:
+  present: false
+safe_exploration:
+  note: >-
+    The read-only entry points a developer can exercise without side effects are
+    GET /4.0/oauth/token (token introspection), GET /4.0/users/{userID}, GET /4.0/events and
+    GET /4.0/properties. Two soft-delete reversals exist if something goes wrong —
+    POST /4.0/guestlists/{guestlist_id}/restore and
+    POST /4.0/guestlists/{guestlist_id}/guests/{guest_id}/restore — see
+    conventions/cvent-social-tables-conventions.yml (reversibility).
+evidence:
+  - url: https://developer.socialtables.com/api-console
+    status: 200
+  - url: https://developer.socialtables.com/docs/authentication/
+    status: 200

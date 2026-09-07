@@ -1,0 +1,69 @@
+generated: '2026-09-07'
+method: searched
+source: https://trust.cvent.com/
+description: >-
+  Social Tables publishes no trust center of its own (trust.socialtables.com answers 404 behind
+  a bot-challenge interstitial). The compliance posture that governs the Social Tables /
+  Cvent Event Diagramming product is published by its owner, Cvent, at trust.cvent.com — a
+  Conveyor-hosted trust center carrying 22 documents, 77 knowledge-base answers and 14
+  organizational-compliance entries, plus a companion marketing page at cvent.com/en/trust.
+trust_center:
+  present: true
+  url: https://trust.cvent.com/
+  http_status: 200
+  platform: Conveyor
+  operator: Cvent, Inc. (owner of Social Tables)
+  secondary_url: https://www.cvent.com/en/trust
+  secondary_http_status: 200
+  access: >-
+    Certification names and the FAQ index are public; the underlying reports (SOC 1/SOC 2)
+    sit behind a "Get Access" request form.
+  security_contact: security@cvent.com
+  ciso: Ben Mayrides, Chief Information Security Officer
+certifications:
+  - name: SOC 1 Type II
+    scope_note: >-
+      Trust center lists three separate SOC 1 Type II reports — Core Solutions, Onsite
+      Solutions and Travel Passkey — for the 2024-11-01 to 2025-10-31 period.
+  - name: SOC 2 Type II
+    document: Cvent_SOC-2-Type-II-Report_110124-103125
+  - name: SOC 3
+  - name: PCI DSS
+  - name: ISO/IEC 27001:2022
+  - name: ISO/IEC 27701
+  - name: Cyber Essentials Plus
+  - name: TX-RAMP
+  - name: VPAT
+  - name: SIG (Standardized Information Gathering questionnaire)
+privacy_frameworks:
+  - GDPR
+  - CCPA
+  - EU-US Data Privacy Framework
+  - Swiss-US Data Privacy Framework
+program_assertions:
+  - One or more annual third-party audits
+  - Annual third-party penetration testing
+  - Disaster recovery plan
+  - Subprocessor list available
+  - Cyber insurance
+  - Will enter into a DPA
+  - Bug bounty or vulnerability disclosure program
+  - Deletes customer data on request
+  - Centralized IAM / SSO for employee access
+  - Status page
+  - Privacy policy
+caveat: >-
+  Every certification above is asserted at the CVENT company level. Nothing on the trust center
+  scopes a certification to the Social Tables API or to api.socialtables.com specifically, and
+  this record does not infer one.
+evidence:
+  - url: https://trust.cvent.com/
+    status: 200
+  - url: https://www.cvent.com/en/security
+    status: 200
+    note: 302s to https://www.cvent.com/en/trust
+  - url: https://trust.socialtables.com/
+    status: 404
+    note: >-
+      Answered behind a bot-challenge interstitial (sgcaptcha) and then 404 — Social Tables
+      runs no trust center of its own.

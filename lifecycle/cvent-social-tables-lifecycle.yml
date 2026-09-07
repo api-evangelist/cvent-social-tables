@@ -1,0 +1,95 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://developer.socialtables.com/docs/api-usage/legacy-ids.html;
+  https://developer.socialtables.com/swagger.json; https://status.cvent.com/
+description: >-
+  Versioning, deprecation and operational-signal profile for the Social Tables 4.0 API. The
+  provider versions in the URL path and documents a live legacy generation, but publishes no
+  deprecation policy, no sunset dates, no changelog and no SLA.
+versioning:
+  scheme: url-path
+  current_version: '4.0'
+  contract_version: 4.0.0
+  contract_format: Swagger 2.0
+  contract_url: https://developer.socialtables.com/swagger.json
+  pattern: 'https://api.socialtables.com/4.0/{resource}'
+  console_selector: >-
+    The API console exposes an "API Version" selector, so more than one generation is served
+    concurrently.
+  generations:
+    - version: '4.0'
+      status: current
+      id_format: alphanumeric (e.g. cinvup1au001as2nqyjyq07k0)
+      note: The generation the published contract describes — 59 paths, 87 operations.
+    - version: 4.0/legacy-api
+      status: live-legacy
+      id_format: numeric (e.g. 1790300)
+      note: >-
+        Documented compatibility surface. "For 2.x, 3.x, and 4.0/legacy-api endpoints, IDs are
+        numeric, while for 4.0 and above IDs will contain alphanumeric characters." A response
+        carries both `id` and `legacy_id` so a caller can address either generation. Example
+        from the docs: GET /4.0/legacy-api/users/1790300.
+    - version: 2.x / 3.x
+      status: legacy
+      note: >-
+        Named by the Legacy IDs page as sharing the numeric ID format. No contract, reference
+        or retirement date is published for them.
+deprecation:
+  policy_published: false
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  note: >-
+    No deprecation policy, notice period, sunset schedule or RFC 8594 Sunset/Deprecation header
+    is published anywhere on the developer portal, and the contract declares none.
+  in_contract_signals:
+    - kind: field-level deprecation
+      location: 'POST /4.0/guestlists — request body property `event_id`'
+      evidence: 'The property description reads "deprecated, use diagram_id".'
+      note: >-
+        This is the ONLY deprecation marker in the entire contract. No operation carries
+        `deprecated: true`.
+  not_deprecation:
+    - >-
+      38 operations declare a 410 Gone response. These are NOT retirement signals: every one
+      of them describes resource state — "guestlist is deleted" — on guest-list-scoped paths.
+      Reading them as deprecations would be wrong.
+status_page:
+  present: true
+  url: https://status.cvent.com/
+  http_status: 200
+  operator: Cvent (parent)
+  note: >-
+    Cvent runs one status page for the platform, split by region and product line; the
+    Social Tables footer links the North America event lane
+    (https://status.cvent.com/NA/event). No status component is scoped to
+    api.socialtables.com specifically, so an integrator cannot see API-gateway health on its own.
+changelog:
+  present: false
+  note: >-
+    No dated changelog, release-notes page or version history is published on the developer
+    portal. The contract's info.version has read 4.0.0 across every capture in this repo, so it
+    is not a usable change signal either.
+sla:
+  published: false
+  uptime_commitment: null
+  note: >-
+    No public SLA or uptime commitment for the API. Cvent's Trust Center asserts a disaster
+    recovery plan and "has a status page" at the company level; neither is an API SLA.
+support:
+  channel: Stack Overflow tag `social-tables`
+  url: https://developer.socialtables.com/docs/support/
+  note: >-
+    The documented engineering-support path is a public Stack Overflow tag, not a ticket queue.
+    Product support runs through Cvent (https://support.cvent.com/).
+evidence:
+  - url: https://developer.socialtables.com/docs/api-usage/legacy-ids.html
+    status: 200
+  - url: https://developer.socialtables.com/swagger.json
+    status: 200
+  - url: https://status.cvent.com/
+    status: 200
+  - url: https://developer.socialtables.com/docs/support/
+    status: 200

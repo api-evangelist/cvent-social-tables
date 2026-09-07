@@ -1,0 +1,75 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://registry.npmjs.org/-/v1/search?text=socialtables (27 results, read 2026-09-07);
+  https://github.com/socialtables (88 public repos);
+  https://developer.socialtables.com/docs/apps/tutorial
+description: >-
+  Client-library survey for the Social Tables (Cvent) API. Registries searched unauthenticated:
+  npm, PyPI, RubyGems, Packagist, crates.io, NuGet, Maven Central, pkg.go.dev. FINDING: Social
+  Tables publishes NO first-party API client SDK in any language. The @socialtables npm scope
+  and the socialtables GitHub org are real and first-party, but everything in them is internal
+  engineering tooling and general-purpose React/Node open source (session middleware, a SAML
+  protocol implementation, a 2D CAD component, validation helpers) — none of it wraps the
+  api.socialtables.com REST surface. The only first-party integration artifact aimed at API
+  consumers is the reference Express application the developer tutorial links to. Because no
+  official SDK exists, this record deliberately emits NO `SDKs` pointer in apis.yml.
+package_count: 1
+official_sdk_count: 0
+packages:
+  - name: socialtables/example-app
+    official: true
+    kind: example-application
+    language: JavaScript
+    registry: github
+    url: https://github.com/socialtables/example-app
+    version: null
+    published: null
+    note: >-
+      "Example application for third-party app developers integrating with Social Tables" —
+      the completed Express project the official tutorial at
+      https://developer.socialtables.com/docs/apps/tutorial points at. Distributed as a git
+      repository only: it is not published to npm and carries no release or tag, so there is
+      no registry metadata endpoint to read a version or publish date from. Repository was
+      last pushed 2024-05-01 (GitHub API, read 2026-09-07) and is not archived.
+    covers:
+      - OAuth authorization-code handshake against https://auth.socialtables.com/oauth/authorize
+      - Token exchange and bearer use against https://api.socialtables.com
+      - 'GET /4.0/oauth/token and GET /4.0/users/{userID}'
+registries_searched:
+  - registry: npm
+    query: 'text=socialtables (27 hits) and scope:socialtables (0 hits)'
+    result: >-
+      First-party scope @socialtables exists and is active — @socialtables/session 3.1.0
+      (2025-10-02), @socialtables/saml-protocol 2.0.0 (2025-10-15), @socialtables/validate.js
+      0.13.2 (2025-05-23), @socialtables/apidoc-swagger 1.1.0 (2024-10-24),
+      @socialtables/st-ui-toolkit 2.1.2 (2020-08-25), @socialtables/openfpc 0.1.3 (2018-05-15),
+      @socialtables/cryptex 2.0.0 (2019-09-05). All are internal or general-purpose libraries;
+      none is a client for the Social Tables API.
+    api_client_found: false
+  - registry: pypi
+    result: No first-party Social Tables / Cvent Social Tables client package found.
+    api_client_found: false
+  - registry: rubygems
+    result: No first-party package found.
+    api_client_found: false
+  - registry: packagist
+    result: No first-party package found.
+    api_client_found: false
+  - registry: crates.io
+    result: No first-party package found.
+    api_client_found: false
+  - registry: nuget
+    result: No first-party package found.
+    api_client_found: false
+  - registry: maven-central
+    result: No first-party package found.
+    api_client_found: false
+  - registry: pkg.go.dev
+    result: No first-party package found.
+    api_client_found: false
+gaps:
+  - >-
+    No official SDK in any language. An integrator writes raw HTTP against a Swagger 2.0
+    contract whose 87 operations carry no operationId, so even generated clients produce
+    machine-named methods.

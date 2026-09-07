@@ -1,10 +1,10 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   title: Social Tables API Gateway Authentication Properties API
   version: 4.0.0
   description: The Social Tables API
-host: api.socialtables.com
-basePath: /
+servers:
+- url: https://api.socialtables.com/
 tags:
 - name: Properties
 paths:
@@ -26,34 +26,37 @@ paths:
       - Properties
       summary: get a property from a property ID
       parameters:
-      - $ref: '#/parameters/property_id-property-service'
+      - $ref: '#/components/parameters/property_id-property-service'
       responses:
         '200':
           description: returns a property
-parameters:
-  property_id-property-service:
-    name: property_id
-    in: path
-    type: string
-    required: true
-securityDefinitions:
-  oauth2:
-    type: oauth2
-    description: OAuth
-    tokenUrl: https://auth.socialtables.com/oauth/token
-    authorizationUrl: https://auth.socialtables.com/oauth/authorize
-    flow: accessCode
-    scopes:
-      authenticated: any authentication whatsoever
-      create:oauth_client: oauth client create
-      userdata: All of the things.
-  user_token:
-    type: apiKey
-    name: user_token
-    in: header
-    description: Social Tables User Token
-  partner_token:
-    type: apiKey
-    name: partner_token
-    in: header
-    description: Social Tables Partner Token
+components:
+  parameters:
+    property_id-property-service:
+      name: property_id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          scopes:
+            authenticated: any authentication whatsoever
+            create:oauth_client: oauth client create
+            userdata: All of the things.
+          authorizationUrl: https://auth.socialtables.com/oauth/authorize
+          tokenUrl: https://auth.socialtables.com/oauth/token
+      description: OAuth
+    user_token:
+      type: apiKey
+      name: user_token
+      in: header
+      description: Social Tables User Token
+    partner_token:
+      type: apiKey
+      name: partner_token
+      in: header
+      description: Social Tables Partner Token

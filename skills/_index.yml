@@ -1,0 +1,37 @@
+generated: '2026-09-07'
+method: generated
+source: >-
+  openapi/_original/cvent-social-tables-openapi.json plus the developer portal docs at
+  https://developer.socialtables.com/docs/
+description: >-
+  Packaged Agent Skills for the Social Tables 4.0 API, one per marquee flow. Every operation
+  named in these skills is method+path verified against the published contract; the contract
+  declares no operationId on any of its 87 operations, so method+path is the handle used
+  throughout. Social Tables publishes no skills or AGENTS.md of its own — searched 2026-09-07.
+skill_count: 3
+skills:
+  - name: cvent-social-tables-authenticate-and-identify
+    file: cvent-social-tables-authenticate-and-identify.md
+    api: cvent-social-tables:events-api
+    summary: >-
+      OAuth authorization-code grant, token introspection, and the dual 4.0/legacy identifier
+      rule that causes most 404s on this API.
+    operations: 3
+  - name: cvent-social-tables-build-event-diagram
+    file: cvent-social-tables-build-event-diagram.md
+    api: cvent-social-tables:cvent-social-tables-layout-automation-api
+    summary: >-
+      Find a property and bookable room, post a Layout Automation wizard specification, read the
+      created diagrams, and understand why the clear-floor call is destructive.
+    operations: 9
+  - name: cvent-social-tables-manage-guest-list-and-seating
+    file: cvent-social-tables-manage-guest-list-and-seating.md
+    api: cvent-social-tables:cvent-social-tables-guest-lists-api
+    summary: >-
+      Create a guest list, bulk-load and de-duplicate guests, tag/meal/group them, seat them on
+      the diagram, check them in, and restore soft-deleted lists and guests.
+    operations: 12
+conventions_applied:
+  - conventions/cvent-social-tables-conventions.yml
+  - errors/cvent-social-tables-problem-types.yml
+  - rate-limits/cvent-social-tables-rate-limits.yml

@@ -1,6 +1,7 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/cvent-social-tables-openapi.json
+generated: '2026-09-07'
+method: searched
+source: https://developer.socialtables.com/docs/authentication/ (OAuth authorization-code flow, read 2026-09-07)
+  and https://developer.socialtables.com/docs/apps/tutorial; scheme detail derived from openapi/_original/cvent-social-tables-openapi.json
 summary:
   types:
   - apiKey
@@ -19,18 +20,97 @@ schemes:
     scopes: 3
   description: OAuth
   sources:
-  - openapi/cvent-social-tables-openapi.json
+  - openapi/cvent-social-tables-authentication-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+  - openapi/cvent-social-tables-diagrams-api-openapi.yml
+  - openapi/cvent-social-tables-events-api-openapi.yml
+  - openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+  - openapi/cvent-social-tables-guest-groups-api-openapi.yml
+  - openapi/cvent-social-tables-guest-lists-api-openapi.yml
+  - openapi/cvent-social-tables-guest-meals-api-openapi.yml
+  - openapi/cvent-social-tables-guest-tags-api-openapi.yml
+  - openapi/cvent-social-tables-guests-api-openapi.yml
+  - openapi/cvent-social-tables-layout-automation-api-openapi.yml
+  - openapi/cvent-social-tables-properties-api-openapi.yml
+  - openapi/cvent-social-tables-rooms-api-openapi.yml
+  - openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+  - openapi/cvent-social-tables-users-api-openapi.yml
 - name: user_token
   type: apiKey
   in: header
   parameter: user_token
   description: Social Tables User Token
   sources:
-  - openapi/cvent-social-tables-openapi.json
+  - openapi/cvent-social-tables-authentication-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+  - openapi/cvent-social-tables-diagrams-api-openapi.yml
+  - openapi/cvent-social-tables-events-api-openapi.yml
+  - openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+  - openapi/cvent-social-tables-guest-groups-api-openapi.yml
+  - openapi/cvent-social-tables-guest-lists-api-openapi.yml
+  - openapi/cvent-social-tables-guest-meals-api-openapi.yml
+  - openapi/cvent-social-tables-guest-tags-api-openapi.yml
+  - openapi/cvent-social-tables-guests-api-openapi.yml
+  - openapi/cvent-social-tables-layout-automation-api-openapi.yml
+  - openapi/cvent-social-tables-properties-api-openapi.yml
+  - openapi/cvent-social-tables-rooms-api-openapi.yml
+  - openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+  - openapi/cvent-social-tables-users-api-openapi.yml
 - name: partner_token
   type: apiKey
   in: header
   parameter: partner_token
   description: Social Tables Partner Token
   sources:
-  - openapi/cvent-social-tables-openapi.json
+  - openapi/cvent-social-tables-authentication-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+  - openapi/cvent-social-tables-diagrams-api-openapi.yml
+  - openapi/cvent-social-tables-events-api-openapi.yml
+  - openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+  - openapi/cvent-social-tables-guest-groups-api-openapi.yml
+  - openapi/cvent-social-tables-guest-lists-api-openapi.yml
+  - openapi/cvent-social-tables-guest-meals-api-openapi.yml
+  - openapi/cvent-social-tables-guest-tags-api-openapi.yml
+  - openapi/cvent-social-tables-guests-api-openapi.yml
+  - openapi/cvent-social-tables-layout-automation-api-openapi.yml
+  - openapi/cvent-social-tables-properties-api-openapi.yml
+  - openapi/cvent-social-tables-rooms-api-openapi.yml
+  - openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+  - openapi/cvent-social-tables-users-api-openapi.yml
+docs: https://developer.socialtables.com/docs/authentication/
+flow_documented:
+  grant: authorization_code
+  authorize: https://auth.socialtables.com/oauth/authorize
+  token: https://api.socialtables.com/4.0/oauth/token (the docs tutorial also shows https://api.socialtables.com/oauth/token;
+    securityDefinitions names https://auth.socialtables.com/oauth/token)
+  authorize_params:
+  - client_id
+  - redirect_uri
+  - response_type=code
+  token_params:
+  - code
+  - client_id
+  - client_secret
+  - grant_type=authorization_code
+  - response_type=token
+  call_header: 'Authorization: Bearer <access_token>'
+  registration: Apps are created on https://developer.socialtables.com; the redirect URI must be pre-registered.
+  introspection: GET /4.0/oauth/token returns the identity behind the token, including id and legacy_id.
+  pkce: false
+  refresh_token_documented: false
+  note: The docs and the contract disagree on the token endpoint host — the tutorial posts to api.socialtables.com
+    while securityDefinitions names auth.socialtables.com. Recorded as published; not resolved here because
+    both are the provider's own statements.
+permissions:
+  model: role-based, per account / team / entity
+  docs: https://developer.socialtables.com/docs/api-usage/permissions.html
+  note: A 401 can mean "not permitted" rather than "not authenticated".
+token_types_note: Two apiKey header schemes also exist in the contract — user_token and partner_token
+  (plus stUserToken / stPartnerToken header parameters on some legacy operations). Neither is explained
+  anywhere in the public documentation; only the OAuth flow is documented.

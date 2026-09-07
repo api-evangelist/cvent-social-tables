@@ -4,97 +4,53 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Cvent Social Tables
 providerId: cvent-social-tables
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-07'
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://developer.socialtables.com/docs/ (every page walked 2026-09-07) and
+  https://developer.socialtables.com/swagger.json (Swagger 2.0, 59 paths / 87 operations)
+description: >-
+  Rate-limit survey for the Social Tables 4.0 API. FINDING: nothing is published. The developer
+  documentation has five pages — Introduction, Authentication, Tutorial, Legacy IDs,
+  Permissions, Layout Automation, Getting Support — and none of them mentions a quota, a
+  throttle, a burst allowance, a 429 response or a retry policy. The Swagger 2.0 contract
+  declares no 429 response on any of its 87 operations and contains no RateLimit / X-RateLimit
+  / Retry-After header definition (searched: zero occurrences of "rate limit" or "X-RateLimit").
+  This file replaces a 2026-05-04 bulk-sweep scaffold that asserted per-tier quotas and
+  response headers the provider has never published. An honest zero is the measurement.
 tags:
-  - 3D Design
-  - Catering
-  - Diagramming
-  - Event Design
-  - Event Management
-  - Events
-  - Floor Plans
-  - Hospitality
-  - Hotel
-  - Meetings
-  - Seating
-  - Seating Charts
-  - Venues
   - Rate Limiting
   - Quotas
   - Throttling
-description: Machine-readable rate limit definitions for the Cvent Social Tables API surface. Captures
-  per-tier quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values
-  to be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Social Tables Events API (Legacy)
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Social Tables Events API (Legacy)
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Social Tables Events API (Legacy)
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Social Tables Events API (Legacy)
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Social Tables Events API (Legacy)
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+limit_count: 0
+limits: []
+response_headers:
+  documented: false
+  headers: []
+  note: >-
+    No X-RateLimit-*, RateLimit-* (RFC 9331 style) or Retry-After header is documented or
+    declared in the contract. An agent has no runtime signal telling it how much budget is
+    left, so the only safe client strategy is conservative backoff on any 4xx.
+exhaustion:
+  status_code: null
+  documented: false
+  note: 429 does not appear in any operation's responses[] in the published contract.
+observed:
+  probed: false
+  note: >-
+    Every operation on api.socialtables.com requires an OAuth bearer token or a
+    user_token / partner_token header, so no unauthenticated response was available to read
+    live limit headers from. Nothing is asserted from an unauthenticated 401.
+evidence:
+  - url: https://developer.socialtables.com/docs/
+    status: 200
+    finding: Documentation index. No rate-limit or quota page exists.
+  - url: https://developer.socialtables.com/swagger.json
+    status: 200
+    finding: 'Swagger 2.0 contract: no 429 responses, no rate-limit headers.'
+gaps:
+  - >-
+    Publish the per-token quota and window, and return RateLimit-Limit / RateLimit-Remaining /
+    RateLimit-Reset (or X-RateLimit-*) plus Retry-After on 429. Without them an integrator
+    discovers the ceiling by hitting it in production.

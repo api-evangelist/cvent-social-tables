@@ -1,9 +1,129 @@
-generated: '2026-07-11'
+generated: '2026-09-07'
 method: derived
-source: openapi/cvent-social-tables-openapi.json
+source: openapi/cvent-social-tables-authentication-api-openapi.yml, openapi/cvent-social-tables-diagram-favorites-api-openapi.yml,
+  openapi/cvent-social-tables-diagram-layouts-api-openapi.yml, openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml,
+  openapi/cvent-social-tables-diagrams-api-openapi.yml, openapi/cvent-social-tables-events-api-openapi.yml,
+  openapi/cvent-social-tables-guest-checkin-api-openapi.yml, openapi/cvent-social-tables-guest-groups-api-openapi.yml,
+  openapi/cvent-social-tables-guest-lists-api-openapi.yml, openapi/cvent-social-tables-guest-meals-api-openapi.yml,
+  openapi/cvent-social-tables-guest-tags-api-openapi.yml, openapi/cvent-social-tables-guests-api-openapi.yml,
+  openapi/cvent-social-tables-layout-automation-api-openapi.yml, openapi/cvent-social-tables-properties-api-openapi.yml,
+  openapi/cvent-social-tables-rooms-api-openapi.yml, openapi/cvent-social-tables-snc-event-integration-api-openapi.yml,
+  openapi/cvent-social-tables-users-api-openapi.yml
 schemes:
 - name: oauth2
-  source: openapi/cvent-social-tables-openapi.json
+  source: openapi/cvent-social-tables-authentication-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-diagrams-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-events-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-guest-groups-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-guest-lists-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-guest-meals-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-guest-tags-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-guests-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-layout-automation-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-properties-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-rooms-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.socialtables.com/oauth/authorize
+    tokenUrl: https://auth.socialtables.com/oauth/token
+  description: OAuth
+- name: oauth2
+  source: openapi/cvent-social-tables-users-api-openapi.yml
   flows:
   - flow: authorizationCode
     authorizationUrl: https://auth.socialtables.com/oauth/authorize
@@ -15,16 +135,70 @@ scopes:
   flows:
   - authorizationCode
   sources:
-  - openapi/cvent-social-tables-openapi.json
+  - openapi/cvent-social-tables-authentication-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+  - openapi/cvent-social-tables-diagrams-api-openapi.yml
+  - openapi/cvent-social-tables-events-api-openapi.yml
+  - openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+  - openapi/cvent-social-tables-guest-groups-api-openapi.yml
+  - openapi/cvent-social-tables-guest-lists-api-openapi.yml
+  - openapi/cvent-social-tables-guest-meals-api-openapi.yml
+  - openapi/cvent-social-tables-guest-tags-api-openapi.yml
+  - openapi/cvent-social-tables-guests-api-openapi.yml
+  - openapi/cvent-social-tables-layout-automation-api-openapi.yml
+  - openapi/cvent-social-tables-properties-api-openapi.yml
+  - openapi/cvent-social-tables-rooms-api-openapi.yml
+  - openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+  - openapi/cvent-social-tables-users-api-openapi.yml
 - scope: create:oauth_client
   description: oauth client create
   flows:
   - authorizationCode
   sources:
-  - openapi/cvent-social-tables-openapi.json
+  - openapi/cvent-social-tables-authentication-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+  - openapi/cvent-social-tables-diagrams-api-openapi.yml
+  - openapi/cvent-social-tables-events-api-openapi.yml
+  - openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+  - openapi/cvent-social-tables-guest-groups-api-openapi.yml
+  - openapi/cvent-social-tables-guest-lists-api-openapi.yml
+  - openapi/cvent-social-tables-guest-meals-api-openapi.yml
+  - openapi/cvent-social-tables-guest-tags-api-openapi.yml
+  - openapi/cvent-social-tables-guests-api-openapi.yml
+  - openapi/cvent-social-tables-layout-automation-api-openapi.yml
+  - openapi/cvent-social-tables-properties-api-openapi.yml
+  - openapi/cvent-social-tables-rooms-api-openapi.yml
+  - openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+  - openapi/cvent-social-tables-users-api-openapi.yml
 - scope: userdata
   description: All of the things.
   flows:
   - authorizationCode
   sources:
-  - openapi/cvent-social-tables-openapi.json
+  - openapi/cvent-social-tables-authentication-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-favorites-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-layouts-api-openapi.yml
+  - openapi/cvent-social-tables-diagram-template-presets-api-openapi.yml
+  - openapi/cvent-social-tables-diagrams-api-openapi.yml
+  - openapi/cvent-social-tables-events-api-openapi.yml
+  - openapi/cvent-social-tables-guest-checkin-api-openapi.yml
+  - openapi/cvent-social-tables-guest-groups-api-openapi.yml
+  - openapi/cvent-social-tables-guest-lists-api-openapi.yml
+  - openapi/cvent-social-tables-guest-meals-api-openapi.yml
+  - openapi/cvent-social-tables-guest-tags-api-openapi.yml
+  - openapi/cvent-social-tables-guests-api-openapi.yml
+  - openapi/cvent-social-tables-layout-automation-api-openapi.yml
+  - openapi/cvent-social-tables-properties-api-openapi.yml
+  - openapi/cvent-social-tables-rooms-api-openapi.yml
+  - openapi/cvent-social-tables-snc-event-integration-api-openapi.yml
+  - openapi/cvent-social-tables-users-api-openapi.yml
+docs: https://developer.socialtables.com/docs/authentication/
+docs_note: 'No scopes / permissions reference page is published. The three scopes below are the ones the
+  contract''s oauth2 securityDefinition declares; the authentication docs describe the grant but never
+  name a scope, and the authorize example in the tutorial sends no scope parameter at all. Descriptions
+  are the provider''s own strings — "userdata: All of the things." is verbatim.'
+permissions_docs: https://developer.socialtables.com/docs/api-usage/permissions.html

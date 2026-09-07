@@ -1,0 +1,1341 @@
+generated: '2026-09-07'
+method: derived
+source: openapi/_original/cvent-social-tables-openapi.json (Swagger 2.0, 59 paths / 87 operations, harvested
+  from https://developer.socialtables.com/swagger.json 2026-09-07)
+status: candidate
+description: 'CANDIDATE tool surface derived from the published Social Tables contract. Social Tables
+  ships NO MCP server: searches of the developer portal, the socialtables GitHub org (88 public repos),
+  npm and the MCP registries/directories found no first-party server for Social Tables. Third-party Cvent
+  MCP servers exist (CData, community builds) but they wrap the separate Cvent Platform API and are not
+  published by this provider, so they are not recorded as its surface. Tool names below are generated
+  from method+path because the contract declares no operationId on any of its 87 operations — nothing
+  here is a name the provider uses.'
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: oauth
+  verified: derived
+  note: 'No server exists to reach. If one were built, it would carry the API''s own auth: an OAuth 2.0
+    authorization-code grant against https://auth.socialtables.com/oauth/authorize with a bearer token
+    on https://api.socialtables.com.'
+searched:
+  first_party_server: false
+  checked:
+  - https://developer.socialtables.com/docs/ (no MCP mention)
+  - https://github.com/socialtables (88 public repos, no MCP server)
+  - npm registry search "socialtables" (27 results, no MCP package)
+  - MCP directory/registry search for Cvent + Social Tables
+  third_party_only:
+  - name: Cvent MCP Server by CData
+    url: https://github.com/CDataSoftware/cvent-mcp-server-by-cdata
+    first_party: false
+    wraps: Cvent Platform data via CData JDBC — not the Social Tables 4.0 API
+  - name: Community Cvent MCP server (cmcintosh)
+    url: https://glama.ai/mcp/servers/cmcintosh/cvent-mcp-server
+    first_party: false
+    wraps: Cvent Event Management REST API
+tool_count: 87
+tools:
+- name: get_diagrams
+  category: Diagrams
+  description: get multiple diagrams
+  rest:
+    method: GET
+    path: /4.0/diagrams
+  read_only: true
+  parameters:
+  - name: ids
+    in: query
+    required: false
+  - name: event
+    in: query
+    required: false
+  - name: space
+    in: query
+    required: false
+  - name: guestlist
+    in: query
+    required: false
+  - name: legacy_event
+    in: query
+    required: false
+  - name: fields
+    in: query
+    required: false
+  - name: external_diagram_id
+    in: query
+    required: false
+  - name: external_event_id
+    in: query
+    required: false
+  - name: limit
+    in: query
+    required: false
+  - name: offset
+    in: query
+    required: false
+- name: get_diagrams_guestlist_by_guestlistid
+  category: Diagrams
+  description: Get a diagram by its guestlist ID
+  rest:
+    method: GET
+    path: /4.0/diagrams/guestlist/{guestlistId}
+  read_only: true
+  parameters:
+  - name: guestlistId
+    in: path
+    required: true
+  - name: fields
+    in: query
+    required: false
+- name: get_diagrams_by_id
+  category: Diagrams
+  description: get a diagram by ID
+  rest:
+    method: GET
+    path: /4.0/diagrams/{id}
+  read_only: true
+  parameters:
+  - name: id
+    in: path
+    required: true
+  - name: fields
+    in: query
+    required: false
+- name: delete_diagrams_by_id
+  category: Diagrams
+  description: deletes a diagram
+  rest:
+    method: DELETE
+    path: /4.0/diagrams/{id}
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+- name: update_diagrams_by_id_auto_seat
+  category: Diagrams
+  description: automatically seat array of guest objects at available chairs
+  rest:
+    method: PATCH
+    path: /4.0/diagrams/{id}/auto-seat
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+  - name: data
+    in: body
+    required: false
+- name: get_diagrams_by_id_guests
+  category: Diagrams
+  description: get chair and floor element information for seated guests
+  rest:
+    method: GET
+    path: /4.0/diagrams/{id}/guests
+  read_only: true
+  parameters:
+  - name: id
+    in: path
+    required: true
+- name: delete_diagrams_by_id_guests
+  category: Diagrams
+  description: Detaches a diagram's guestlist and unseats all guests
+  rest:
+    method: DELETE
+    path: /4.0/diagrams/{id}/guests
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+- name: update_diagrams_by_id_seat
+  category: Diagrams
+  description: seat guests at specified floor elements in a diagram
+  rest:
+    method: PATCH
+    path: /4.0/diagrams/{id}/seat
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+  - name: data
+    in: body
+    required: true
+- name: get_events
+  category: Events
+  description: Retrieve all events an authenticated user has access to within their team.
+  rest:
+    method: GET
+    path: /4.0/events
+  read_only: true
+  parameters:
+  - name: event_ids
+    in: query
+    required: false
+  - name: v2_event_ids
+    in: query
+    required: false
+  - name: attachSpacesAndBookableRooms
+    in: query
+    required: false
+  - name: permissionLevel
+    in: query
+    required: false
+- name: create_events
+  category: Events
+  description: Creates an event
+  rest:
+    method: POST
+    path: /4.0/events
+  read_only: false
+  parameters:
+  - name: Post40EventsBody
+    in: body
+    required: true
+- name: get_events_page
+  category: Events
+  description: Retrieve a list of events that the user (specified via the token) has access to, with offset-based
+    pagination
+  rest:
+    method: GET
+    path: /4.0/events/page
+  read_only: true
+  parameters:
+  - name: limit
+    in: query
+    required: false
+  - name: offset
+    in: query
+    required: false
+  - name: name
+    in: query
+    required: false
+  - name: owner_id
+    in: query
+    required: false
+  - name: collaborator_id
+    in: query
+    required: false
+  - name: industry_type
+    in: query
+    required: false
+  - name: start_date
+    in: query
+    required: false
+  - name: end_date
+    in: query
+    required: false
+  - name: last_activity
+    in: query
+    required: false
+  - name: event_type
+    in: query
+    required: false
+  - name: team_id
+    in: query
+    required: false
+  - name: space_id
+    in: query
+    required: false
+  - name: sort_col
+    in: query
+    required: false
+  - name: sort_dir
+    in: query
+    required: false
+  - name: date_filter
+    in: query
+    required: false
+  - name: space_template_ids
+    in: query
+    required: false
+  - name: bookable_room_ids
+    in: query
+    required: false
+  - name: event_platform
+    in: query
+    required: false
+  - name: event_ids
+    in: query
+    required: false
+  - name: v2_event_ids
+    in: query
+    required: false
+- name: delete_events_by_event
+  category: Events
+  description: Delete an event
+  rest:
+    method: DELETE
+    path: /4.0/events/{event}
+  read_only: false
+  parameters:
+  - name: event
+    in: path
+    required: true
+- name: get_events_by_event
+  category: Events
+  description: Returns information about an event by its unique ID.
+  rest:
+    method: GET
+    path: /4.0/events/{event}
+  read_only: true
+  parameters:
+  - name: event
+    in: path
+    required: true
+  - name: include_deleted
+    in: query
+    required: false
+- name: replace_events_by_event
+  category: Events
+  description: Update an event
+  rest:
+    method: PUT
+    path: /4.0/events/{event}
+  read_only: false
+  parameters:
+  - name: event
+    in: path
+    required: true
+  - name: Put40EventsEventBody
+    in: body
+    required: true
+- name: get_favorites
+  category: Diagram Favorites
+  description: get multiple favorites
+  rest:
+    method: GET
+    path: /4.0/favorites
+  read_only: true
+  parameters:
+  - name: user
+    in: query
+    required: false
+  - name: team
+    in: query
+    required: false
+- name: create_favorites
+  category: Diagram Favorites
+  description: inserts a favorite
+  rest:
+    method: POST
+    path: /4.0/favorites/
+  read_only: false
+  parameters:
+  - name: body
+    in: body
+    required: true
+- name: update_favorites
+  category: Diagram Favorites
+  description: updates a favorite
+  rest:
+    method: PATCH
+    path: /4.0/favorites/
+  read_only: false
+  parameters:
+  - name: data
+    in: body
+    required: true
+- name: get_favorites_by_id
+  category: Diagram Favorites
+  description: get a favorite by ID
+  rest:
+    method: GET
+    path: /4.0/favorites/{id}
+  read_only: true
+  parameters:
+  - name: id
+    in: path
+    required: true
+- name: delete_favorites_by_id
+  category: Diagram Favorites
+  description: deletes a favorite
+  rest:
+    method: DELETE
+    path: /4.0/favorites/{id}
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+- name: get_guestlists
+  category: Guest Lists
+  description: Retrieve all guestlists by session or event id
+  rest:
+    method: GET
+    path: /4.0/guestlists
+  read_only: true
+  parameters:
+  - name: event_id
+    in: query
+    required: false
+  - name: session_id
+    in: query
+    required: false
+- name: create_guestlists
+  category: Guest Lists
+  description: Create a guestlist
+  rest:
+    method: POST
+    path: /4.0/guestlists
+  read_only: false
+  parameters:
+  - name: body
+    in: body
+    required: true
+- name: get_guestlists_team_by_team_id_guests_filter
+  category: Guests
+  description: Retrieve all guests matching specified filter
+  rest:
+    method: GET
+    path: /4.0/guestlists/team/{team_id}/guests/_filter
+  read_only: true
+  parameters:
+  - name: team_id
+    in: path
+    required: true
+  - name: filter_key
+    in: query
+    required: true
+  - name: filter_value
+    in: query
+    required: true
+  - name: event_ids
+    in: query
+    required: true
+- name: get_guestlists_by_guestlist_id
+  category: Guest Lists
+  description: Retrieve all guestlists
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: replace_guestlists_by_guestlist_id
+  category: Guest Lists
+  description: Update a guestlist
+  rest:
+    method: PUT
+    path: /4.0/guestlists/{guestlist_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guestlist
+    in: body
+    required: false
+- name: update_guestlists_by_guestlist_id
+  category: Guest Lists
+  description: Update a guestlist
+  rest:
+    method: PATCH
+    path: /4.0/guestlists/{guestlist_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guestlist
+    in: body
+    required: false
+- name: delete_guestlists_by_guestlist_id
+  category: Guest Lists
+  description: Delete a guestlist
+  rest:
+    method: DELETE
+    path: /4.0/guestlists/{guestlist_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_clone
+  category: Guest Lists
+  description: Clone a guestlist
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/_clone
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: event_id
+    in: body
+    required: true
+- name: get_guestlists_by_guestlist_id_checkin
+  category: Guest Checkin
+  description: Get all checked in guests for a guestlist
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/checkin
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: get_guestlists_by_guestlist_id_column_mapping
+  category: Guest Lists
+  description: Get a guestlist column mapping
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/column_mapping
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: delete_guestlists_by_guestlist_id_cvent_seating
+  category: Guest Lists
+  description: Delete a guestlist
+  rest:
+    method: DELETE
+    path: /4.0/guestlists/{guestlist_id}/cvent/seating
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_groups
+  category: Guest Groups
+  description: Create a group
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/groups
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guests
+    in: body
+    required: true
+- name: get_guestlists_by_guestlist_id_groups_by_group_id
+  category: Guest Groups
+  description: Retrieve a GROUP
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/groups/{group_id}
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: group_id
+    in: path
+    required: true
+- name: delete_guestlists_by_guestlist_id_groups_by_group_id
+  category: Guest Groups
+  description: Delete a GROUP
+  rest:
+    method: DELETE
+    path: /4.0/guestlists/{guestlist_id}/groups/{group_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: group_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_groups_by_group_id_guests_bulk
+  category: Guest Groups
+  description: Bulk add/remove guests to/from group
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/groups/{group_id}/guests/_bulk
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: group_id
+    in: path
+    required: true
+  - name: guest_data
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_groups_by_group_id_guests_bulk_2
+  category: Guest Groups
+  description: Bulk adds guests from group
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/groups/{group_id}/guests/_bulk/create
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: group_id
+    in: path
+    required: true
+  - name: guest_ids
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_groups_by_group_id_guests_bulk_3
+  category: Guest Groups
+  description: Bulk deletes guests from group
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/groups/{group_id}/guests/_bulk/delete
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: group_id
+    in: path
+    required: true
+  - name: guests
+    in: body
+    required: true
+- name: delete_guestlists_by_guestlist_id_groups_by_group_id_name
+  category: Guest Groups
+  description: Clear Group Name
+  rest:
+    method: DELETE
+    path: /4.0/guestlists/{guestlist_id}/groups/{group_id}/name
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: group_id
+    in: path
+    required: true
+- name: replace_guestlists_by_guestlist_id_groups_by_group_id_name_by_na
+  category: Guest Groups
+  description: Set group name
+  rest:
+    method: PUT
+    path: /4.0/guestlists/{guestlist_id}/groups/{group_id}/name/{name}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: group_id
+    in: path
+    required: true
+  - name: name
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_guests
+  category: Guests
+  description: Add a guest to a guestlist
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guests
+    in: body
+    required: true
+- name: get_guestlists_by_guestlist_id_guests
+  category: Guests
+  description: Retrieve all guests for a guestlist
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/guests
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_bulk
+  category: Guests
+  description: add multiple guests to a guestlist
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/_bulk
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_dedupe
+  category: Guests
+  description: dedupe new guests against existing guests in a guestlist
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/_dedupe
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guests
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_replace
+  category: Guests
+  description: deletes existing guests that match new duplicate guests
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/_replace
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guests
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_checkin
+  category: Guest Checkin
+  description: Updates multiple guests to a single checkin status
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/checkin
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_meals
+  category: Guest Meals
+  description: assign/delete multiple guests to a tag
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/meals
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: get_guestlists_by_guestlist_id_guests_seating
+  category: Guests
+  description: Retrieve all guests and their seatings for a guestlist
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/guests/seating
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_tags
+  category: Guest Tags
+  description: assign/delete multiple guests to a tag
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/tags
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_update_checkin_status
+  category: Guest Checkin
+  description: Updates multiple guests to multiple checkin statuses
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/update-checkin-status
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: get_guestlists_by_guestlist_id_guests_by_guest_id
+  category: Guests
+  description: Retrieve a guest
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/guests/{guest_id}
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guest_id
+    in: path
+    required: true
+- name: update_guestlists_by_guestlist_id_guests_by_guest_id
+  category: Guests
+  description: update a guest
+  rest:
+    method: PATCH
+    path: /4.0/guestlists/{guestlist_id}/guests/{guest_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guest_id
+    in: path
+    required: true
+  - name: guest
+    in: body
+    required: false
+- name: replace_guestlists_by_guestlist_id_guests_by_guest_id
+  category: Guests
+  description: update a guest
+  rest:
+    method: PUT
+    path: /4.0/guestlists/{guestlist_id}/guests/{guest_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guest_id
+    in: path
+    required: true
+  - name: guest
+    in: body
+    required: false
+- name: delete_guestlists_by_guestlist_id_guests_by_guest_id
+  category: Guests
+  description: Delete a guest & remove from group
+  rest:
+    method: DELETE
+    path: /4.0/guestlists/{guestlist_id}/guests/{guest_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guest_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_by_guest_id_checkin
+  category: Guests
+  description: Updates the checkin status of an individual guest
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/{guest_id}/checkin
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guest_id
+    in: path
+    required: true
+  - name: checked_in
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_by_guest_id_restore
+  category: Guests
+  description: Restore a deleted guest and their group if applicable
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/{guest_id}/restore
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guest_id
+    in: path
+    required: true
+- name: get_guestlists_by_guestlist_id_guests_by_guest_id_seating
+  category: Guests
+  description: Retrieve a guest with seating information
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/guests/{guest_id}/seating
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guest_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_guests_by_guest_id_seating
+  category: Guests
+  description: Seats a guest and any grouped guests with them
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/guests/{guest_id}/seating
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: guest_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_meals
+  category: Guest Meals
+  description: create a meal on a guestlist
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/meals
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: replace_guestlists_by_guestlist_id_meals_by_meal_title
+  category: Guest Meals
+  description: edit a meal on a guestlist
+  rest:
+    method: PUT
+    path: /4.0/guestlists/{guestlist_id}/meals/{meal_title}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: meal_title
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: delete_guestlists_by_guestlist_id_meals_by_meal_title
+  category: Guest Meals
+  description: delete a meal on a guestlist
+  rest:
+    method: DELETE
+    path: /4.0/guestlists/{guestlist_id}/meals/{meal_title}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: meal_title
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: create_guestlists_by_guestlist_id_restore
+  category: Guest Lists
+  description: Restore a deleted guestlist
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/restore
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: get_guestlists_by_guestlist_id_tags
+  category: Guest Tags
+  description: get the tags status on a guestlist
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/tags
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+- name: create_guestlists_by_guestlist_id_tags
+  category: Guest Tags
+  description: create a tag on a guestlist
+  rest:
+    method: POST
+    path: /4.0/guestlists/{guestlist_id}/tags
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: get_guestlists_by_guestlist_id_tags_by_tag_title_or_id
+  category: Guest Tags
+  description: get a tag on a guestlist
+  rest:
+    method: GET
+    path: /4.0/guestlists/{guestlist_id}/tags/{tag_title_or_id}
+  read_only: true
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: tag_title_or_id
+    in: path
+    required: true
+- name: replace_guestlists_by_guestlist_id_tags_by_tag_title_or_id
+  category: Guest Tags
+  description: edit a tag on a guestlist
+  rest:
+    method: PUT
+    path: /4.0/guestlists/{guestlist_id}/tags/{tag_title_or_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: tag_title_or_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: delete_guestlists_by_guestlist_id_tags_by_tag_title_or_id
+  category: Guest Tags
+  description: delete a tag on a guestlist
+  rest:
+    method: DELETE
+    path: /4.0/guestlists/{guestlist_id}/tags/{tag_title_or_id}
+  read_only: false
+  parameters:
+  - name: guestlist_id
+    in: path
+    required: true
+  - name: tag_title_or_id
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true
+- name: create_layout_automation
+  category: Layout Automation
+  description: actively calculates layout and creates an event/space/diagram
+  rest:
+    method: POST
+    path: /4.0/layout-automation
+  read_only: false
+  parameters:
+  - name: body
+    in: body
+    required: true
+- name: delete_layout_automation
+  category: Layout Automation
+  description: removes floor elements from previous automated and manual layouts
+  rest:
+    method: DELETE
+    path: /4.0/layout-automation
+  read_only: false
+  parameters:
+  - name: spaces
+    in: query
+    required: true
+  - name: event
+    in: query
+    required: true
+  - name: hardDelete
+    in: query
+    required: false
+- name: create_layout_automation_custom_setup
+  category: Layout Automation
+  description: actively calculates layout and creates an event/space/diagram using custom_setup defined
+    from Home Team Setup Presets https://home-2018.socialtables.com/settings/team-setup-presets
+  rest:
+    method: POST
+    path: /4.0/layout-automation/custom-setup
+  read_only: false
+  parameters:
+  - name: body
+    in: body
+    required: true
+- name: get_layouts
+  category: Diagram Layouts
+  description: get multiple layouts
+  rest:
+    method: GET
+    path: /4.0/layouts
+  read_only: true
+  parameters:
+  - name: bookable_room
+    in: query
+    required: false
+  - name: space_template
+    in: query
+    required: false
+  - name: team_id
+    in: query
+    required: false
+- name: create_layouts
+  category: Diagram Layouts
+  description: inserts a layout
+  rest:
+    method: POST
+    path: /4.0/layouts/
+  read_only: false
+  parameters:
+  - name: body
+    in: body
+    required: true
+- name: get_layouts_by_id
+  category: Diagram Layouts
+  description: get a layout by ID
+  rest:
+    method: GET
+    path: /4.0/layouts/{id}
+  read_only: true
+  parameters:
+  - name: id
+    in: path
+    required: true
+- name: delete_layouts_by_id
+  category: Diagram Layouts
+  description: deletes a layout
+  rest:
+    method: DELETE
+    path: /4.0/layouts/{id}
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+- name: update_layouts_by_id
+  category: Diagram Layouts
+  description: updates a layout
+  rest:
+    method: PATCH
+    path: /4.0/layouts/{id}
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+  - name: data
+    in: body
+    required: true
+- name: create_oauth_token
+  category: Authentication
+  description: Request an OAuth bearer token
+  rest:
+    method: POST
+    path: /4.0/oauth/token
+  read_only: false
+  parameters:
+  - name: Content-Type
+    in: header
+    required: false
+  - name: Accept
+    in: header
+    required: false
+  - name: client_id
+    in: formData
+    required: true
+  - name: client_secret
+    in: formData
+    required: true
+  - name: grant_type
+    in: formData
+    required: true
+  - name: code
+    in: formData
+    required: false
+  - name: refresh_token
+    in: formData
+    required: false
+  - name: username
+    in: formData
+    required: false
+  - name: password
+    in: formData
+    required: false
+- name: get_oauth_token
+  category: Authentication
+  description: Get information about the current OAuth bearer token as-supplied in headers
+  rest:
+    method: GET
+    path: /4.0/oauth/token
+  read_only: true
+  parameters: []
+- name: get_properties
+  category: Properties
+  description: get active properties owned by the caller team
+  rest:
+    method: GET
+    path: /4.0/properties
+  read_only: true
+  parameters: []
+- name: get_properties_by_property_id
+  category: Properties
+  description: get a property from a property ID
+  rest:
+    method: GET
+    path: /4.0/properties/{property_id}
+  read_only: true
+  parameters:
+  - name: property_id
+    in: path
+    required: true
+- name: get_properties_by_property_id_rooms
+  category: Rooms
+  description: Returns all rooms for a given property ID
+  rest:
+    method: GET
+    path: /4.0/properties/{property_id}/rooms
+  read_only: true
+  parameters:
+  - name: property_id
+    in: path
+    required: true
+- name: get_rooms
+  category: Rooms
+  description: get all rooms that the current user has access to
+  rest:
+    method: GET
+    path: /4.0/rooms
+  read_only: true
+  parameters:
+  - name: page_size
+    in: query
+    required: false
+  - name: before
+    in: query
+    required: false
+  - name: after
+    in: query
+    required: false
+  - name: room_ids
+    in: query
+    required: false
+- name: get_rooms_by_room_id
+  category: Rooms
+  description: get a room by ID
+  rest:
+    method: GET
+    path: /4.0/rooms/{room_id}
+  read_only: true
+  parameters:
+  - name: room_id
+    in: path
+    required: true
+  - name: archived
+    in: query
+    required: false
+- name: get_teams_by_team_id_users
+  category: Users
+  description: get users for a given team
+  rest:
+    method: GET
+    path: /4.0/teams/{team_id}/users
+  read_only: true
+  parameters:
+  - name: team_id
+    in: path
+    required: true
+  - name: page_size
+    in: query
+    required: false
+  - name: after
+    in: query
+    required: false
+  - name: before
+    in: query
+    required: false
+- name: get_template_presets
+  category: Diagram Template Presets
+  description: get multiple template presets
+  rest:
+    method: GET
+    path: /4.0/template-presets
+  read_only: true
+  parameters:
+  - name: user
+    in: query
+    required: false
+  - name: team
+    in: query
+    required: false
+  - name: setup
+    in: query
+    required: false
+  - name: propertyId
+    in: query
+    required: false
+  - name: catalogItemId
+    in: query
+    required: false
+- name: create_template_presets
+  category: Diagram Template Presets
+  description: inserts a template preset
+  rest:
+    method: POST
+    path: /4.0/template-presets
+  read_only: false
+  parameters:
+  - name: event_id
+    in: query
+    required: false
+  - name: body
+    in: body
+    required: true
+- name: get_template_presets_by_id
+  category: Diagram Template Presets
+  description: get a template preset by id
+  rest:
+    method: GET
+    path: /4.0/template-presets/{id}
+  read_only: true
+  parameters:
+  - name: id
+    in: path
+    required: true
+- name: delete_template_presets_by_id
+  category: Diagram Template Presets
+  description: deletes a template preset
+  rest:
+    method: DELETE
+    path: /4.0/template-presets/{id}
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+  - name: event_id
+    in: query
+    required: false
+- name: update_template_presets_by_id
+  category: Diagram Template Presets
+  description: updates a template preset
+  rest:
+    method: PATCH
+    path: /4.0/template-presets/{id}
+  read_only: false
+  parameters:
+  - name: id
+    in: path
+    required: true
+  - name: event_id
+    in: query
+    required: false
+  - name: data
+    in: body
+    required: true
+- name: create_v1_integrations_by_snctype
+  category: SNC Event Integration
+  description: Accepts data about external events and persists them
+  rest:
+    method: POST
+    path: /4.0/v1/integrations/{sncType}
+  read_only: false
+  parameters:
+  - name: sncType
+    in: path
+    required: true
+  - name: body
+    in: body
+    required: true

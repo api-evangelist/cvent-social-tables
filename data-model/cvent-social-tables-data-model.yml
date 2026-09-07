@@ -1,0 +1,213 @@
+generated: '2026-09-07'
+method: derived
+source: >-
+  openapi/_original/cvent-social-tables-openapi.json (268 definitions, 59 paths) and
+  https://developer.socialtables.com/docs/api-usage/layout-automation
+description: >-
+  Entity-relationship graph for the Social Tables 4.0 API, derived from the published contract's
+  schema definitions, their id-reference fields and the path hierarchy. The contract is split
+  across five backing services whose names survive in every definition suffix — account-service,
+  property-service, guest-list-service, diagram-service, layout-automation-service (plus
+  snc-integration-service) — and that split is the clearest map of the domain.
+services:
+  - id: account-service
+    owns: [user, team, account]
+    definitions: 'suffix -account-service'
+  - id: property-service
+    owns: [property, room]
+    definitions: 'suffix -property-service'
+  - id: guest-list-service
+    owns: [guestlist, guest, group, tag, meal, checkin]
+    definitions: 'suffix -guest-list-service'
+  - id: diagram-service
+    owns: [diagram, layout, favorite, template-preset, seat, floor-element]
+    definitions: 'suffix -diagram-service'
+  - id: layout-automation-service
+    owns: [automated-layout, event-diagrams]
+    definitions: 'suffix -layout-automation-service'
+  - id: snc-integration-service
+    owns: [snc-event-integration]
+    definitions: 'suffix -snc-integration-service'
+entities:
+  - name: user
+    id_field: id
+    legacy_id_field: legacy_id
+    id_format: alphanumeric in 4.0, numeric in legacy
+    paths: ['GET /4.0/oauth/token', 'GET /4.0/teams/{team_id}/users']
+    fields: [accountId, customerId, originUserId, productId, email, firstName, lastName, mobilePhone, title]
+    relationships:
+      - belongs_to: team
+        via: team_id
+      - belongs_to: account
+        via: accountId
+  - name: team
+    id_field: team_id
+    legacy_id_field: legacy_team_id
+    paths: ['GET /4.0/teams/{team_id}/users', 'GET /4.0/guestlists/team/{team_id}/guests/_filter']
+    relationships:
+      - has_many: user
+      - has_many: event
+      - has_many: favorite
+        via: team_id
+  - name: property
+    id_field: property_id
+    legacy_id_field: legacy_property_id
+    paths: ['GET /4.0/properties', 'GET /4.0/properties/{property_id}']
+    relationships:
+      - has_many: room
+        via: 'GET /4.0/properties/{property_id}/rooms'
+  - name: room
+    id_field: room_id
+    aliases: [bookable_room_id, venue_id, space_id]
+    paths: ['GET /4.0/rooms', 'GET /4.0/rooms/{room_id}', 'GET /4.0/properties/{property_id}/rooms']
+    fields_of_interest: [fireCode, room-details, diagramCheckSettings]
+    note: >-
+      The Layout Automation docs state the bookable room id "must be prepended with an S" when
+      supplied as venue_id — the same physical room is addressed by different identifier forms
+      on different surfaces.
+    relationships:
+      - belongs_to: property
+        via: property_id
+      - has_many: diagram
+        via: space_id
+  - name: event
+    id_field: event
+    paths: ['GET /4.0/events', 'GET /4.0/events/page', 'GET|PUT|DELETE /4.0/events/{event}']
+    fields: [name, start_time, end_time, is_archived, screenshot_url, user_id, team_id, public, uses_metric]
+    relationships:
+      - belongs_to: team
+        via: team_id
+      - belongs_to: user
+        via: user_id
+      - has_many: diagram
+      - has_many: guestlist
+        via: event_id
+  - name: guestlist
+    id_field: id
+    paths: ['GET|POST /4.0/guestlists', 'GET|PUT|PATCH|DELETE /4.0/guestlists/{guestlist_id}']
+    fields: [id, session_id, event_id, name, deleted]
+    soft_delete: true
+    restore: 'POST /4.0/guestlists/{guestlist_id}/restore'
+    relationships:
+      - belongs_to: event
+        via: event_id
+      - has_many: guest
+      - has_many: group
+      - has_many: tag
+      - has_many: meal
+      - has_one: diagram
+        via: 'GET /4.0/diagrams/guestlist/{guestlistId}'
+  - name: guest
+    id_field: guest_id
+    paths:
+      - 'GET|POST /4.0/guestlists/{guestlist_id}/guests'
+      - 'GET|PATCH|PUT|DELETE /4.0/guestlists/{guestlist_id}/guests/{guest_id}'
+    fields: [id, first_name, last_name, email, checked_in_status, tags, meals, seating]
+    soft_delete: true
+    restore: 'POST /4.0/guestlists/{guestlist_id}/guests/{guest_id}/restore'
+    relationships:
+      - belongs_to: guestlist
+        via: guestlist_id
+      - belongs_to: group
+        via: group_id
+      - has_many: tag
+      - has_many: meal
+      - has_one: seat
+        via: 'GET|POST /4.0/guestlists/{guestlist_id}/guests/{guest_id}/seating'
+  - name: group
+    id_field: group_id
+    paths: ['POST /4.0/guestlists/{guestlist_id}/groups', 'GET|DELETE /4.0/guestlists/{guestlist_id}/groups/{group_id}']
+    fields: [id, guestlist_id, guest_count, is_named, guests]
+    relationships:
+      - belongs_to: guestlist
+        via: guestlist_id
+      - has_many: guest
+  - name: tag
+    id_field: tag_title_or_id
+    paths: ['GET|POST /4.0/guestlists/{guestlist_id}/tags', 'GET|PUT|DELETE /4.0/guestlists/{guestlist_id}/tags/{tag_title_or_id}']
+    fields: [id, guestlist_id, title, color, archived]
+    note: Addressable by title OR id — a single path parameter accepts both.
+    relationships:
+      - belongs_to: guestlist
+        via: guestlist_id
+  - name: meal
+    id_field: meal_title
+    paths: ['POST /4.0/guestlists/{guestlist_id}/meals', 'PUT|DELETE /4.0/guestlists/{guestlist_id}/meals/{meal_title}']
+    note: Keyed by title, not by a surrogate id.
+    relationships:
+      - belongs_to: guestlist
+      - has_many: guest
+  - name: diagram
+    id_field: id
+    paths: ['GET /4.0/diagrams', 'GET|DELETE /4.0/diagrams/{id}', 'PATCH /4.0/diagrams/{id}/seat', 'PATCH /4.0/diagrams/{id}/auto-seat']
+    fields: [deleted, external_diagram_id, external_event_id, floorPlan, guestlist_id, length, name, notes, rotation, sort_order, table_numbering, team_uploads_id]
+    relationships:
+      - belongs_to: guestlist
+        via: guestlist_id
+      - belongs_to: room
+        via: space_id
+      - has_many: floor_element
+      - has_many: guest
+        via: 'GET|DELETE /4.0/diagrams/{id}/guests'
+  - name: layout
+    id_field: id
+    paths: ['GET /4.0/layouts', 'POST /4.0/layouts/', 'GET|PATCH|DELETE /4.0/layouts/{id}']
+    fields: [name, rotation, length, width, space_id, team_id, legacy_team_id, space_template_id, bookable_room_id, floor_elements, groups, catalog_id]
+    relationships:
+      - belongs_to: room
+        via: 'space_id / bookable_room_id'
+      - belongs_to: team
+        via: team_id
+      - has_many: group
+  - name: favorite
+    id_field: id
+    paths: ['GET /4.0/favorites', 'POST|PATCH /4.0/favorites/', 'GET|DELETE /4.0/favorites/{id}']
+    fields: [user_id, legacy_user_id, team_id, legacy_team_id, space_id, name, floor_elements, legacy_property_id]
+    unique: 'name — POST returns 409 "created a favorite with an existing name"'
+    relationships:
+      - belongs_to: user
+      - belongs_to: team
+      - belongs_to: room
+        via: space_id
+  - name: template_preset
+    id_field: id
+    paths: ['GET|POST /4.0/template-presets', 'GET|PATCH|DELETE /4.0/template-presets/{id}']
+    fields: [id, type, owner_id, name, legacy_property_id, definition]
+    relationships:
+      - belongs_to: user
+        via: owner_id
+      - belongs_to: property
+        via: legacy_property_id
+  - name: seat
+    paths: ['PATCH /4.0/diagrams/{id}/seat', 'PATCH /4.0/diagrams/{id}/auto-seat', 'GET|POST /4.0/guestlists/{guestlist_id}/guests/{guest_id}/seating']
+    fields: [floor_element_id, chair_id, guest_id, update_id]
+    note: >-
+      The join entity of the whole model — it binds a guest (guest-list-service) to a chair on a
+      floor element (diagram-service). `update_id` is the concurrency token on seat writes.
+    relationships:
+      - belongs_to: guest
+        via: guest_id
+      - belongs_to: diagram
+      - belongs_to: floor_element
+        via: floor_element_id
+  - name: snc_event_integration
+    paths: ['POST /4.0/v1/integrations/{sncType}']
+    fields: [property_id, property_name, booking_id, booking_name, account_id, account_name, booking_arrival_date, booking_departure_date, booking_status, event_functions]
+    note: >-
+      Inbound Sales & Catering (SNC) booking payload — the seam where a hotel's sales-and-catering
+      system pushes a booking that becomes an event.
+    relationships:
+      - belongs_to: property
+      - creates: event
+external_ids:
+  note: >-
+    external_event_id / external_diagram_id / externalPropertyId / externalRoomId appear on the
+    diagram-core and layout-automation schemas as the correlation keys for a caller's own system.
+    They are the intended integration join keys, though no published path binds the
+    event-diagrams bodies that document them (see conventions/, idempotency.unbound_mechanism).
+id_generations:
+  note: >-
+    Every core entity carries a dual identity — `id` (alphanumeric, 4.0) and `legacy_id` /
+    `legacy_team_id` / `legacy_user_id` / `legacy_property_id` (numeric, 2.x-3.x). Any traversal
+    of this graph has to keep both.
+  docs: https://developer.socialtables.com/docs/api-usage/legacy-ids.html

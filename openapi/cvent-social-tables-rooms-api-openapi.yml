@@ -1,10 +1,10 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   title: Social Tables API Gateway Authentication Rooms API
   version: 4.0.0
   description: The Social Tables API
-host: api.socialtables.com
-basePath: /
+servers:
+- url: https://api.socialtables.com/
 tags:
 - name: Rooms
 paths:
@@ -13,64 +13,107 @@ paths:
       tags:
       - Rooms
       summary: Returns all rooms for a given property ID
-      produces:
-      - application/json
-      consumes:
-      - application/json
       parameters:
-      - $ref: '#/parameters/property_id-property-service'
+      - $ref: '#/components/parameters/property_id-property-service'
       responses:
         '200':
           description: a body containing rooms for that respective property ID
+  /4.0/rooms:
+    get:
+      tags:
+      - Rooms
+      summary: get all rooms that the current user has access to
+      description: 'Gets a list of all rooms for which the requestor has
+
+        access based on the their roles and their team''s roles. Identity
+
+        is inferred from OAuth authorization header.
+
+        '
+      parameters:
+      - $ref: '#/components/parameters/page_size-property-service'
+      - $ref: '#/components/parameters/before-property-service'
+      - $ref: '#/components/parameters/after-property-service'
+      - $ref: '#/components/parameters/room_ids-property-service'
+      responses:
+        '200':
+          description: returns a list of rooms
   /4.0/rooms/{room_id}:
     get:
       tags:
       - Rooms
       summary: get a room by ID
       description: get a room by ID
-      produces:
-      - application/json
-      consumes:
-      - application/json
       parameters:
-      - $ref: '#/parameters/room_id-property-service'
-      - $ref: '#/parameters/archived-property-service'
+      - $ref: '#/components/parameters/room_id-property-service'
+      - $ref: '#/components/parameters/archived-property-service'
       responses:
         '200':
           description: success
-parameters:
-  archived-property-service:
-    name: archived
-    in: query
-    type: boolean
-  room_id-property-service:
-    name: room_id
-    in: path
-    type: string
-    required: true
-  property_id-property-service:
-    name: property_id
-    in: path
-    type: string
-    required: true
-securityDefinitions:
-  oauth2:
-    type: oauth2
-    description: OAuth
-    tokenUrl: https://auth.socialtables.com/oauth/token
-    authorizationUrl: https://auth.socialtables.com/oauth/authorize
-    flow: accessCode
-    scopes:
-      authenticated: any authentication whatsoever
-      create:oauth_client: oauth client create
-      userdata: All of the things.
-  user_token:
-    type: apiKey
-    name: user_token
-    in: header
-    description: Social Tables User Token
-  partner_token:
-    type: apiKey
-    name: partner_token
-    in: header
-    description: Social Tables Partner Token
+components:
+  parameters:
+    after-property-service:
+      name: after
+      in: query
+      description: cursor for paging
+      schema:
+        type: string
+    archived-property-service:
+      name: archived
+      in: query
+      schema:
+        type: boolean
+    before-property-service:
+      name: before
+      in: query
+      description: before cursor for backpaging
+      schema:
+        type: string
+    page_size-property-service:
+      name: page_size
+      in: query
+      description: page size
+      schema:
+        type: integer
+        default: 50
+    property_id-property-service:
+      name: property_id
+      in: path
+      required: true
+      schema:
+        type: string
+    room_id-property-service:
+      name: room_id
+      in: path
+      required: true
+      schema:
+        type: string
+    room_ids-property-service:
+      name: room_ids
+      in: query
+      schema:
+        type: array
+        items:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          scopes:
+            authenticated: any authentication whatsoever
+            create:oauth_client: oauth client create
+            userdata: All of the things.
+          authorizationUrl: https://auth.socialtables.com/oauth/authorize
+          tokenUrl: https://auth.socialtables.com/oauth/token
+      description: OAuth
+    user_token:
+      type: apiKey
+      name: user_token
+      in: header
+      description: Social Tables User Token
+    partner_token:
+      type: apiKey
+      name: partner_token
+      in: header
+      description: Social Tables Partner Token

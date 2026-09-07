@@ -1,0 +1,136 @@
+generated: '2026-09-07'
+method: derived
+source: >-
+  openapi/_original/cvent-social-tables-openapi.json (Swagger 2.0, harvested verbatim from
+  https://developer.socialtables.com/swagger.json 2026-09-07); envelope shapes confirmed against
+  live responses from api.socialtables.com and auth.socialtables.com
+description: >-
+  Error catalogue for the Social Tables 4.0 API, derived from the 4xx/5xx responses the
+  published contract declares on its 87 operations, plus the two error envelopes actually in
+  use. The provider publishes no error-reference page, so titles and remediation below are
+  written from the contract's own response descriptions — nothing is invented.
+format: custom
+rfc9457: false
+problem_json: false
+envelopes:
+  - id: service-error
+    shape:
+      title: 'A short, human-readable summary of the problem. (required)'
+      status: 'The HTTP status code corresponding to this problem. (required, 400-599)'
+      detail: A human-readable explanation specific to this occurrence of the problem.
+      key: 'A canonical name representing the type of the error. (required, discriminator)'
+      requestId: 'A unique identifier for this request, for debugging and support. (required)'
+    content_type: application/json
+    source: definitions/ErrorResponse-layout-automation-service
+    note: >-
+      RFC 7807-shaped in structure but not served as application/problem+json; `key` plays the
+      role that `type` plays in RFC 7807/9457. Declared by the layout-automation service.
+    known_keys:
+      - key: external_event_id_conflict
+        status: 409
+        meaning: The supplied externalEventId is already in use by an existing event.
+        extra: 'conflictingEvents[] — eventId, externalEventId, eventUrl.'
+      - key: external_diagram_id_conflict
+        status: 409
+        meaning: One or more supplied externalDiagramIds are already in use.
+        extra: >-
+          conflictingDiagrams[] — diagramId, diagramName, diagramUrl, externalDiagramId,
+          externalEventId, createdAt, updatedAt, eventUrl.
+      - key: null
+        status: 400
+        meaning: >-
+          Validation failure — ErrorResponse_ValidationFailed carries ValidationErrorDetail
+          entries.
+  - id: gateway-error
+    shape:
+      code: numeric HTTP status (api gateway) or a string code (auth service)
+      message: human-readable message
+    content_type: application/json
+    note: >-
+      Observed live, not declared in the contract. api.socialtables.com returns
+      {"code":404,"message":"Not Found"} for unrouted paths; auth.socialtables.com returns
+      {"code":"ResourceNotFound","message":"Resource /... not found on server"}. A client must
+      handle BOTH envelopes.
+    evidence:
+      - url: https://api.socialtables.com/openapi.json
+        status: 404
+      - url: https://auth.socialtables.com/.well-known/openid-configuration
+        status: 404
+problem_type_count: 6
+problem_types:
+  - status: 400
+    title: Bad request / validation failure
+    declared_on: 40 operations
+    meaning: >-
+      Request body or query parameters failed validation. Contract descriptions are
+      operation-specific, e.g. "validation error must specify either user and / or team",
+      "validation error must specify either bookable_room or space_template",
+      "favorite not valid", "layout update not valid", "Error creating group",
+      "Error with no id".
+    remediation: >-
+      Read `detail` and, on the layout-automation surface, the ValidationErrorDetail entries.
+      Do not retry unchanged.
+    retryable: false
+  - status: 401
+    title: Unauthorized
+    declared_on: 14 operations
+    meaning: >-
+      "authorization missing or invalid" — no bearer token, an expired token, or a token whose
+      user lacks the role for this entity.
+    remediation: >-
+      Re-run the authorization-code grant at https://auth.socialtables.com/oauth/authorize and
+      exchange for a fresh access token. Check the role model at
+      https://developer.socialtables.com/docs/api-usage/permissions.html — a 401 here can mean
+      "not permitted", not only "not authenticated".
+    retryable: after re-auth
+  - status: 404
+    title: Not found
+    declared_on: 22 operations
+    meaning: >-
+      The addressed entity does not exist — "Diagram not found", "favorite not found",
+      "layout not found", "template preset not found", "Error with invalid id or no id".
+    remediation: >-
+      Verify the ID generation. A numeric ID sent to a 4.0 endpoint (or an alphanumeric ID sent
+      to a legacy endpoint) surfaces as a 404. See
+      https://developer.socialtables.com/docs/api-usage/legacy-ids.html.
+    retryable: false
+  - status: 405
+    title: Method not allowed
+    declared_on: 3 operations
+    meaning: >-
+      Declared with the description "Error with no id" — the collection path was called with a
+      method that only the item path accepts.
+    remediation: Address the item path with its ID.
+    retryable: false
+  - status: 409
+    title: Conflict — duplicate name or external ID
+    declared_on: 2 operations (plus the external-ID conflict schema)
+    meaning: >-
+      "created a favorite with an existing name" (POST /4.0/favorites/), "duplicate layout name"
+      (POST /4.0/layouts/), and the external_event_id_conflict / external_diagram_id_conflict
+      keys on the layout-automation schemas.
+    remediation: >-
+      Choose a distinct name, or treat the conflict as the de-duplication signal it is and read
+      the conflicting entity out of the response body.
+    retryable: false
+  - status: 410
+    title: Gone — guest list is deleted
+    declared_on: 38 operations
+    meaning: >-
+      The guest list in the path has been deleted. This is a RESOURCE-STATE signal, not an API
+      deprecation: every occurrence reads "guestlist is deleted" / "requested guestlist is
+      deleted".
+    remediation: >-
+      A deleted guest list can be brought back with
+      POST /4.0/guestlists/{guestlist_id}/restore, and a deleted guest with
+      POST /4.0/guestlists/{guestlist_id}/guests/{guest_id}/restore. No restore window is
+      published.
+    retryable: after restore
+gaps:
+  - No error-reference page is published; every string above comes from the contract itself.
+  - >-
+    No 429 and no 5xx response is declared on any of the 87 operations, so a client has no
+    contract-level guidance for throttling or server failure.
+  - >-
+    The contract declares no error SCHEMA on 4xx responses outside the layout-automation
+    service — only a description string — so a generated client gets an untyped error body.
