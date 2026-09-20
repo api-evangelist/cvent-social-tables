@@ -1,0 +1,47 @@
+slug: cvent-social-tables
+provider: Cvent Social Tables
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Travel & Hospitality
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Guests
+  spec_file: cvent-social-tables-guests-api-openapi.yml
+  capability_id: BC-4110
+  capability_id_l1: BC-4110
+  capability_name: Events & Group Operations Management
+  confidence: 0.72
+  evidence: '"Add a guest to a guestlist", "dedupe new guests against existing guests in a guestlist",
+    "Updates the checkin status of an individual guest", schema guestsWithSeating-guest-list-service'
+  reason: Full lifecycle of the event guest list including seating association and on-site check-in for
+    events at hospitality venues — event/group operations. No single L2 covers guest-list and seating
+    administration, so L1 only.
+- tag: Layout Automation
+  spec_file: cvent-social-tables-layout-automation-api-openapi.yml
+  capability_id: BC-4110.20
+  capability_id_l1: BC-4110
+  capability_name: Event Space & Function Diary Management
+  confidence: 0.72
+  evidence: POST /4.0/layout-automation/custom-setup with schemas Table-layout-automation-service, Aisle-layout-automation-service,
+    SpaceCustomSetup-layout-automation-service, TemplatedLayoutSpec-layout-automation-service
+  reason: Automated generation of table/aisle layouts within a venue space is function-space setup-style
+    and capacity planning, which BC-4110.20 explicitly covers.
+- tag: Diagrams
+  spec_file: cvent-social-tables-diagrams-api-openapi.yml
+  capability_id: BC-4110.20
+  capability_id_l1: BC-4110
+  capability_name: Event Space & Function Diary Management
+  confidence: 0.7
+  evidence: PATCH /4.0/diagrams/{id}/seat — seat guests at specified floor elements in a diagram; GET
+    /4.0/diagrams/{id}/guests — get chair and floor element information for seated guests
+  reason: Operational room diagramming and guest seating for events at hospitality venues — function-space
+    setup, capacity and seating planning. Exact L2 boundary with banquet execution is arguable, hence
+    not 0.9.
