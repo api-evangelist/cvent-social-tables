@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Guest Meals API
+  title: Social Tables API Gateway Guest Meals API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -56,6 +56,8 @@ paths:
                     type: string
         description: body object
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsMeals
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/meals:
     post:
       tags:
@@ -90,6 +92,8 @@ paths:
                   type: object
         description: body object
         required: true
+      operationId: post40GuestlistsByGuestlistIdMeals
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/meals/{meal_title}:
     put:
       tags:
@@ -129,6 +133,8 @@ paths:
                   type: object
         description: body object
         required: true
+      operationId: put40GuestlistsByGuestlistIdMealsByMealTitle
+      x-operation-id-source: derived
     delete:
       tags:
       - Guest Meals
@@ -167,25 +173,34 @@ paths:
                   type: object
         description: body object
         required: true
+      operationId: delete40GuestlistsByGuestlistIdMealsByMealTitle
+      x-operation-id-source: derived
 components:
   schemas:
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
     tags-guest-list-service:
       type: object
       properties:
+        id:
+          type: string
+          description: id of tag
+        guestlist_id:
+          type: string
+          description: id of the guestlist the tag belongs to
         title:
           type: string
           description: title of tag
         color:
           type: string
           description: color of tag
+        archived:
+          type: boolean
+          description: whether the tag is archived
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
       required:
       - title
     guests-guest-list-service:

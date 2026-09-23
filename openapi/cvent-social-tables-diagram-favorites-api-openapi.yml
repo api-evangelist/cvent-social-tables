@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Diagram Favorites API
+  title: Social Tables API Gateway Diagram Favorites API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -35,6 +35,8 @@ paths:
                   $ref: '#/components/schemas/favorites__favorite-diagram-service'
         '400':
           description: validation error must specify either user and / or team
+      operationId: get40Favorites
+      x-operation-id-source: derived
   /4.0/favorites/:
     post:
       tags:
@@ -58,6 +60,8 @@ paths:
               $ref: '#/components/schemas/favorites__favorite-diagram-service'
         description: the body of the favorite
         required: true
+      operationId: post40Favorites
+      x-operation-id-source: derived
     patch:
       tags:
       - Diagram Favorites
@@ -81,6 +85,8 @@ paths:
                   $ref: '#/components/schemas/favorites__favorite-patch-diagram-service'
         description: the body of the favorite update
         required: true
+      operationId: patch40Favorites
+      x-operation-id-source: derived
   /4.0/favorites/{id}:
     get:
       tags:
@@ -101,6 +107,8 @@ paths:
                 $ref: '#/components/schemas/favorites__favorite-diagram-service'
         '404':
           description: favorite not found
+      operationId: get40FavoritesById
+      x-operation-id-source: derived
     delete:
       tags:
       - Diagram Favorites
@@ -116,109 +124,16 @@ paths:
           description: OK
         '404':
           description: favorite not found
+      operationId: delete40FavoritesById
+      x-operation-id-source: derived
 components:
   schemas:
-    floor-elements__table-meta-core-diagram-service:
-      title: Table Metadata core fields
-      type: object
+    widthLengthStrict-diagram-service:
+      required:
+      - width
+      - length
       allOf:
-      - type: object
-        properties:
-          legacy_id:
-            type: integer
-          removed:
-            type: integer
-          theater_curve:
-            type: number
-          useCustomSeatNumbering:
-            type: boolean
-          sectionLabelling:
-            type: string
-          useCustomSectionLabelling:
-            type: boolean
-      - $ref: '#/components/schemas/floor-elements__components~1theater-chairs-diagram-service'
-    favorites__favorite-patch-diagram-service:
-      title: Favorite Patch
-      type: object
-      additionalProperties: false
-      required:
-      - name
-      properties:
-        name:
-          type: string
-    floor-elements__object-meta-core-diagram-service:
-      title: Object Metadata core fields
-      type: object
-      properties:
-        image:
-          type: string
-        path_def:
-          type: string
-        legacy_id:
-          type: integer
-        steps:
-          type: integer
-        line_thickness:
-          type: number
-        tile_dimensions:
-          $ref: '#/components/schemas/widthLength-diagram-service'
-        rope_number:
-          type: integer
-        connections:
-          $ref: '#/components/schemas/floor-elements__line-connections-diagram-service'
-        projector_image_type:
-          type: string
-        line_endpoints:
-          $ref: '#/components/schemas/floor-elements__line-endpoints-diagram-service'
-    floor-elements__chair-strict-diagram-service:
-      title: Strict Chair Floor Element
-      type: object
-      required:
-      - id
-      - type
-      - side_index
-      allOf:
-      - $ref: '#/components/schemas/floor-elements__chair-core-diagram-service'
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-          dimensions:
-            $ref: '#/components/schemas/widthLengthStrict-diagram-service'
-          side_index:
-            type: integer
-    floor-elements__tent-diagram-service:
-      title: Tent Floor Element
-      type: object
-      additionalProperties: false
-      properties:
-        hor:
-          type: number
-        ver:
-          type: number
-        type:
-          type: string
-    widthLength-diagram-service:
-      type: object
-      additionalProperties: false
-      properties:
-        width:
-          type: number
-        length:
-          type: number
-    xyPairStrict-diagram-service:
-      type: object
-      required:
-      - x
-      - y
-      additionalProperties: false
-      properties:
-        x:
-          type: number
-        y:
-          type: number
+      - $ref: '#/components/schemas/widthLength-diagram-service'
     floor-elements__floor-element-diagram-service:
       title: Floor Element
       type: object
@@ -251,18 +166,17 @@ components:
           table_meta:
             $ref: '#/components/schemas/floor-elements__table-meta-strict-diagram-service'
       - $ref: '#/components/schemas/floor-elements__floor-element-core-diagram-service'
-    floor-elements__table-meta-strict-diagram-service:
-      title: Object Metadata
+    xyPairStrict-diagram-service:
       type: object
       required:
-      - chairs
-      allOf:
-      - $ref: '#/components/schemas/floor-elements__table-meta-core-diagram-service'
-      - properties:
-          chairs:
-            type: object
-            additionalProperties:
-              $ref: '#/components/schemas/floor-elements__chair-strict-diagram-service'
+      - x
+      - y
+      additionalProperties: false
+      properties:
+        x:
+          type: number
+        y:
+          type: number
     dimensions-diagram-service:
       type: object
       additionalProperties: false
@@ -273,32 +187,23 @@ components:
           type: number
         radius:
           type: number
-    favorites__favorite-diagram-service:
-      title: Favorite
+    favorites__favorite-patch-diagram-service:
+      title: Favorite Patch
       type: object
       additionalProperties: false
       required:
       - name
-      - floor_elements
       properties:
-        user_id:
-          type: string
-        legacy_user_id:
-          type: integer
-        team_id:
-          type: string
-        legacy_team_id:
-          type: integer
-        space_id:
-          type: integer
         name:
           type: string
-        floor_elements:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/floor-elements__floor-element-diagram-service'
-        legacy_property_id:
-          type: integer
+    widthLength-diagram-service:
+      type: object
+      additionalProperties: false
+      properties:
+        width:
+          type: number
+        length:
+          type: number
     floor-elements__floor-element-core-diagram-service:
       title: Floor Element core fields
       type: object
@@ -326,15 +231,86 @@ components:
           $ref: '#/components/schemas/floor-elements__object-meta-diagram-service'
         section_id:
           type: string
-    floor-elements__object-meta-diagram-service:
-      title: Object Metadata
+    floor-elements__object-meta-core-diagram-service:
+      title: Object Metadata core fields
+      type: object
+      properties:
+        image:
+          type: string
+        path_def:
+          type: string
+        legacy_id:
+          type: integer
+        steps:
+          type: integer
+        line_thickness:
+          type: number
+        tile_dimensions:
+          $ref: '#/components/schemas/widthLength-diagram-service'
+        rope_number:
+          type: integer
+        connections:
+          $ref: '#/components/schemas/floor-elements__line-connections-diagram-service'
+        projector_image_type:
+          type: string
+        line_endpoints:
+          $ref: '#/components/schemas/floor-elements__line-endpoints-diagram-service'
+    floor-elements__table-meta-core-diagram-service:
+      title: Table Metadata core fields
       type: object
       allOf:
-      - $ref: '#/components/schemas/floor-elements__object-meta-core-diagram-service'
       - type: object
         properties:
-          tents:
-            $ref: '#/components/schemas/floor-elements__tent-diagram-service'
+          legacy_id:
+            type: integer
+          removed:
+            type: integer
+          theater_curve:
+            type: number
+          useCustomSeatNumbering:
+            type: boolean
+          sectionLabelling:
+            type: string
+          useCustomSectionLabelling:
+            type: boolean
+      - $ref: '#/components/schemas/floor-elements__components~1theater-chairs-diagram-service'
+    favorites__favorite-diagram-service:
+      title: Favorite
+      type: object
+      additionalProperties: false
+      required:
+      - name
+      - floor_elements
+      properties:
+        user_id:
+          type: string
+        legacy_user_id:
+          type: integer
+        team_id:
+          type: string
+        legacy_team_id:
+          type: integer
+        space_id:
+          type: integer
+        name:
+          type: string
+        floor_elements:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/floor-elements__floor-element-diagram-service'
+        legacy_property_id:
+          type: integer
+    floor-elements__tent-diagram-service:
+      title: Tent Floor Element
+      type: object
+      additionalProperties: false
+      properties:
+        hor:
+          type: number
+        ver:
+          type: number
+        type:
+          type: string
     floor-elements__line-endpoints-diagram-service:
       title: Line Endpoints
       type: object
@@ -356,26 +332,34 @@ components:
           $ref: '#/components/schemas/floor-elements__line-connection-diagram-service'
         tail:
           $ref: '#/components/schemas/floor-elements__line-connection-diagram-service'
-    floor-elements__line-connection-diagram-service:
-      title: Line Connection
+    floor-elements__object-meta-diagram-service:
+      title: Object Metadata
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/floor-elements__object-meta-core-diagram-service'
+      - type: object
+        properties:
+          tents:
+            $ref: '#/components/schemas/floor-elements__tent-diagram-service'
+    floor-elements__chair-strict-diagram-service:
+      title: Strict Chair Floor Element
       type: object
       required:
-      - object_id
-      - ratio_x
-      - ratio_y
-      properties:
-        object_id:
-          type: string
-        ratio_x:
-          type: number
-        ratio_y:
-          type: number
-    widthLengthStrict-diagram-service:
-      required:
-      - width
-      - length
+      - id
+      - type
+      - side_index
       allOf:
-      - $ref: '#/components/schemas/widthLength-diagram-service'
+      - $ref: '#/components/schemas/floor-elements__chair-core-diagram-service'
+      - type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+          dimensions:
+            $ref: '#/components/schemas/widthLengthStrict-diagram-service'
+          side_index:
+            type: integer
     floor-elements__chair-core-diagram-service:
       title: Common chair fields
       type: object
@@ -396,6 +380,32 @@ components:
           - right
           - default
           type: string
+    floor-elements__line-connection-diagram-service:
+      title: Line Connection
+      type: object
+      required:
+      - object_id
+      - ratio_x
+      - ratio_y
+      properties:
+        object_id:
+          type: string
+        ratio_x:
+          type: number
+        ratio_y:
+          type: number
+    floor-elements__table-meta-strict-diagram-service:
+      title: Object Metadata
+      type: object
+      required:
+      - chairs
+      allOf:
+      - $ref: '#/components/schemas/floor-elements__table-meta-core-diagram-service'
+      - properties:
+          chairs:
+            type: object
+            additionalProperties:
+              $ref: '#/components/schemas/floor-elements__chair-strict-diagram-service'
   securitySchemes:
     oauth2:
       type: oauth2

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication SNC Event Integration API
+  title: Social Tables API Gateway SNC Event Integration API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -19,9 +19,7 @@ paths:
 
         booking_id must be unique for each event and function_id must be unique for each diagram.
 
-        If you are interested in using this api, please contact your account manager or Cvent sales.
-
-        '
+        If you are interested in using this api, please contact your account manager or Cvent sales.'
       parameters:
       - name: sncType
         in: path
@@ -37,6 +35,8 @@ paths:
             schema:
               $ref: '#/components/schemas/event_integrationsRequest-snc-integration-service'
         required: true
+      operationId: post40V1IntegrationsBySncType
+      x-operation-id-source: derived
 components:
   schemas:
     event_integrationsRequest-snc-integration-service:

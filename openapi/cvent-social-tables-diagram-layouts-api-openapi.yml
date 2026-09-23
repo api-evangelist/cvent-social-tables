@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Diagram Layouts API
+  title: Social Tables API Gateway Diagram Layouts API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -40,6 +40,8 @@ paths:
                   $ref: '#/components/schemas/layouts__layout-diagram-service'
         '400':
           description: validation error must specify either bookable_room or space_template
+      operationId: get40Layouts
+      x-operation-id-source: derived
   /4.0/layouts/:
     post:
       tags:
@@ -63,6 +65,8 @@ paths:
               $ref: '#/components/schemas/layouts__layout-diagram-service'
         description: the body of the layout
         required: true
+      operationId: post40Layouts
+      x-operation-id-source: derived
   /4.0/layouts/{id}:
     get:
       tags:
@@ -83,6 +87,8 @@ paths:
                 $ref: '#/components/schemas/layouts__layout-diagram-service'
         '404':
           description: layout not found
+      operationId: get40LayoutsById
+      x-operation-id-source: derived
     delete:
       tags:
       - Diagram Layouts
@@ -98,6 +104,8 @@ paths:
           description: OK
         '404':
           description: layout not found
+      operationId: delete40LayoutsById
+      x-operation-id-source: derived
     patch:
       tags:
       - Diagram Layouts
@@ -127,51 +135,187 @@ paths:
                   $ref: '#/components/schemas/layouts__layout-patch-diagram-service'
         description: the body of the layout update
         required: true
+      operationId: patch40LayoutsById
+      x-operation-id-source: derived
 components:
   schemas:
-    floor-elements__table-meta-core-diagram-service:
-      title: Table Metadata core fields
+    xyPairStrict-diagram-service:
+      type: object
+      required:
+      - x
+      - y
+      additionalProperties: false
+      properties:
+        x:
+          type: number
+        y:
+          type: number
+    floor-elements__object-meta-diagram-service:
+      title: Object Metadata
       type: object
       allOf:
+      - $ref: '#/components/schemas/floor-elements__object-meta-core-diagram-service'
       - type: object
         properties:
-          legacy_id:
-            type: integer
-          removed:
-            type: integer
-          theater_curve:
-            type: number
-          useCustomSeatNumbering:
-            type: boolean
-          sectionLabelling:
+          tents:
+            $ref: '#/components/schemas/floor-elements__tent-diagram-service'
+    floor-elements__chair-strict-diagram-service:
+      title: Strict Chair Floor Element
+      type: object
+      required:
+      - id
+      - type
+      - side_index
+      allOf:
+      - $ref: '#/components/schemas/floor-elements__chair-core-diagram-service'
+      - type: object
+        properties:
+          id:
             type: string
-          useCustomSectionLabelling:
-            type: boolean
-      - $ref: '#/components/schemas/floor-elements__components~1theater-chairs-diagram-service'
-    floor-elements__object-meta-core-diagram-service:
-      title: Object Metadata core fields
+          type:
+            type: string
+          dimensions:
+            $ref: '#/components/schemas/widthLengthStrict-diagram-service'
+          side_index:
+            type: integer
+    floor-elements__chair-core-diagram-service:
+      title: Common chair fields
       type: object
       properties:
-        image:
+        custom_chair_id:
           type: string
-        path_def:
+        catalogCategoryTypeItemId:
+          type: integer
+        side:
+          type: integer
+        guest_id:
           type: string
-        legacy_id:
-          type: integer
-        steps:
-          type: integer
-        line_thickness:
+        orientation:
+          enum:
+          - top
+          - bottom
+          - left
+          - right
+          - default
+          type: string
+    template-config__aisle-strict-diagram-service:
+      title: Template Aisle Strict
+      type: object
+      required:
+      - width
+      allOf:
+      - $ref: '#/components/schemas/template-config__aisle-diagram-service'
+    layouts__layout-diagram-service:
+      title: Layout
+      type: object
+      additionalProperties: false
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        rotation:
           type: number
-        tile_dimensions:
-          $ref: '#/components/schemas/widthLength-diagram-service'
-        rope_number:
+        length:
+          type: number
+        width:
+          type: number
+        space_id:
           type: integer
-        connections:
-          $ref: '#/components/schemas/floor-elements__line-connections-diagram-service'
-        projector_image_type:
+        legacy_team_id:
+          type: integer
+        space_template_id:
+          type: integer
+        bookable_room_id:
+          type: integer
+        team_id:
           type: string
-        line_endpoints:
-          $ref: '#/components/schemas/floor-elements__line-endpoints-diagram-service'
+        floor_elements:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/floor-elements__floor-element-diagram-service'
+        groups:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/groups__group-strict-diagram-service'
+        catalog_id:
+          type: integer
+    floor-elements__floor-element-diagram-service:
+      title: Floor Element
+      type: object
+      required:
+      - color
+      - dimensions
+      - id
+      - layer
+      - layout
+      - position
+      - rotation
+      allOf:
+      - properties:
+          id:
+            type: string
+          catalogCategoryTypeItemId:
+            type: integer
+          color:
+            type: string
+          dimensions:
+            $ref: '#/components/schemas/dimensions-diagram-service'
+          layer:
+            type: integer
+          layout:
+            type: string
+          rotation:
+            type: number
+          position:
+            $ref: '#/components/schemas/xyPairStrict-diagram-service'
+          table_meta:
+            $ref: '#/components/schemas/floor-elements__table-meta-strict-diagram-service'
+      - $ref: '#/components/schemas/floor-elements__floor-element-core-diagram-service'
+    template-config__meta-strict-diagram-service:
+      title: Strict Template Metadata
+      type: object
+      required:
+      - rows
+      - cols
+      allOf:
+      - $ref: '#/components/schemas/template-config__meta-diagram-service'
+    layouts__layout-patch-diagram-service:
+      title: Layout Patch
+      type: object
+      additionalProperties: false
+      required:
+      - name
+      properties:
+        deleted:
+          type: boolean
+        name:
+          type: string
+        proposeMetadata:
+          type: object
+          additionalProperties: false
+          properties:
+            capacity:
+              type: integer
+    template-config__meta-diagram-service:
+      title: Template Table
+      type: object
+      additionalProperties: false
+      properties:
+        rows:
+          type: integer
+        cols:
+          type: integer
+    dimensions-diagram-service:
+      type: object
+      additionalProperties: false
+      properties:
+        width:
+          type: number
+        length:
+          type: number
+        radius:
+          type: number
     template-config__template-config-core-diagram-service:
       title: Template Config core fields
       type: object
@@ -255,80 +399,6 @@ components:
           type: integer
         color:
           type: string
-    floor-elements__tent-diagram-service:
-      title: Tent Floor Element
-      type: object
-      additionalProperties: false
-      properties:
-        hor:
-          type: number
-        ver:
-          type: number
-        type:
-          type: string
-    floor-elements__line-endpoints-diagram-service:
-      title: Line Endpoints
-      type: object
-      properties:
-        head:
-          enum:
-          - arrow
-        tail:
-          enum:
-          - arrow
-    template-config__aisles-strict-diagram-service:
-      title: Strict Template Aisles
-      type: object
-      additionalProperties: false
-      required:
-      - vertical
-      - horizontal
-      properties:
-        vertical:
-          $ref: '#/components/schemas/template-config__aisle-strict-diagram-service'
-        horizontal:
-          $ref: '#/components/schemas/template-config__aisle-strict-diagram-service'
-    floor-elements__line-connection-diagram-service:
-      title: Line Connection
-      type: object
-      required:
-      - object_id
-      - ratio_x
-      - ratio_y
-      properties:
-        object_id:
-          type: string
-        ratio_x:
-          type: number
-        ratio_y:
-          type: number
-    template-config__meta-strict-diagram-service:
-      title: Strict Template Metadata
-      type: object
-      required:
-      - rows
-      - cols
-      allOf:
-      - $ref: '#/components/schemas/template-config__meta-diagram-service'
-    floor-elements__chair-strict-diagram-service:
-      title: Strict Chair Floor Element
-      type: object
-      required:
-      - id
-      - type
-      - side_index
-      allOf:
-      - $ref: '#/components/schemas/floor-elements__chair-core-diagram-service'
-      - type: object
-        properties:
-          id:
-            type: string
-          type:
-            type: string
-          dimensions:
-            $ref: '#/components/schemas/widthLengthStrict-diagram-service'
-          side_index:
-            type: integer
     template-config__template-config-strict-diagram-service:
       title: Strict Template Config
       type: object
@@ -344,76 +414,6 @@ components:
           meta:
             $ref: '#/components/schemas/template-config__meta-strict-diagram-service'
       - $ref: '#/components/schemas/template-config__template-config-core-diagram-service'
-    layouts__layout-diagram-service:
-      title: Layout
-      type: object
-      additionalProperties: false
-      required:
-      - name
-      properties:
-        name:
-          type: string
-        rotation:
-          type: number
-        length:
-          type: number
-        width:
-          type: number
-        space_id:
-          type: integer
-        legacy_team_id:
-          type: integer
-        space_template_id:
-          type: integer
-        bookable_room_id:
-          type: integer
-        team_id:
-          type: string
-        floor_elements:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/floor-elements__floor-element-diagram-service'
-        groups:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/groups__group-strict-diagram-service'
-        catalog_id:
-          type: integer
-    theaterChairNumberIsOddEven-diagram-service:
-      enum:
-      - odd
-      - even
-      - true
-      - false
-    dimensions-diagram-service:
-      type: object
-      additionalProperties: false
-      properties:
-        width:
-          type: number
-        length:
-          type: number
-        radius:
-          type: number
-    widthLength-diagram-service:
-      type: object
-      additionalProperties: false
-      properties:
-        width:
-          type: number
-        length:
-          type: number
-    xyPairStrict-diagram-service:
-      type: object
-      required:
-      - x
-      - y
-      additionalProperties: false
-      properties:
-        x:
-          type: number
-        y:
-          type: number
     template-config__aisle-diagram-service:
       title: Template Aisle
       type: object
@@ -422,15 +422,20 @@ components:
           type: number
         floorElementsBetween:
           type: number
-    floor-elements__object-meta-diagram-service:
-      title: Object Metadata
+    floor-elements__line-connection-diagram-service:
+      title: Line Connection
       type: object
-      allOf:
-      - $ref: '#/components/schemas/floor-elements__object-meta-core-diagram-service'
-      - type: object
-        properties:
-          tents:
-            $ref: '#/components/schemas/floor-elements__tent-diagram-service'
+      required:
+      - object_id
+      - ratio_x
+      - ratio_y
+      properties:
+        object_id:
+          type: string
+        ratio_x:
+          type: number
+        ratio_y:
+          type: number
     widthLengthStrict-diagram-service:
       required:
       - width
@@ -448,55 +453,82 @@ components:
           $ref: '#/components/schemas/xyPairStrict-diagram-service'
         rotation:
           type: number
-    layouts__layout-patch-diagram-service:
-      title: Layout Patch
+    widthLength-diagram-service:
+      type: object
+      additionalProperties: false
+      properties:
+        width:
+          type: number
+        length:
+          type: number
+    floor-elements__object-meta-core-diagram-service:
+      title: Object Metadata core fields
+      type: object
+      properties:
+        image:
+          type: string
+        path_def:
+          type: string
+        legacy_id:
+          type: integer
+        steps:
+          type: integer
+        line_thickness:
+          type: number
+        tile_dimensions:
+          $ref: '#/components/schemas/widthLength-diagram-service'
+        rope_number:
+          type: integer
+        connections:
+          $ref: '#/components/schemas/floor-elements__line-connections-diagram-service'
+        projector_image_type:
+          type: string
+        line_endpoints:
+          $ref: '#/components/schemas/floor-elements__line-endpoints-diagram-service'
+    floor-elements__line-endpoints-diagram-service:
+      title: Line Endpoints
+      type: object
+      properties:
+        head:
+          enum:
+          - arrow
+        tail:
+          enum:
+          - arrow
+    floor-elements__tent-diagram-service:
+      title: Tent Floor Element
+      type: object
+      additionalProperties: false
+      properties:
+        hor:
+          type: number
+        ver:
+          type: number
+        type:
+          type: string
+    groups__group-strict-diagram-service:
+      title: Strict Group
       type: object
       additionalProperties: false
       required:
-      - name
-      properties:
-        deleted:
-          type: boolean
-        name:
-          type: string
-        proposeMetadata:
-          type: object
-          additionalProperties: false
-          properties:
-            capacity:
-              type: integer
-    floor-elements__floor-element-diagram-service:
-      title: Floor Element
-      type: object
-      required:
-      - color
-      - dimensions
       - id
-      - layer
-      - layout
-      - position
-      - rotation
-      allOf:
-      - properties:
-          id:
-            type: string
-          catalogCategoryTypeItemId:
-            type: integer
-          color:
-            type: string
-          dimensions:
-            $ref: '#/components/schemas/dimensions-diagram-service'
-          layer:
-            type: integer
-          layout:
-            type: string
-          rotation:
-            type: number
-          position:
-            $ref: '#/components/schemas/xyPairStrict-diagram-service'
-          table_meta:
-            $ref: '#/components/schemas/floor-elements__table-meta-strict-diagram-service'
-      - $ref: '#/components/schemas/floor-elements__floor-element-core-diagram-service'
+      properties:
+        id:
+          type: string
+        template_config:
+          $ref: '#/components/schemas/template-config__template-config-strict-diagram-service'
+        favorite_id:
+          type: string
+        group_rotation:
+          type: integer
+        template_preset_id:
+          type: string
+    theaterChairNumberIsOddEven-diagram-service:
+      enum:
+      - odd
+      - even
+      - true
+      - false
     floor-elements__floor-element-core-diagram-service:
       title: Floor Element core fields
       type: object
@@ -524,13 +556,37 @@ components:
           $ref: '#/components/schemas/floor-elements__object-meta-diagram-service'
         section_id:
           type: string
-    template-config__aisle-strict-diagram-service:
-      title: Template Aisle Strict
+    template-config__aisles-strict-diagram-service:
+      title: Strict Template Aisles
       type: object
+      additionalProperties: false
       required:
-      - width
+      - vertical
+      - horizontal
+      properties:
+        vertical:
+          $ref: '#/components/schemas/template-config__aisle-strict-diagram-service'
+        horizontal:
+          $ref: '#/components/schemas/template-config__aisle-strict-diagram-service'
+    floor-elements__table-meta-core-diagram-service:
+      title: Table Metadata core fields
+      type: object
       allOf:
-      - $ref: '#/components/schemas/template-config__aisle-diagram-service'
+      - type: object
+        properties:
+          legacy_id:
+            type: integer
+          removed:
+            type: integer
+          theater_curve:
+            type: number
+          useCustomSeatNumbering:
+            type: boolean
+          sectionLabelling:
+            type: string
+          useCustomSectionLabelling:
+            type: boolean
+      - $ref: '#/components/schemas/floor-elements__components~1theater-chairs-diagram-service'
     floor-elements__line-connections-diagram-service:
       title: Line Connections
       type: object
@@ -554,52 +610,6 @@ components:
             type: object
             additionalProperties:
               $ref: '#/components/schemas/floor-elements__chair-strict-diagram-service'
-    groups__group-strict-diagram-service:
-      title: Strict Group
-      type: object
-      additionalProperties: false
-      required:
-      - id
-      properties:
-        id:
-          type: string
-        template_config:
-          $ref: '#/components/schemas/template-config__template-config-strict-diagram-service'
-        favorite_id:
-          type: string
-        group_rotation:
-          type: integer
-        template_preset_id:
-          type: string
-    template-config__meta-diagram-service:
-      title: Template Table
-      type: object
-      additionalProperties: false
-      properties:
-        rows:
-          type: integer
-        cols:
-          type: integer
-    floor-elements__chair-core-diagram-service:
-      title: Common chair fields
-      type: object
-      properties:
-        custom_chair_id:
-          type: string
-        catalogCategoryTypeItemId:
-          type: integer
-        side:
-          type: integer
-        guest_id:
-          type: string
-        orientation:
-          enum:
-          - top
-          - bottom
-          - left
-          - right
-          - default
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

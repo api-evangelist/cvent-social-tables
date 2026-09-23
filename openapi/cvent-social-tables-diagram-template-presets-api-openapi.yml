@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Diagram Template Presets API
+  title: Social Tables API Gateway Diagram Template Presets API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -53,6 +53,8 @@ paths:
           description: validation error must specify either user or team
         '401':
           description: authorization missing or invalid
+      operationId: get40TemplatePresets
+      x-operation-id-source: derived
     post:
       tags:
       - Diagram Template Presets
@@ -81,6 +83,8 @@ paths:
               $ref: '#/components/schemas/template-presets__template-preset-post-diagram-service'
         description: the body of the template preset
         required: true
+      operationId: post40TemplatePresets
+      x-operation-id-source: derived
   /4.0/template-presets/{id}:
     get:
       tags:
@@ -103,6 +107,8 @@ paths:
           description: authorization missing or invalid
         '404':
           description: template preset not found
+      operationId: get40TemplatePresetsById
+      x-operation-id-source: derived
     delete:
       tags:
       - Diagram Template Presets
@@ -125,6 +131,8 @@ paths:
           description: authorization missing or invalid
         '404':
           description: template preset not found
+      operationId: delete40TemplatePresetsById
+      x-operation-id-source: derived
     patch:
       tags:
       - Diagram Template Presets
@@ -161,8 +169,51 @@ paths:
                   $ref: '#/components/schemas/template-presets__template-preset-diagram-service'
         description: the body of the template preset update
         required: true
+      operationId: patch40TemplatePresetsById
+      x-operation-id-source: derived
 components:
   schemas:
+    xyPair-diagram-service:
+      type: object
+      additionalProperties: false
+      properties:
+        x:
+          type: number
+        y:
+          type: number
+    template-presets__template-preset-diagram-service:
+      title: Template Preset
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        owner_id:
+          type: string
+        name:
+          type: string
+        legacy_property_id:
+          type: integer
+        definition:
+          type: object
+          additionalProperties: false
+          properties:
+            template_config:
+              $ref: '#/components/schemas/template-config__template-config-diagram-service'
+      required:
+      - definition
+    dimensions-diagram-service:
+      type: object
+      additionalProperties: false
+      properties:
+        width:
+          type: number
+        length:
+          type: number
+        radius:
+          type: number
     template-config__template-config-core-diagram-service:
       title: Template Config core fields
       type: object
@@ -246,30 +297,12 @@ components:
           type: integer
         color:
           type: string
-    template-config__aisle-diagram-service:
-      title: Template Aisle
-      type: object
-      properties:
-        width:
-          type: number
-        floorElementsBetween:
-          type: number
     theaterChairNumberIsOddEven-diagram-service:
       enum:
       - odd
       - even
       - true
       - false
-    dimensions-diagram-service:
-      type: object
-      additionalProperties: false
-      properties:
-        width:
-          type: number
-        length:
-          type: number
-        radius:
-          type: number
     template-config__meta-diagram-service:
       title: Template Table
       type: object
@@ -279,61 +312,14 @@ components:
           type: integer
         cols:
           type: integer
-    template-presets__template-preset-post-diagram-service:
-      title: Template Preset Post
-      allOf:
-      - $ref: '#/components/schemas/template-presets__template-preset-diagram-service'
-    xyPair-diagram-service:
+    template-config__aisle-diagram-service:
+      title: Template Aisle
       type: object
-      additionalProperties: false
       properties:
-        x:
+        width:
           type: number
-        y:
+        floorElementsBetween:
           type: number
-    template-config__table-diagram-service:
-      title: Template Table
-      type: object
-      additionalProperties: false
-      properties:
-        size:
-          $ref: '#/components/schemas/dimensions-diagram-service'
-        spacing:
-          $ref: '#/components/schemas/xyPair-diagram-service'
-        rotation:
-          type: number
-    template-presets__template-preset-diagram-service:
-      title: Template Preset
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        owner_id:
-          type: string
-        name:
-          type: string
-        legacy_property_id:
-          type: integer
-        definition:
-          type: object
-          additionalProperties: false
-          properties:
-            template_config:
-              $ref: '#/components/schemas/template-config__template-config-diagram-service'
-      required:
-      - definition
-    template-config__aisles-diagram-service:
-      title: Template Aisles
-      type: object
-      additionalProperties: false
-      properties:
-        vertical:
-          $ref: '#/components/schemas/template-config__aisle-diagram-service'
-        horizontal:
-          $ref: '#/components/schemas/template-config__aisle-diagram-service'
     template-config__template-config-diagram-service:
       title: Template Config
       type: object
@@ -347,6 +333,30 @@ components:
           meta:
             $ref: '#/components/schemas/template-config__meta-diagram-service'
       - $ref: '#/components/schemas/template-config__template-config-core-diagram-service'
+    template-presets__template-preset-post-diagram-service:
+      title: Template Preset Post
+      allOf:
+      - $ref: '#/components/schemas/template-presets__template-preset-diagram-service'
+    template-config__table-diagram-service:
+      title: Template Table
+      type: object
+      additionalProperties: false
+      properties:
+        size:
+          $ref: '#/components/schemas/dimensions-diagram-service'
+        spacing:
+          $ref: '#/components/schemas/xyPair-diagram-service'
+        rotation:
+          type: number
+    template-config__aisles-diagram-service:
+      title: Template Aisles
+      type: object
+      additionalProperties: false
+      properties:
+        vertical:
+          $ref: '#/components/schemas/template-config__aisle-diagram-service'
+        horizontal:
+          $ref: '#/components/schemas/template-config__aisle-diagram-service'
   securitySchemes:
     oauth2:
       type: oauth2

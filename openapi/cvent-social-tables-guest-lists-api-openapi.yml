@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Guest Lists API
+  title: Social Tables API Gateway Guest Lists API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -31,6 +31,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/guestlists-guest-list-service'
+      operationId: get40Guestlists
+      x-operation-id-source: derived
     post:
       tags:
       - Guest Lists
@@ -56,6 +58,8 @@ paths:
                 diagram_id:
                   type: string
         required: true
+      operationId: post40Guestlists
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}:
     get:
       tags:
@@ -76,6 +80,8 @@ paths:
                 $ref: '#/components/schemas/guestlists-guest-list-service'
         '410':
           description: requested guestlist is deleted
+      operationId: get40GuestlistsByGuestlistId
+      x-operation-id-source: derived
     put:
       tags:
       - Guest Lists
@@ -97,6 +103,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/guestlists-guest-list-service'
+      operationId: put40GuestlistsByGuestlistId
+      x-operation-id-source: derived
     patch:
       tags:
       - Guest Lists
@@ -118,6 +126,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/guestlists-guest-list-service'
+      operationId: patch40GuestlistsByGuestlistId
+      x-operation-id-source: derived
     delete:
       tags:
       - Guest Lists
@@ -133,6 +143,8 @@ paths:
           description: successfully deleted
         '404':
           description: Error with invalid id or no id
+      operationId: delete40GuestlistsByGuestlistId
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/_clone:
     post:
       tags:
@@ -161,6 +173,8 @@ paths:
             schema:
               $ref: '#/components/schemas/guestlists-guest-list-service'
         required: true
+      operationId: post40GuestlistsByGuestlistIdClone
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/column_mapping:
     get:
       tags:
@@ -177,6 +191,8 @@ paths:
           description: successfully fetched column mapping
         '404':
           description: column mapping for given guestlist_id doesn't exist
+      operationId: get40GuestlistsByGuestlistIdColumnMapping
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/cvent/seating:
     delete:
       tags:
@@ -193,6 +209,8 @@ paths:
           description: successfully deleted
         '404':
           description: Error with invalid id or no id
+      operationId: delete40GuestlistsByGuestlistIdCventSeating
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/restore:
     post:
       tags:
@@ -211,6 +229,8 @@ paths:
           description: Error restoring deleted guestlist
         '404':
           description: Error restoring guestlist with invalid id
+      operationId: post40GuestlistsByGuestlistIdRestore
+      x-operation-id-source: derived
 components:
   schemas:
     guestlists-guest-list-service:

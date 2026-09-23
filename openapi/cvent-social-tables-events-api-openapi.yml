@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Events API
+  title: Social Tables API Gateway Events API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -12,7 +12,7 @@ paths:
     get:
       tags:
       - Events
-      summary: Retrieve all events an authenticated user has access to within their team.
+      summary: Retrieve all events an authenticated user has access to within their team
       parameters:
       - name: event_ids
         in: query
@@ -45,6 +45,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/data-social-tables-api'
+      operationId: get40Events
+      x-operation-id-source: derived
     post:
       tags:
       - Events
@@ -63,6 +65,8 @@ paths:
               $ref: '#/components/schemas/Post40EventsBody-social-tables-api'
         description: Creates an event
         required: true
+      operationId: post40Events
+      x-operation-id-source: derived
   /4.0/events/{event}:
     delete:
       tags:
@@ -82,10 +86,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/data-social-tables-api'
+      operationId: delete40EventsByEvent
+      x-operation-id-source: derived
     get:
       tags:
       - Events
-      summary: Returns information about an event by its unique ID.
+      summary: Returns information about an event by its unique ID
       parameters:
       - name: event
         in: path
@@ -106,6 +112,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/data-social-tables-api'
+      operationId: get40EventsByEvent
+      x-operation-id-source: derived
     put:
       tags:
       - Events
@@ -131,11 +139,13 @@ paths:
               $ref: '#/components/schemas/Put40EventsEventBody-social-tables-api'
         description: Update an event
         required: true
+      operationId: put40EventsByEvent
+      x-operation-id-source: derived
   /4.0/events/page:
     get:
       tags:
       - Events
-      summary: Retrieve a list of events that the user (specified via the token) has access to, with offset-based pagination
+      summary: Retrieve a list of events that the user (specified via the token) has access…
       parameters:
       - name: limit
         in: query
@@ -264,8 +274,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/data-social-tables-api'
+      operationId: get40EventsPage
+      x-operation-id-source: derived
 components:
   schemas:
+    data-social-tables-api:
+      properties: {}
+    Put40EventsEventBody-social-tables-api:
+      properties:
+        name:
+          type: string
+          description: Name of the event
+        category:
+          type: string
+          description: 'Type of event. For example: Athletic, Catered Meal, Ceremony, Class/Lecture, Concert, Conference, Executive Meeting, Trade Show, Reception, Training'
+        start_epoch:
+          type: string
+          description: Start date in milliseconds since epoch
+        end_epoch:
+          type: string
+          description: End date in milliseconds since epoch
+        industry:
+          type: string
+          description: Industry associated with the event. Association, Corporate, Education, Government, Nonprofit, Religious, Social
+        is_public:
+          type: boolean
+          description: Whether to make this event and its diagrams public. Defaults to false.
+        uses_metric:
+          type: boolean
+          description: Whether to use metric system. Defaults to false
+        archived:
+          type: boolean
+          description: Whether to archive/delete the event. Defaults to false
+      required:
+      - name
     Post40EventsBody-social-tables-api:
       properties:
         team_id:
@@ -295,36 +337,6 @@ components:
       required:
       - name
       - category
-    Put40EventsEventBody-social-tables-api:
-      properties:
-        name:
-          type: string
-          description: Name of the event
-        category:
-          type: string
-          description: 'Type of event. For example: Athletic, Catered Meal, Ceremony, Class/Lecture, Concert, Conference, Executive Meeting, Trade Show, Reception, Training'
-        start_epoch:
-          type: string
-          description: Start date in milliseconds since epoch
-        end_epoch:
-          type: string
-          description: End date in milliseconds since epoch
-        industry:
-          type: string
-          description: Industry associated with the event. Association, Corporate, Education, Government, Nonprofit, Religious, Social
-        is_public:
-          type: boolean
-          description: Whether to make this event and its diagrams public. Defaults to false.
-        uses_metric:
-          type: boolean
-          description: Whether to use metric system. Defaults to false
-        archived:
-          type: boolean
-          description: Whether to archive/delete the event. Defaults to false
-      required:
-      - name
-    data-social-tables-api:
-      properties: {}
   securitySchemes:
     oauth2:
       type: oauth2

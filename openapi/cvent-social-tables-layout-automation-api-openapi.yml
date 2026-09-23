@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Layout Automation API
+  title: Social Tables API Gateway Layout Automation API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -27,6 +27,10 @@ paths:
               $ref: '#/components/schemas/CustomWizardPost-layout-automation-service'
         description: description event POST body used to create event etc
         required: true
+      summary: Create layout automation
+      x-summary-source: derived
+      operationId: post40LayoutAutomation
+      x-operation-id-source: derived
     delete:
       tags:
       - Layout Automation
@@ -54,6 +58,10 @@ paths:
       responses:
         '204':
           description: success
+      summary: Delete layout automation
+      x-summary-source: derived
+      operationId: delete40LayoutAutomation
+      x-operation-id-source: derived
   /4.0/layout-automation/custom-setup:
     post:
       tags:
@@ -73,8 +81,295 @@ paths:
               $ref: '#/components/schemas/CustomSetupPost-layout-automation-service'
         description: description event POST body used to create event etc
         required: true
+      summary: Create layout automation custom setup
+      x-summary-source: derived
+      operationId: post40LayoutAutomationCustomSetup
+      x-operation-id-source: derived
 components:
   schemas:
+    SpaceResult-layout-automation-service:
+      type: object
+      properties:
+        id:
+          type: integer
+        event_id:
+          type: integer
+        space_order:
+          type: integer
+        bookable_room:
+          type: string
+        venue_id:
+          type: string
+        name:
+          type: string
+        updated_at:
+          type: string
+          format: date-time
+        is_new:
+          type: boolean
+        diagram_id:
+          type: string
+        pdf_url:
+          type: string
+        warnings:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+              resolution:
+                type: string
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+              resolution:
+                type: string
+    TemplatedLayoutSpec-layout-automation-service:
+      type: object
+      properties:
+        setup:
+          type: string
+          enum:
+          - aligned
+          - classroom
+          - conference-table
+          - hollow
+          - hollow-square
+          - staggered
+          - theater
+          - theater-row
+          - theatre
+          - u-shape
+          default: aligned
+        attendees:
+          type: integer
+          minimum: 0
+          maximum: 10000
+        chairType:
+          type: string
+          enum:
+          - banquet
+          - chiavari
+          - ghost
+        chairs:
+          type: object
+          properties:
+            size:
+              type: object
+              properties:
+                length:
+                  type: number
+                  minimum: 0
+                width:
+                  type: number
+                  minimum: 0
+        rotation:
+          type: number
+          default: 0
+          description: The rotation relative to the viewport.
+        table:
+          $ref: '#/components/schemas/Table-layout-automation-service'
+          default:
+            chairs: 2
+            size:
+              width: 24
+              length: 12
+              radius: 20
+            spacing:
+              x: 0
+              y: 0
+        aisles:
+          type: object
+          properties:
+            horizontal:
+              $ref: '#/components/schemas/Aisle-layout-automation-service'
+            vertical:
+              $ref: '#/components/schemas/Aisle-layout-automation-service'
+              default:
+                width: 36
+                floorElementsBetween: 15
+          default:
+            horizontal: {}
+            vertical: {}
+        chevronAngle:
+          type: number
+          default: 0
+        ignore_doors_and_columns:
+          type: boolean
+          description: True and undefined result in skipping collision checks with permanentObjects
+        best_effort_capacity:
+          type: boolean
+          description: Whether a failure to seat all attendees is acceptable. False will throw a fatal error if not all attendees can be seated. True will seat the max possible and add a ctx error message
+        errors_in_diagram:
+          type: boolean
+          default: true
+          description: Add error text to the diagram.
+        nudgeOnCollide:
+          type: boolean
+          description: 'On collision, nudge tables slightly to a nearby valid position if any exists. Note: This may slightly compromise a setup''s natural shape.'
+        updatedRects:
+          type: boolean
+          description: Uses an improved algorithm to detect bounding boxes in a floorplan. It usually results in larger valid areas being detected.
+      required:
+      - attendees
+    PersistedAutomationPostResponse-layout-automation-service:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        user_id:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        is_a_sample:
+          type: integer
+        category:
+          type: string
+        is_public:
+          type: boolean
+        pricing_plan:
+          type: string
+        team_id:
+          type: integer
+        eventbrite_event_id:
+          type: string
+        eventbrite_access_token:
+          type: string
+        last_accessed:
+          type: string
+          format: date-time
+        logo:
+          type: string
+        floor_only:
+          type: integer
+        is_archived:
+          type: boolean
+        aim_only:
+          type: integer
+        start_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+        mobile_col1:
+          type: integer
+        mobile_col2:
+          type: integer
+        event_url:
+          type: string
+        screenshot_url:
+          type: string
+        thumb_url:
+          type: string
+        forTraining:
+          type: boolean
+        uses_metric:
+          type: integer
+        collaborators_expire_at:
+          type: string
+          format: date-time
+        venue_mapper_version:
+          type: integer
+        uid:
+          type: string
+        cvent_rfp_id:
+          type: string
+        last_activity:
+          type: string
+          format: date-time
+        has_time:
+          type: boolean
+        status:
+          type: string
+        industry:
+          type: string
+        author:
+          $ref: '#/components/schemas/EventAuthor-layout-automation-service'
+        spaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpaceResult-layout-automation-service'
+        message:
+          type: string
+    SpaceCustomSetup-layout-automation-service:
+      type: object
+      required:
+      - name
+      - custom_setup
+      - attendees
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        external_event_id:
+          type: string
+        external_diagram_id:
+          type: string
+        venue_id:
+          type: string
+        custom_setup:
+          type: string
+        attendees:
+          type: integer
+          maximum: 10000
+    Aisle-layout-automation-service:
+      type: object
+      properties:
+        width:
+          type: number
+          default: 0
+        floorElementsBetween:
+          type: integer
+          default: 0
+          description: Number of floor elements that should be placed in a row or column before an aisle is placed.
+    CustomSetupPost-layout-automation-service:
+      required:
+      - category
+      - spaces
+      type: object
+      properties:
+        event_id:
+          type: number
+        uses_metric:
+          type: boolean
+        start_time:
+          format: date-time
+          type: string
+        end_time:
+          format: date-time
+          type: string
+        category:
+          type: string
+        name:
+          type: string
+          description: Required if no event_id is provided.
+        public:
+          type: boolean
+        attendee_management:
+          type: boolean
+        useSocialDistance:
+          type: boolean
+        spaces:
+          items:
+            $ref: '#/components/schemas/SpaceCustomSetup-layout-automation-service'
+          type: array
+        user_email:
+          type: string
+        team_id:
+          type: number
     CustomWizardPost-layout-automation-service:
       required:
       - category
@@ -179,134 +474,30 @@ components:
         rotateCrescentOffset:
           type: number
           description: The offset for where the missing chairs should be for crescent tables. Ignored for other floor elements.
-    SpaceResult-layout-automation-service:
+    EventAuthor-layout-automation-service:
       type: object
       properties:
         id:
           type: integer
-        event_id:
-          type: integer
-        space_order:
-          type: integer
-        bookable_room:
+        first_name:
           type: string
-        venue_id:
+        last_name:
           type: string
-        name:
+        email_address:
           type: string
-        updated_at:
-          type: string
-          format: date-time
-        is_new:
-          type: boolean
-        diagram_id:
-          type: string
-        pdf_url:
-          type: string
-        warnings:
-          type: array
-          items:
-            type: object
-            properties:
-              message:
-                type: string
-              resolution:
-                type: string
-        errors:
-          type: array
-          items:
-            type: object
-            properties:
-              message:
-                type: string
-              resolution:
-                type: string
-    PersistedAutomationPostResponse-layout-automation-service:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        user_id:
-          type: integer
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-        is_a_sample:
-          type: integer
-        category:
-          type: string
-        is_public:
-          type: boolean
-        pricing_plan:
-          type: string
-        team_id:
-          type: integer
-        eventbrite_event_id:
-          type: string
-        eventbrite_access_token:
-          type: string
-        last_accessed:
-          type: string
-          format: date-time
-        logo:
-          type: string
-        floor_only:
-          type: integer
-        is_archived:
-          type: boolean
-        aim_only:
-          type: integer
-        start_time:
-          type: string
-          format: date-time
-        end_time:
-          type: string
-          format: date-time
-        mobile_col1:
-          type: integer
-        mobile_col2:
-          type: integer
-        event_url:
-          type: string
-        screenshot_url:
-          type: string
-        thumb_url:
-          type: string
-        forTraining:
-          type: boolean
-        uses_metric:
-          type: integer
-        collaborators_expire_at:
-          type: string
-          format: date-time
-        venue_mapper_version:
-          type: integer
-        uid:
-          type: string
-        cvent_rfp_id:
-          type: string
-        last_activity:
-          type: string
-          format: date-time
-        has_time:
-          type: boolean
-        status:
-          type: string
-        industry:
-          type: string
-        author:
-          $ref: '#/components/schemas/EventAuthor-layout-automation-service'
-        spaces:
-          type: array
-          items:
-            $ref: '#/components/schemas/SpaceResult-layout-automation-service'
-        message:
-          type: string
+    PositionString-layout-automation-service:
+      type: string
+      enum:
+      - center
+      - nw
+      - sw
+      - ne
+      - se
+      - n
+      - s
+      - e
+      - w
+      default: center
     SpaceCustomWizard-layout-automation-service:
       type: object
       required:
@@ -334,185 +525,6 @@ components:
           type: string
         custom_setup:
           type: string
-    TemplatedLayoutSpec-layout-automation-service:
-      type: object
-      properties:
-        setup:
-          type: string
-          enum:
-          - aligned
-          - classroom
-          - conference-table
-          - hollow
-          - hollow-square
-          - staggered
-          - theater
-          - theater-row
-          - theatre
-          - u-shape
-          default: aligned
-        attendees:
-          type: integer
-          minimum: 0
-          maximum: 10000
-        chairType:
-          type: string
-          enum:
-          - banquet
-          - chiavari
-          - ghost
-        chairs:
-          type: object
-          properties:
-            size:
-              type: object
-              properties:
-                length:
-                  type: number
-                  minimum: 0
-                width:
-                  type: number
-                  minimum: 0
-        rotation:
-          type: number
-          default: 0
-          description: The rotation relative to the viewport.
-        table:
-          $ref: '#/components/schemas/Table-layout-automation-service'
-          default:
-            chairs: 2
-            size:
-              width: 24
-              length: 12
-              radius: 20
-            spacing:
-              x: 0
-              y: 0
-        aisles:
-          type: object
-          properties:
-            horizontal:
-              $ref: '#/components/schemas/Aisle-layout-automation-service'
-            vertical:
-              $ref: '#/components/schemas/Aisle-layout-automation-service'
-              default:
-                width: 36
-                floorElementsBetween: 15
-          default:
-            horizontal: {}
-            vertical: {}
-        chevronAngle:
-          type: number
-          default: 0
-        ignore_doors_and_columns:
-          type: boolean
-          description: True and undefined result in skipping collision checks with permanentObjects
-        best_effort_capacity:
-          type: boolean
-          description: Whether a failure to seat all attendees is acceptable. False will throw a fatal error if not all attendees can be seated. True will seat the max possible and add a ctx error message
-        errors_in_diagram:
-          type: boolean
-          default: true
-          description: Add error text to the diagram.
-        nudgeOnCollide:
-          type: boolean
-          description: 'On collision, nudge tables slightly to a nearby valid position if any exists. Note: This may slightly compromise a setup''s natural shape.'
-        updatedRects:
-          type: boolean
-          description: Uses an improved algorithm to detect bounding boxes in a floorplan. It usually results in larger valid areas being detected.
-      required:
-      - attendees
-    CustomSetupPost-layout-automation-service:
-      required:
-      - category
-      - spaces
-      type: object
-      properties:
-        event_id:
-          type: number
-        uses_metric:
-          type: boolean
-        start_time:
-          format: date-time
-          type: string
-        end_time:
-          format: date-time
-          type: string
-        category:
-          type: string
-        name:
-          type: string
-          description: Required if no event_id is provided.
-        public:
-          type: boolean
-        attendee_management:
-          type: boolean
-        useSocialDistance:
-          type: boolean
-        spaces:
-          items:
-            $ref: '#/components/schemas/SpaceCustomSetup-layout-automation-service'
-          type: array
-        user_email:
-          type: string
-        team_id:
-          type: number
-    Aisle-layout-automation-service:
-      type: object
-      properties:
-        width:
-          type: number
-          default: 0
-        floorElementsBetween:
-          type: integer
-          default: 0
-          description: Number of floor elements that should be placed in a row or column before an aisle is placed.
-    EventAuthor-layout-automation-service:
-      type: object
-      properties:
-        id:
-          type: integer
-        first_name:
-          type: string
-        last_name:
-          type: string
-        email_address:
-          type: string
-    SpaceCustomSetup-layout-automation-service:
-      type: object
-      required:
-      - name
-      - custom_setup
-      - attendees
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        external_event_id:
-          type: string
-        external_diagram_id:
-          type: string
-        venue_id:
-          type: string
-        custom_setup:
-          type: string
-        attendees:
-          type: integer
-          maximum: 10000
-    PositionString-layout-automation-service:
-      type: string
-      enum:
-      - center
-      - nw
-      - sw
-      - ne
-      - se
-      - n
-      - s
-      - e
-      - w
-      default: center
   securitySchemes:
     oauth2:
       type: oauth2

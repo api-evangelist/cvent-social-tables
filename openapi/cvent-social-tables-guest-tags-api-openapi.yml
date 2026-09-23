@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Guest Tags API
+  title: Social Tables API Gateway Guest Tags API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -52,6 +52,8 @@ paths:
                     $ref: '#/components/schemas/guests-guest-list-service'
         description: body object
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsTags
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/tags:
     get:
       tags:
@@ -74,6 +76,8 @@ paths:
           description: Error getting tags state
         '410':
           description: guestlist is deleted
+      operationId: get40GuestlistsByGuestlistIdTags
+      x-operation-id-source: derived
     post:
       tags:
       - Guest Tags
@@ -105,8 +109,19 @@ paths:
               properties:
                 tag:
                   type: object
+                  required:
+                  - title
+                  properties:
+                    title:
+                      type: string
+                      description: title of tag
+                    color:
+                      type: string
+                      description: color of tag
         description: body object
         required: true
+      operationId: post40GuestlistsByGuestlistIdTags
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/tags/{tag_title_or_id}:
     get:
       tags:
@@ -134,6 +149,8 @@ paths:
           description: Error getting tag
         '410':
           description: guestlist is deleted
+      operationId: get40GuestlistsByGuestlistIdTagsByTagTitleOrId
+      x-operation-id-source: derived
     put:
       tags:
       - Guest Tags
@@ -166,12 +183,26 @@ paths:
             schema:
               type: object
               required:
-              - tags
+              - tag
               properties:
-                tags:
+                tag:
                   type: object
+                  required:
+                  - title
+                  properties:
+                    title:
+                      type: string
+                      description: title of tag
+                    color:
+                      type: string
+                      description: color of tag
+                    archived:
+                      type: boolean
+                      description: whether the tag is archived
         description: body object
         required: true
+      operationId: put40GuestlistsByGuestlistIdTagsByTagTitleOrId
+      x-operation-id-source: derived
     delete:
       tags:
       - Guest Tags
@@ -210,25 +241,34 @@ paths:
                   type: object
         description: body object
         required: true
+      operationId: delete40GuestlistsByGuestlistIdTagsByTagTitleOrId
+      x-operation-id-source: derived
 components:
   schemas:
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
     tags-guest-list-service:
       type: object
       properties:
+        id:
+          type: string
+          description: id of tag
+        guestlist_id:
+          type: string
+          description: id of the guestlist the tag belongs to
         title:
           type: string
           description: title of tag
         color:
           type: string
           description: color of tag
+        archived:
+          type: boolean
+          description: whether the tag is archived
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
       required:
       - title
     guests-guest-list-service:

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Rooms API
+  title: Social Tables API Gateway Rooms API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -18,6 +18,8 @@ paths:
       responses:
         '200':
           description: a body containing rooms for that respective property ID
+      operationId: get40PropertiesByPropertyIdRooms
+      x-operation-id-source: derived
   /4.0/rooms:
     get:
       tags:
@@ -27,9 +29,7 @@ paths:
 
         access based on the their roles and their team''s roles. Identity
 
-        is inferred from OAuth authorization header.
-
-        '
+        is inferred from OAuth authorization header.'
       parameters:
       - $ref: '#/components/parameters/page_size-property-service'
       - $ref: '#/components/parameters/before-property-service'
@@ -38,54 +38,33 @@ paths:
       responses:
         '200':
           description: returns a list of rooms
+      operationId: get40Rooms
+      x-operation-id-source: derived
   /4.0/rooms/{room_id}:
     get:
       tags:
       - Rooms
       summary: get a room by ID
-      description: get a room by ID
       parameters:
       - $ref: '#/components/parameters/room_id-property-service'
       - $ref: '#/components/parameters/archived-property-service'
       responses:
         '200':
           description: success
+      operationId: get40RoomsByRoomId
+      x-operation-id-source: derived
 components:
   parameters:
-    after-property-service:
-      name: after
-      in: query
-      description: cursor for paging
-      schema:
-        type: string
     archived-property-service:
       name: archived
       in: query
       schema:
         type: boolean
-    before-property-service:
-      name: before
+    after-property-service:
+      name: after
+      description: cursor for paging
       in: query
-      description: before cursor for backpaging
-      schema:
-        type: string
-    page_size-property-service:
-      name: page_size
-      in: query
-      description: page size
-      schema:
-        type: integer
-        default: 50
-    property_id-property-service:
-      name: property_id
-      in: path
-      required: true
-      schema:
-        type: string
-    room_id-property-service:
-      name: room_id
-      in: path
-      required: true
+      required: false
       schema:
         type: string
     room_ids-property-service:
@@ -95,6 +74,33 @@ components:
         type: array
         items:
           type: string
+    property_id-property-service:
+      name: property_id
+      in: path
+      required: true
+      schema:
+        type: string
+    page_size-property-service:
+      name: page_size
+      description: page size
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 50
+    before-property-service:
+      name: before
+      description: before cursor for backpaging
+      in: query
+      required: false
+      schema:
+        type: string
+    room_id-property-service:
+      name: room_id
+      in: path
+      required: true
+      schema:
+        type: string
   securitySchemes:
     oauth2:
       type: oauth2

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Guests API
+  title: Social Tables API Gateway Guests API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -56,6 +56,8 @@ paths:
                     type: string
         description: body object
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsMeals
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/tags:
     post:
       tags:
@@ -100,6 +102,8 @@ paths:
                     $ref: '#/components/schemas/guests-guest-list-service'
         description: body object
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsTags
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests:
     post:
       tags:
@@ -128,6 +132,8 @@ paths:
             schema:
               $ref: '#/components/schemas/guests-guest-list-service'
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuests
+      x-operation-id-source: derived
     get:
       tags:
       - Guests
@@ -149,6 +155,8 @@ paths:
                   $ref: '#/components/schemas/guests-guest-list-service'
         '410':
           description: guestlist is deleted
+      operationId: get40GuestlistsByGuestlistIdGuests
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/_bulk:
     post:
       tags:
@@ -194,6 +202,8 @@ paths:
                     $ref: '#/components/schemas/guests-guest-list-service'
         description: body object
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsBulk
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/_dedupe:
     post:
       tags:
@@ -222,6 +232,8 @@ paths:
             schema:
               $ref: '#/components/schemas/guests-guest-list-service'
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsDedupe
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/_replace:
     post:
       tags:
@@ -250,6 +262,8 @@ paths:
             schema:
               $ref: '#/components/schemas/guests-guest-list-service'
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsReplace
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/{guest_id}:
     get:
       tags:
@@ -275,6 +289,8 @@ paths:
                 $ref: '#/components/schemas/guests-guest-list-service'
         '410':
           description: guestlist is deleted
+      operationId: get40GuestlistsByGuestlistIdGuestsByGuestId
+      x-operation-id-source: derived
     patch:
       tags:
       - Guests
@@ -301,6 +317,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/guests-guest-list-service'
+      operationId: patch40GuestlistsByGuestlistIdGuestsByGuestId
+      x-operation-id-source: derived
     put:
       tags:
       - Guests
@@ -327,6 +345,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/guests-guest-list-service'
+      operationId: put40GuestlistsByGuestlistIdGuestsByGuestId
+      x-operation-id-source: derived
     delete:
       tags:
       - Guests
@@ -353,6 +373,8 @@ paths:
           description: Error with no id
         '410':
           description: guestlist is deleted
+      operationId: delete40GuestlistsByGuestlistIdGuestsByGuestId
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/{guest_id}/checkin:
     post:
       tags:
@@ -386,6 +408,8 @@ paths:
             schema:
               $ref: '#/components/schemas/guests-guest-list-service'
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsByGuestIdCheckin
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/{guest_id}/restore:
     post:
       tags:
@@ -415,6 +439,8 @@ paths:
           description: Guestlist or guest not found
         '410':
           description: Guestlist is deleted
+      operationId: post40GuestlistsByGuestlistIdGuestsByGuestIdRestore
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/{guest_id}/seating:
     get:
       tags:
@@ -440,6 +466,8 @@ paths:
                 $ref: '#/components/schemas/guestsWithSeating-guest-list-service'
         '410':
           description: guestlist is deleted
+      operationId: get40GuestlistsByGuestlistIdGuestsByGuestIdSeating
+      x-operation-id-source: derived
     post:
       tags:
       - Guests
@@ -460,6 +488,8 @@ paths:
           description: returns the diagram update
         '410':
           description: guestlist is deleted
+      operationId: post40GuestlistsByGuestlistIdGuestsByGuestIdSeating
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/seating:
     get:
       tags:
@@ -482,6 +512,8 @@ paths:
                   $ref: '#/components/schemas/guestsWithSeating-guest-list-service'
         '410':
           description: guestlist is deleted
+      operationId: get40GuestlistsByGuestlistIdGuestsSeating
+      x-operation-id-source: derived
   /4.0/guestlists/team/{team_id}/guests/_filter:
     get:
       tags:
@@ -519,8 +551,36 @@ paths:
                   $ref: '#/components/schemas/guests-guest-list-service'
         '404':
           description: no guests found
+      operationId: get40GuestlistsTeamByTeamIdGuestsFilter
+      x-operation-id-source: derived
 components:
   schemas:
+    tags-guest-list-service:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of tag
+        guestlist_id:
+          type: string
+          description: id of the guestlist the tag belongs to
+        title:
+          type: string
+          description: title of tag
+        color:
+          type: string
+          description: color of tag
+        archived:
+          type: boolean
+          description: whether the tag is archived
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
+      required:
+      - title
     guestsWithSeating-guest-list-service:
       type: object
       properties:
@@ -572,25 +632,6 @@ components:
       - id
       - first_name
       - last_name
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
-    tags-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: title of tag
-        color:
-          type: string
-          description: color of tag
-      required:
-      - title
     guests-guest-list-service:
       type: object
       properties:

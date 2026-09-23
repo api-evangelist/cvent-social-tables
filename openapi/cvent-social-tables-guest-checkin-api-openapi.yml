@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Guest Checkin API
+  title: Social Tables API Gateway Guest Checkin API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -30,6 +30,8 @@ paths:
                   $ref: '#/components/schemas/guests-guest-list-service'
         '410':
           description: guestlist is deleted
+      operationId: get40GuestlistsByGuestlistIdCheckin
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/checkin:
     post:
       tags:
@@ -54,6 +56,8 @@ paths:
             schema:
               $ref: '#/components/schemas/checkinBulk-guest-list-service'
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsCheckin
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/update-checkin-status:
     post:
       tags:
@@ -76,6 +80,8 @@ paths:
             schema:
               $ref: '#/components/schemas/checkinBulk-guest-list-service'
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsUpdateCheckinStatus
+      x-operation-id-source: derived
   /4.0/guestlists/{guestlist_id}/guests/{guest_id}/checkin:
     post:
       tags:
@@ -109,16 +115,10 @@ paths:
             schema:
               $ref: '#/components/schemas/guests-guest-list-service'
         required: true
+      operationId: post40GuestlistsByGuestlistIdGuestsByGuestIdCheckin
+      x-operation-id-source: derived
 components:
   schemas:
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
     checkinBulk-guest-list-service:
       properties:
         guests:
@@ -143,12 +143,27 @@ components:
     tags-guest-list-service:
       type: object
       properties:
+        id:
+          type: string
+          description: id of tag
+        guestlist_id:
+          type: string
+          description: id of the guestlist the tag belongs to
         title:
           type: string
           description: title of tag
         color:
           type: string
           description: color of tag
+        archived:
+          type: boolean
+          description: whether the tag is archived
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
       required:
       - title
     guests-guest-list-service:

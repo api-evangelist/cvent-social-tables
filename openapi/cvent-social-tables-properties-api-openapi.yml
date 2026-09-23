@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Properties API
+  title: Social Tables API Gateway Properties API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -20,6 +20,8 @@ paths:
           description: team context is missing from request
         '401':
           description: unauthorized
+      operationId: get40Properties
+      x-operation-id-source: derived
   /4.0/properties/{property_id}:
     get:
       tags:
@@ -30,6 +32,8 @@ paths:
       responses:
         '200':
           description: returns a property
+      operationId: get40PropertiesByPropertyId
+      x-operation-id-source: derived
 components:
   parameters:
     property_id-property-service:

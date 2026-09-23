@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Social Tables API Gateway Authentication Users API
+  title: Social Tables API Gateway Users API
   version: 4.0.0
   description: The Social Tables API
 servers:
@@ -33,15 +33,10 @@ paths:
                     items:
                       type: object
                       description: user objects
+      operationId: get40TeamsByTeamIdUsers
+      x-operation-id-source: derived
 components:
   parameters:
-    team_id-account-service:
-      name: team_id
-      description: team ID
-      in: path
-      required: true
-      schema:
-        type: string
     after-account-service:
       name: after
       description: cursor for paging
@@ -64,6 +59,13 @@ components:
       schema:
         type: integer
         default: 50
+    team_id-account-service:
+      name: team_id
+      description: team ID
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     resultPaging-account-service:
       type: object

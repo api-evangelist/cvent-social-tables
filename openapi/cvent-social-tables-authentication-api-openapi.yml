@@ -63,6 +63,8 @@ paths:
               - client_id
               - client_secret
               - grant_type
+      operationId: post40OauthToken
+      x-operation-id-source: derived
     get:
       summary: Get information about the current OAuth bearer token as-supplied in headers
       tags:
@@ -73,6 +75,8 @@ paths:
       responses:
         '200':
           description: success
+      operationId: get40OauthToken
+      x-operation-id-source: derived
 components:
   securitySchemes:
     oauth2:
