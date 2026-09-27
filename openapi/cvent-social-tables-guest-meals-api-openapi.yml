@@ -195,14 +195,6 @@ components:
         archived:
           type: boolean
           description: whether the tag is archived
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
     guests-guest-list-service:
       type: object
       properties:
@@ -242,6 +234,14 @@ components:
       - id
       - first_name
       - last_name
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
+      required:
+      - title
   securitySchemes:
     oauth2:
       type: oauth2

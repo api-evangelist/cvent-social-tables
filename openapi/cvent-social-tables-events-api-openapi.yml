@@ -278,8 +278,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    data-social-tables-api:
-      properties: {}
     Put40EventsEventBody-social-tables-api:
       properties:
         name:
@@ -308,6 +306,8 @@ components:
           description: Whether to archive/delete the event. Defaults to false
       required:
       - name
+    data-social-tables-api:
+      properties: {}
     Post40EventsBody-social-tables-api:
       properties:
         team_id:

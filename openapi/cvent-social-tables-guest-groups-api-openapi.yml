@@ -267,6 +267,52 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    tags-guest-list-service:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of tag
+        guestlist_id:
+          type: string
+          description: id of the guestlist the tag belongs to
+        title:
+          type: string
+          description: title of tag
+        color:
+          type: string
+          description: color of tag
+        archived:
+          type: boolean
+          description: whether the tag is archived
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
+      required:
+      - title
+    groupBulk-guest-list-service:
+      type: object
+      properties:
+        action:
+          type: string
+          enum:
+          - CREATE
+          - DELETE
+        guests:
+          type: array
+          items:
+            $ref: '#/components/schemas/guests-guest-list-service'
+      required:
+      - guests
+      - action
+      example:
+        action: CREATE | DELETE
+        guests:
+        - 99b4ae20-2779-11e6-b0b7-13c2616041ae
+        - 99b4ae21-2779-11e6-b0b7-13c2616041ae
     guests-guest-list-service:
       type: object
       properties:
@@ -337,52 +383,6 @@ components:
           guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
           first_name: Test
           last_name: Two
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
-    groupBulk-guest-list-service:
-      type: object
-      properties:
-        action:
-          type: string
-          enum:
-          - CREATE
-          - DELETE
-        guests:
-          type: array
-          items:
-            $ref: '#/components/schemas/guests-guest-list-service'
-      required:
-      - guests
-      - action
-      example:
-        action: CREATE | DELETE
-        guests:
-        - 99b4ae20-2779-11e6-b0b7-13c2616041ae
-        - 99b4ae21-2779-11e6-b0b7-13c2616041ae
-    tags-guest-list-service:
-      type: object
-      properties:
-        id:
-          type: string
-          description: id of tag
-        guestlist_id:
-          type: string
-          description: id of the guestlist the tag belongs to
-        title:
-          type: string
-          description: title of tag
-        color:
-          type: string
-          description: color of tag
-        archived:
-          type: boolean
-          description: whether the tag is archived
   securitySchemes:
     oauth2:
       type: oauth2
