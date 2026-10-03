@@ -55,31 +55,22 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    page_size-property-service:
-      name: page_size
-      description: page size
+    archived-property-service:
+      name: archived
       in: query
-      required: false
       schema:
-        type: integer
-        default: 50
-    room_id-property-service:
-      name: room_id
-      in: path
-      required: true
-      schema:
-        type: string
-    property_id-property-service:
-      name: property_id
-      in: path
-      required: true
-      schema:
-        type: string
+        type: boolean
     after-property-service:
       name: after
       description: cursor for paging
       in: query
       required: false
+      schema:
+        type: string
+    room_id-property-service:
+      name: room_id
+      in: path
+      required: true
       schema:
         type: string
     room_ids-property-service:
@@ -89,11 +80,20 @@ components:
         type: array
         items:
           type: string
-    archived-property-service:
-      name: archived
+    page_size-property-service:
+      name: page_size
+      description: page size
       in: query
+      required: false
       schema:
-        type: boolean
+        type: integer
+        default: 50
+    property_id-property-service:
+      name: property_id
+      in: path
+      required: true
+      schema:
+        type: string
     before-property-service:
       name: before
       description: before cursor for backpaging

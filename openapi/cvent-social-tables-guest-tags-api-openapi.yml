@@ -245,24 +245,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    tags-guest-list-service:
-      type: object
-      properties:
-        id:
-          type: string
-          description: id of tag
-        guestlist_id:
-          type: string
-          description: id of the guestlist the tag belongs to
-        title:
-          type: string
-          description: title of tag
-        color:
-          type: string
-          description: color of tag
-        archived:
-          type: boolean
-          description: whether the tag is archived
     guests-guest-list-service:
       type: object
       properties:
@@ -302,6 +284,24 @@ components:
       - id
       - first_name
       - last_name
+    tags-guest-list-service:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of tag
+        guestlist_id:
+          type: string
+          description: id of the guestlist the tag belongs to
+        title:
+          type: string
+          description: title of tag
+        color:
+          type: string
+          description: color of tag
+        archived:
+          type: boolean
+          description: whether the tag is archived
     meals-guest-list-service:
       type: object
       properties:

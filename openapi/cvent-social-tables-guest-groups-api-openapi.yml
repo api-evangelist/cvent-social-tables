@@ -267,24 +267,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    tags-guest-list-service:
-      type: object
-      properties:
-        id:
-          type: string
-          description: id of tag
-        guestlist_id:
-          type: string
-          description: id of the guestlist the tag belongs to
-        title:
-          type: string
-          description: title of tag
-        color:
-          type: string
-          description: color of tag
-        archived:
-          type: boolean
-          description: whether the tag is archived
     meals-guest-list-service:
       type: object
       properties:
@@ -293,6 +275,37 @@ components:
           description: name of meal
       required:
       - title
+    group-guest-list-service:
+      type: object
+      properties:
+        id:
+          type: string
+        guestlist_id:
+          type: string
+        guest_count:
+          type: integer
+        is_named:
+          type: boolean
+        guests:
+          type: array
+          items:
+            $ref: '#/components/schemas/guests-guest-list-service'
+      required:
+      - id
+      example:
+        id: 1db84340-2779-11e6-88c6-db7134cc99b6
+        name: Group A
+        guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+        guest_count: 2
+        guests:
+        - id: 1db18c80-2779-11e6-88c6-db7134cc99b6
+          guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+          first_name: Test
+          last_name: One
+        - id: 1db18c81-2779-11e6-88c6-db7134cc99b6
+          guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+          first_name: Test
+          last_name: Two
     groupBulk-guest-list-service:
       type: object
       properties:
@@ -352,37 +365,24 @@ components:
       - id
       - first_name
       - last_name
-    group-guest-list-service:
+    tags-guest-list-service:
       type: object
       properties:
         id:
           type: string
+          description: id of tag
         guestlist_id:
           type: string
-        guest_count:
-          type: integer
-        is_named:
+          description: id of the guestlist the tag belongs to
+        title:
+          type: string
+          description: title of tag
+        color:
+          type: string
+          description: color of tag
+        archived:
           type: boolean
-        guests:
-          type: array
-          items:
-            $ref: '#/components/schemas/guests-guest-list-service'
-      required:
-      - id
-      example:
-        id: 1db84340-2779-11e6-88c6-db7134cc99b6
-        name: Group A
-        guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
-        guest_count: 2
-        guests:
-        - id: 1db18c80-2779-11e6-88c6-db7134cc99b6
-          guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
-          first_name: Test
-          last_name: One
-        - id: 1db18c81-2779-11e6-88c6-db7134cc99b6
-          guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
-          first_name: Test
-          last_name: Two
+          description: whether the tag is archived
   securitySchemes:
     oauth2:
       type: oauth2

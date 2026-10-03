@@ -177,6 +177,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
+      required:
+      - title
     tags-guest-list-service:
       type: object
       properties:
@@ -234,14 +242,6 @@ components:
       - id
       - first_name
       - last_name
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
   securitySchemes:
     oauth2:
       type: oauth2
