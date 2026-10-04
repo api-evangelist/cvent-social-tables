@@ -37,6 +37,13 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
+    before-account-service:
+      name: before
+      description: before cursor for backpaging
+      in: query
+      required: false
+      schema:
+        type: string
     page_size-account-service:
       name: page_size
       description: page size
@@ -55,13 +62,6 @@ components:
     after-account-service:
       name: after
       description: cursor for paging
-      in: query
-      required: false
-      schema:
-        type: string
-    before-account-service:
-      name: before
-      description: before cursor for backpaging
       in: query
       required: false
       schema:

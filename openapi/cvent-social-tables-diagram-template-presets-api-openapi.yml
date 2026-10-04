@@ -173,15 +173,23 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    template-config__aisles-diagram-service:
-      title: Template Aisles
+    template-config__aisle-diagram-service:
+      title: Template Aisle
+      type: object
+      properties:
+        width:
+          type: number
+        floorElementsBetween:
+          type: number
+    template-config__meta-diagram-service:
+      title: Template Table
       type: object
       additionalProperties: false
       properties:
-        vertical:
-          $ref: '#/components/schemas/template-config__aisle-diagram-service'
-        horizontal:
-          $ref: '#/components/schemas/template-config__aisle-diagram-service'
+        rows:
+          type: integer
+        cols:
+          type: integer
     xyPair-diagram-service:
       type: object
       additionalProperties: false
@@ -189,16 +197,6 @@ components:
         x:
           type: number
         y:
-          type: number
-    dimensions-diagram-service:
-      type: object
-      additionalProperties: false
-      properties:
-        width:
-          type: number
-        length:
-          type: number
-        radius:
           type: number
     template-config__table-diagram-service:
       title: Template Table
@@ -210,69 +208,6 @@ components:
         spacing:
           $ref: '#/components/schemas/xyPair-diagram-service'
         rotation:
-          type: number
-    template-config__template-config-diagram-service:
-      title: Template Config
-      type: object
-      allOf:
-      - type: object
-        properties:
-          table:
-            $ref: '#/components/schemas/template-config__table-diagram-service'
-          aisles:
-            $ref: '#/components/schemas/template-config__aisles-diagram-service'
-          meta:
-            $ref: '#/components/schemas/template-config__meta-diagram-service'
-      - $ref: '#/components/schemas/template-config__template-config-core-diagram-service'
-    template-presets__template-preset-post-diagram-service:
-      title: Template Preset Post
-      allOf:
-      - $ref: '#/components/schemas/template-presets__template-preset-diagram-service'
-    template-config__meta-diagram-service:
-      title: Template Table
-      type: object
-      additionalProperties: false
-      properties:
-        rows:
-          type: integer
-        cols:
-          type: integer
-    template-presets__template-preset-diagram-service:
-      title: Template Preset
-      type: object
-      additionalProperties: false
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        owner_id:
-          type: string
-        name:
-          type: string
-        legacy_property_id:
-          type: integer
-        definition:
-          type: object
-          additionalProperties: false
-          properties:
-            template_config:
-              $ref: '#/components/schemas/template-config__template-config-diagram-service'
-      required:
-      - definition
-    theaterChairNumberIsOddEven-diagram-service:
-      enum:
-      - odd
-      - even
-      - true
-      - false
-    template-config__aisle-diagram-service:
-      title: Template Aisle
-      type: object
-      properties:
-        width:
-          type: number
-        floorElementsBetween:
           type: number
     template-config__template-config-core-diagram-service:
       title: Template Config core fields
@@ -357,6 +292,71 @@ components:
           type: integer
         color:
           type: string
+    template-presets__template-preset-post-diagram-service:
+      title: Template Preset Post
+      allOf:
+      - $ref: '#/components/schemas/template-presets__template-preset-diagram-service'
+    template-config__aisles-diagram-service:
+      title: Template Aisles
+      type: object
+      additionalProperties: false
+      properties:
+        vertical:
+          $ref: '#/components/schemas/template-config__aisle-diagram-service'
+        horizontal:
+          $ref: '#/components/schemas/template-config__aisle-diagram-service'
+    theaterChairNumberIsOddEven-diagram-service:
+      enum:
+      - odd
+      - even
+      - true
+      - false
+    template-config__template-config-diagram-service:
+      title: Template Config
+      type: object
+      allOf:
+      - type: object
+        properties:
+          table:
+            $ref: '#/components/schemas/template-config__table-diagram-service'
+          aisles:
+            $ref: '#/components/schemas/template-config__aisles-diagram-service'
+          meta:
+            $ref: '#/components/schemas/template-config__meta-diagram-service'
+      - $ref: '#/components/schemas/template-config__template-config-core-diagram-service'
+    dimensions-diagram-service:
+      type: object
+      additionalProperties: false
+      properties:
+        width:
+          type: number
+        length:
+          type: number
+        radius:
+          type: number
+    template-presets__template-preset-diagram-service:
+      title: Template Preset
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        owner_id:
+          type: string
+        name:
+          type: string
+        legacy_property_id:
+          type: integer
+        definition:
+          type: object
+          additionalProperties: false
+          properties:
+            template_config:
+              $ref: '#/components/schemas/template-config__template-config-diagram-service'
+      required:
+      - definition
   securitySchemes:
     oauth2:
       type: oauth2

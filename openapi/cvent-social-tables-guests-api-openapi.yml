@@ -555,14 +555,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
     guestsWithSeating-guest-list-service:
       type: object
       properties:
@@ -632,6 +624,14 @@ components:
         archived:
           type: boolean
           description: whether the tag is archived
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
+      required:
+      - title
     guests-guest-list-service:
       type: object
       properties:

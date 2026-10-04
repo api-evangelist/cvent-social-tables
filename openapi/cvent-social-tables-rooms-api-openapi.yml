@@ -55,11 +55,13 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    archived-property-service:
-      name: archived
+    before-property-service:
+      name: before
+      description: before cursor for backpaging
       in: query
+      required: false
       schema:
-        type: boolean
+        type: string
     after-property-service:
       name: after
       description: cursor for paging
@@ -73,6 +75,11 @@ components:
       required: true
       schema:
         type: string
+    archived-property-service:
+      name: archived
+      in: query
+      schema:
+        type: boolean
     room_ids-property-service:
       name: room_ids
       in: query
@@ -92,13 +99,6 @@ components:
       name: property_id
       in: path
       required: true
-      schema:
-        type: string
-    before-property-service:
-      name: before
-      description: before cursor for backpaging
-      in: query
-      required: false
       schema:
         type: string
   securitySchemes:

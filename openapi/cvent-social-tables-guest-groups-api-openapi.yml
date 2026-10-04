@@ -267,65 +267,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    meals-guest-list-service:
-      type: object
-      properties:
-        title:
-          type: string
-          description: name of meal
-      required:
-      - title
-    group-guest-list-service:
-      type: object
-      properties:
-        id:
-          type: string
-        guestlist_id:
-          type: string
-        guest_count:
-          type: integer
-        is_named:
-          type: boolean
-        guests:
-          type: array
-          items:
-            $ref: '#/components/schemas/guests-guest-list-service'
-      required:
-      - id
-      example:
-        id: 1db84340-2779-11e6-88c6-db7134cc99b6
-        name: Group A
-        guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
-        guest_count: 2
-        guests:
-        - id: 1db18c80-2779-11e6-88c6-db7134cc99b6
-          guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
-          first_name: Test
-          last_name: One
-        - id: 1db18c81-2779-11e6-88c6-db7134cc99b6
-          guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
-          first_name: Test
-          last_name: Two
-    groupBulk-guest-list-service:
-      type: object
-      properties:
-        action:
-          type: string
-          enum:
-          - CREATE
-          - DELETE
-        guests:
-          type: array
-          items:
-            $ref: '#/components/schemas/guests-guest-list-service'
-      required:
-      - guests
-      - action
-      example:
-        action: CREATE | DELETE
-        guests:
-        - 99b4ae20-2779-11e6-b0b7-13c2616041ae
-        - 99b4ae21-2779-11e6-b0b7-13c2616041ae
     guests-guest-list-service:
       type: object
       properties:
@@ -365,6 +306,45 @@ components:
       - id
       - first_name
       - last_name
+    meals-guest-list-service:
+      type: object
+      properties:
+        title:
+          type: string
+          description: name of meal
+      required:
+      - title
+    group-guest-list-service:
+      type: object
+      properties:
+        id:
+          type: string
+        guestlist_id:
+          type: string
+        guest_count:
+          type: integer
+        is_named:
+          type: boolean
+        guests:
+          type: array
+          items:
+            $ref: '#/components/schemas/guests-guest-list-service'
+      required:
+      - id
+      example:
+        id: 1db84340-2779-11e6-88c6-db7134cc99b6
+        name: Group A
+        guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+        guest_count: 2
+        guests:
+        - id: 1db18c80-2779-11e6-88c6-db7134cc99b6
+          guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+          first_name: Test
+          last_name: One
+        - id: 1db18c81-2779-11e6-88c6-db7134cc99b6
+          guestlist_id: 1dad46c0-2779-11e6-88c6-db7134cc99b6
+          first_name: Test
+          last_name: Two
     tags-guest-list-service:
       type: object
       properties:
@@ -383,6 +363,26 @@ components:
         archived:
           type: boolean
           description: whether the tag is archived
+    groupBulk-guest-list-service:
+      type: object
+      properties:
+        action:
+          type: string
+          enum:
+          - CREATE
+          - DELETE
+        guests:
+          type: array
+          items:
+            $ref: '#/components/schemas/guests-guest-list-service'
+      required:
+      - guests
+      - action
+      example:
+        action: CREATE | DELETE
+        guests:
+        - 99b4ae20-2779-11e6-b0b7-13c2616041ae
+        - 99b4ae21-2779-11e6-b0b7-13c2616041ae
   securitySchemes:
     oauth2:
       type: oauth2
