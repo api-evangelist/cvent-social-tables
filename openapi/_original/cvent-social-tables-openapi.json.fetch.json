@@ -1,0 +1,12 @@
+{
+ "url": "https://developer.socialtables.com/swagger.json",
+ "requested_url": "https://developer.socialtables.com/swagger.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 179111,
+ "sha256": "6728ec0edd8c7bdb5c92f2cbf66fad7b45dc449b21ea6ef80d91c02549586a16",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
