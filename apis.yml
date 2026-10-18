@@ -130,6 +130,8 @@ apis:
   humanURL: https://developer.socialtables.com
   baseURL: https://api.socialtables.com
   tags:
+  - Diagramming
+  tags_raw:
   - Diagrams
   properties:
   - type: OpenAPI
