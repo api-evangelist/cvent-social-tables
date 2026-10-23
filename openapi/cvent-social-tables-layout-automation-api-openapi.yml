@@ -547,3 +547,9 @@ components:
       name: partner_token
       in: header
       description: Social Tables Partner Token
+x-provenance:
+  method: harvested
+  publisher: Cvent Social Tables
+  source: https://developer.socialtables.com/swagger.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
